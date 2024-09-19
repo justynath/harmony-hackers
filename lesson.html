@@ -22,7 +22,16 @@
             
             <!-- Controls for the user??? (tbd empty header for now goes here)-->
             <header>
-                <p>settings</p>
+                <div class="column difficulty-radio">
+                    <!-- nothing here for now, going to add difficulty radio later-->
+                     <p>Placeholder for difficulty</p>
+                </div>
+                <div class="column volume-slider">
+                    <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
+                </div>
+                <div class="column keys-checkbox">
+                    <span>Show Keys</span><input type="checkbox" checked>
+                </div>
             </header>
             <!-- Create a ul list to hold each key, with each key being a list item
             going to style them into piano "keys" in css. Mapped the keys to the 
