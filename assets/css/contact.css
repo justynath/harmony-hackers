@@ -1,0 +1,101 @@
+:root {
+    --primary: #0e0e0e;
+    --secondary: #FFFFFF;
+    --accent: #FAFAFA;
+    --background: #050505;
+    --text: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", Arial, sans-serif;
+    text-decoration: none !important;
+}
+
+nav {
+  background-color: #d5aa77;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  padding: 15px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: var(--primary);
+    color: var(--secondary);
+    font-family: Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+  
+  .container {
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    line-height: 3em;
+    background: linear-gradient(0deg, #000000 0%, #0e0e0e 5%, #757575 25%, #c5c5c5 35%, #ffffff 50%, #c5c5c5 65%, #757575 75%, #0e0e0e 95%, #000000 0%);
+    color: var(--background);
+    align-content: center;
+    border-top: 0.025rem solid #ffffff;
+    border-bottom: 0.025rem solid #ffffff;
+    z-index: 1100;
+  }
+
+  main {
+    margin-top: 5.2rem;
+  }
+  
+  h1, h2 {
+    margin: 2rem auto;
+  }
+  
+  p {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  @keyframes color-change {
+    0% {
+      color: #ffffff;
+    }
+      25% {
+      color: #69afaf;
+    }
+    50% {
+      color: #0f7db9;
+    }
+      75% {
+      color: #0a91a5;
+    }
+    100% {
+      color: #0fd7cd;
+    }
+  }
+  
+  footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    line-height: 3em;
+    width: 100%;
+    align-content: center;
+    background-color: #8f4e18;
+  }
