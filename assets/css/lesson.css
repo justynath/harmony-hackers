@@ -9,6 +9,7 @@
 /* our keyboard body */
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -16,7 +17,19 @@ body {
 }
 
 .wrapper {
+  flex-direction: row;
   padding: 35px 40px;
   border-radius: 20px;
   background: #141414;
+}
+
+.wrapper header {
+  display: flex;
+  color: #b2b2b2;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h2 {
+  font-size: 1.6rem;
 }
