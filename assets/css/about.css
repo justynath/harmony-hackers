@@ -1,4 +1,3 @@
-/* Base Styles for larger screens (default) */
 .about-section {
     display: flex;
     justify-content: space-between;
@@ -42,12 +41,6 @@
     background-color: var(--accent-dark); /* Darker shade on hover */
 }
 
-.note {
-    font-size: 0.9em;
-    margin-top: 1em;
-    color: var(--secondary-light); /* Subtle color for the note */
-}
-
 .about-image {
     flex: 1;
     position: relative;
@@ -58,6 +51,145 @@
 .about-image img {
     max-width: 100%;
     border-radius: 12px;
+}
+
+
+/* MEET THE TEAM SECTION */
+
+/* Team Section */
+#team-section {
+    padding: 2em;
+    margin-bottom: 100px;
+}
+
+.team-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-image {
+    padding: 20px;
+}
+
+.card-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* .card {
+    width: 300px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-image {
+    padding: 20px;
+}
+
+.card-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+ */
+
+
+
+
+
+ @media screen and (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* Display 2 cards per row */
+        gap: 1.5em;
+    }
 }
 
 /* Responsive Styles for tablets (screens smaller than 768px) */
@@ -93,6 +225,18 @@
     .about-image img {
         max-width: 100%; /* Ensure image stays responsive */
     }
+
+
+    /* TEAM SECTION */
+    .team-grid {
+        grid-template-columns: 1fr; /* Display 1 card per row */
+        gap: 1em;
+    }
+
+    .card {
+        margin: 0 auto;
+    }
+
 }
 
 /* Responsive Styles for mobile devices (screens smaller than 480px) */
