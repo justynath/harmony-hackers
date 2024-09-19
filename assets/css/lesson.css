@@ -7,6 +7,7 @@
 }
 
 /* our keyboard body */
+
 body {
   display: flex;
   flex-direction: column;
@@ -30,6 +31,67 @@ body {
   justify-content: space-between;
 }
 
+/* placeholder for the flashcard wrapper */
+.card-wrapper {
+  flex-direction: row;
+  padding: 35px 40px;
+  border-radius: 20px;
+  background: #141414;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+/* placeholder for header font, change later as settings added */
 header h2 {
   font-size: 1.6rem;
+}
+
+.piano-keys {
+  display: flex;
+  list-style: none;
+  margin-top: 40px;
+}
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.piano-keys .black {
+  z-index: 2;
+  width: 44px;
+  height: 160px;
+  margin: 0 -22px 0 -22px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+.piano-keys .black.active {
+  box-shadow: inset -5px -10px 10px rgba(24, 24, 24, 0.1);
+  background: linear-gradient(to bottom, #000, #434343);
+}
+.piano-keys .white {
+  height: 250px;
+  width: 75px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: linear-gradient(#fff 96%, #eee 4%);
+}
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.piano-keys .key span {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #a2a2a2;
+  font-size: 1.13rem;
+  text-align: center;
+}
+.piano-keys .key.hide span {
+  display: none;
+}
+.piano-keys .black span {
+  bottom: 13px;
+  color: #888888;
 }
