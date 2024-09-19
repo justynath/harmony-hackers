@@ -25,6 +25,21 @@ body {
     font-family: Geneva, Verdana, sans-serif;
     text-align: center;
   }
+
+  nav {
+    background-color: #d5aa77;
+  }
+
+ nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    display: inline-block;
+    padding: 15px;
+  }
   
   .container {
     grid-template-rows: auto 1fr auto;
