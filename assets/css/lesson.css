@@ -41,10 +41,72 @@ body {
   color: white;
 }
 
-/* placeholder for header font, change later as settings added */
+/* 
+Header styling, volume keys styled cleanly and added styling for
+the key checkbox
+*/
+
 header h2 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
+header .column {
+  display: flex;
+  align-items: center;
+}
+
+/* styling the span text */
+header span {
+  font-weight: 500;
+  margin-right: 15px;
+  font-size: 1.2rem;
+}
+header input {
+  outline: none;
+  border-radius: 30px;
+}
+.volume-slider input {
+  accent-color: #fff;
+}
+
+/* styling the key checkbox */
+.key-checkbox input {
+  height: 30px;
+  width: 60px;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  background: #4b4b4b;
+}
+
+/* styling the input before we click */
+.key-checkbox input::before {
+  content: "";
+  position: absolute;
+  /* positioning input */
+  top: 50%;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* coloring and resizing */
+  background: #8c8c8c;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+
+/* additional styling for input before it gets checked */
+.key-checkbox input:checked::before {
+  left: 35px;
+  background: #fff;
+}
+
+/* 
+piano keys styling, we style the keys to be the same shape as piano
+keys, we also automatically uppercase all the keys and add shading to
+the bottom to make the keys look 3d. Later will add shading to make the
+keys look pressed / changing the color when a key is highlighted during
+a lesson
+*/
 
 .piano-keys {
   display: flex;
