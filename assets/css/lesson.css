@@ -1,0 +1,22 @@
+/* default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Monterrat", sans-serif;
+}
+
+/* our keyboard body */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #e3f2fd;
+}
+
+.wrapper {
+  padding: 35px 40px;
+  border-radius: 20px;
+  background: #141414;
+}
