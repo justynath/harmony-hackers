@@ -1,16 +1,13 @@
-// Function to display the working message
-function displayWorkingMessage() {
-    const paragraph = document.createElement("p");
-    paragraph.textContent = "It's working! Yay!";
-    document.body.appendChild(paragraph);
-  
-    // Add animation to the paragraph
-    setInterval(() => {
-      if (!paragraph.style.animation) {
-        paragraph.style.animation = "color-change 1s infinite";
-      }
-    }, 500);
+document.addEventListener('DOMContentLoaded', () => {
+  const transition1_el = document.querySelector('.transition-1');
+  const transition2_el = document.querySelector('.transition-2');
+  const loader = document.querySelector('.loader');
+setTimeout(() => {
+  if(transition2_el){
+    console.log("is active class removed")
+    transition1_el.classList.remove('is-active');
+    transition2_el.classList.remove('is-active');
+    loader.classList.remove('loader');
   }
-  
-  // Display the working message
-  displayWorkingMessage();
+                }, 2000);
+});
