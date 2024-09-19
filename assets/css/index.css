@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 :root {
     --primary: #0e0e0e;
     --secondary: #FFFFFF;
@@ -20,7 +21,6 @@ body {
 }
 
 body {
-    background: var(--primary);
     color: var(--secondary);
     font-family: Geneva, Verdana, sans-serif;
     text-align: center;
@@ -29,7 +29,15 @@ body {
   .container {
     grid-template-rows: auto 1fr auto;
   }
-  
+  .hero{
+    background: url(../images/new-hero-image-1.webp) center / cover no-repeat fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
   header {
     position: fixed;
     top: 0;
@@ -42,21 +50,101 @@ body {
     border-bottom: 0.025rem solid #ffffff;
     z-index: 1100;
   }
-
-  main {
-    margin-top: 5.2rem;
+  
+  .text-box{
+    background-color: rgba(151, 30, 8, 0.5);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .satisfy-regular {
+    font-family: "Satisfy", cursive;
+    font-weight: 400;
+    font-style: normal;
   }
   
   h1, h2 {
     margin: 2rem auto;
+    font-family: 'Satify', cursive;
+    color: #d5aa77;
   }
   
   p {
     margin: 1rem;
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
   }
   
+  .button,
+.button *,
+.button :after,
+.button :before,
+.button:after,
+.button:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.button {
+  width: 10rem;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #d5aa77;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: 900;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+.button:disabled {
+  cursor: default;
+}
+.button:-moz-focusring {
+  outline: auto;
+}
+
+.button {
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 15px 0px;
+  position: relative;
+  text-transform: uppercase;
+}
+.button .new,
+.button .old {
+  font-weight: 900;
+}
+.button .new {
+  background: #971e08;
+  color: #fff;
+  content: "";
+  display: grid;
+  inset: 0;
+  opacity: 0;
+  place-items: center;
+  position: absolute;
+  transform: rotate(90deg) translateY(100%);
+  transform-origin: bottom left;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.button:hover .new {
+  opacity: 1;
+  transform: rotate(0deg) translateY(0);
+}
+.button .old {
+  transition: opacity 0.2s;
+}
+.button:hover .old {
+  opacity: 0;
+}
   @keyframes color-change {
     0% {
       color: #ffffff;
@@ -88,3 +176,4 @@ body {
     border-bottom: 0.025rem solid #ffffff;
     z-index: 1100;
   }
+
