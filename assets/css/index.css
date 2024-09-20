@@ -17,18 +17,18 @@
 }
 
 nav {
-  background-color: #d5aa77;
+  background-color: transparent;
+  
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navbar-brand{
+  color: var(--main) !important;
+  font-weight: 900;
+  font-family: 'Satisfy', serif;
 }
 
-nav li {
-  display: inline-block;
-  padding: 15px;
+.navbar-nav .nav-link{
+  color: var(--main) !important;
 }
 
 html,
@@ -145,9 +145,6 @@ body {
     background: url(../images/new-hero-image-1.webp) center / cover no-repeat fixed;
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
   .hero::before {
@@ -188,7 +185,6 @@ body {
   }
   
   .title {
-    margfont-size: 2.5rem;in: 2rem auto;
     font-family: 'Satisfy', cursive;
     color: var(--main);
     font-weight: 900;
@@ -316,7 +312,7 @@ body {
   
   @media (min-width: 750px) {
     .text-box{
-      margin-top: -10rem;
+      margin-top: 3rem;
       gap: 2rem;
     }
     .title{
