@@ -17,18 +17,8 @@
 }
 
 nav {
-  background-color: #d5aa77;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  padding: 15px;
+  background-color: transparent;
+  z-index: -3;
 }
 
 html,
@@ -145,9 +135,6 @@ body {
     background: url(../images/new-hero-image-1.webp) center / cover no-repeat fixed;
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
   .hero::before {
@@ -316,7 +303,7 @@ body {
   
   @media (min-width: 750px) {
     .text-box{
-      margin-top: -10rem;
+      margin-top: 3rem;
       gap: 2rem;
     }
     .title{
