@@ -13,12 +13,13 @@ const keys = document.querySelectorAll(".piano-keys .key"),
 let allKeys = [];
 // and we want our audio sound effects (we will tie these to our datasets)
 // default is a in case key not mapped
-audio = new Audio(`./assets/audio/A1.mp3`);
+audio = new Audio(`../assets/audio/A1.mp3`);
 
 // play note function, will play the note corresponding to our key
 const playNote = function (key) {
   // sets the srt to our audio file chosen
-  audio.src = `./assets/audio/${key}.mp3`;
+  audio.src = `../assets/audio/${key}.mp3`;
+  console.log(audio);
   // playing audio
   audio.play();
 };
@@ -30,5 +31,5 @@ keys.forEach((key) => {
   // adding data-key value to the allKeys array
   allKeys.push(key.dataset.key);
   // calling playTune function with passing data-key value as an argument
-  key.addEventListener("click", () => playTune(key.dataset.key));
+  key.addEventListener("click", () => playNote(key.dataset.key));
 });
