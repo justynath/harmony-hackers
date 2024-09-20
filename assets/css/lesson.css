@@ -41,6 +41,11 @@ body {
   color: white;
 }
 
+/* center card image */
+.carousel-inner img {
+margin: 0 auto;
+}
+
 /* 
 Header styling, volume keys styled cleanly and added styling for
 the key checkbox
