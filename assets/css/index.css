@@ -325,6 +325,11 @@ body {
     p{
       font-size: 1.5rem;
     }
+    .button{
+      width: 10rem;
+      padding: 13px 0;
+      font-size: 1rem;   
+    }
   }
   @media (min-width: 1400px) {
     .title{
