@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+:root {
+    --primary: #0e0e0e;
+    --secondary: #FFFFFF;
+    --accent: #FAFAFA;
+    --background: #050505;
+    --text: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", Arial, sans-serif;
+    text-decoration: none !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: var(--accent);
+    font-family: Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    line-height: 3em;
+    background: linear-gradient(0deg, #000000 0%, #0e0e0e 5%, #757575 25%, #c5c5c5 35%, #ffffff 50%, #c5c5c5 65%, #757575 75%, #0e0e0e 95%, #000000 0%);
+    color: var(--background);
+    align-content: center;
+    border-top: 0.025rem solid #ffffff;
+    border-bottom: 0.025rem solid #ffffff;
+    z-index: 3;
+  }
+
+main {
+    flex: 1 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+main h1 {
+    margin: 35px;
+    font-size: 4em;
+}
+
+.error-img {
+        max-width: 100%; /* Make sure the image is responsive */
+        width: 500px;    /* Set the image width (can be any size) */
+        height: auto;    /* Keep the aspect ratio */
+        display: inline-block; /* Needed to center the image */
+        margin: 30px auto;
+}
+
+main p {
+    font-size: 1.2em;
+    line-height: 1.7;
+}
+
+main a {
+    color: lightskyblue;
+}
