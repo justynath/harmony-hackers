@@ -18,7 +18,17 @@
 
 nav {
   background-color: transparent;
-  z-index: -3;
+  
+}
+
+.navbar-brand{
+  color: var(--main) !important;
+  font-weight: 900;
+  font-family: 'Satisfy', serif;
+}
+
+.navbar-nav .nav-link{
+  color: var(--main) !important;
 }
 
 html,
@@ -175,7 +185,6 @@ body {
   }
   
   .title {
-    margfont-size: 2.5rem;in: 2rem auto;
     font-family: 'Satisfy', cursive;
     color: var(--main);
     font-weight: 900;
