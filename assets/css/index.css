@@ -129,10 +129,7 @@ body {
     color: #4a050f;
 }
 
-.note:nth-child(6) {
-    animation-delay: 1s;
-    color: #0000;
-}
+
   
   @keyframes bounce {
     0%, 100% {
@@ -160,12 +157,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Adjust the RGBA value for the tint */
-    z-index: 1;/* Ensure the tint is above the background image but below text */
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
   }
   
   .hero * {
-    position: relative; /* Ensure text and other content are above the tint */
+    position: relative;
     z-index: 2; 
    }
   header {
@@ -191,7 +188,7 @@ body {
   }
   
   .title {
-    margin: 2rem auto;
+    margfont-size: 2.5rem;in: 2rem auto;
     font-family: 'Satisfy', cursive;
     color: var(--main);
     font-weight: 900;
@@ -280,3 +277,82 @@ body {
     background-color: #8f4e18;
   }
 
+  @media (max-width: 320px) {
+    .title {
+      font-size: 3rem;
+    }
+    .button{
+      padding: 10px 0;
+      width: 6rem;
+      font-size: .8rem;
+    }
+    p{
+      font-size: 1rem;
+    }
+    .text-box{
+      margin-top: -12rem;
+      gap: 0;
+    }
+  }
+  @media (min-width: 375px) {
+    .title {
+      font-size: 3rem;
+    }
+    .button{
+      padding: 10px 0;
+      width: 6rem;
+      font-size: .8rem;
+    }
+    p{
+      font-size: 1rem;
+    }
+    .text-box{
+      margin-top: -5rem;
+      gap: 2rem;
+    }
+
+  }
+
+  
+  @media (min-width: 750px) {
+    .text-box{
+      margin-top: -10rem;
+      gap: 2rem;
+    }
+    .title{
+      font-size: 4rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+  }
+  @media (min-width: 1400px) {
+    .title{
+      font-size: 7rem;
+    }
+    p{
+      font-size: 2rem;
+    }
+    .button{
+      width: 13rem;
+      padding: 20px 0;
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 2500px) {
+    .title{
+      font-size: 12rem;
+    }
+    p {
+      font-size: 4rem;
+    }
+    .button{
+    width: 20rem;
+    padding: 30px 0;
+    font-size: 2rem;
+    }
+    .text-box{
+      gap: 3rem;
+    }
+  }
