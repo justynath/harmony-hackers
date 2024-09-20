@@ -76,6 +76,13 @@
 }
 
 .card {
+    /* width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; */
     width: 100%;
     background-color: white;
     border: 1px solid #ddd;
@@ -83,107 +90,106 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    height: 100%; /* Ensure full height */
+    min-height: 450px; /* Adjust this based on your content */
 }
 
 .card-image {
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
 }
 
 .card-image img {
     width: 180px;
-    height: 180px;
+    height: fit-content;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .card-body {
-    padding: 20px;
+    /* padding: 10px 20px 20px 20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content; */
+    padding: 10px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Grows to take available space, pushing the footer down */
+
 }
 
 .card-title {
     font-size: 1.5em;
     margin-bottom: 10px;
     font-weight: bold;
+    color: var(--primary);
+}
+
+.card-role {
+    font-size: 1em;
+    color: #555;
+    margin: 0 auto;
 }
 
 .card-text {
     font-size: 1em;
     color: #555;
     margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    padding: 10px 20px;
+    background-color: #f8f9fa; /* Light gray background */
+    border-top: 1px solid #ddd; /* Adds a subtle line between the body and footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between elements inside the footer */
+}
+
+label {
+    color: var(--primary);
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.music-player {
+    max-width: 85%;
+    border-radius: 10px;
+    margin: 0 auto;
+    
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--primary);
+    color: var(--text);
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-
-
-/* .card {
-    width: 300px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.card-image {
-    padding: 20px;
-}
-
-.card-image img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.card-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.card-text {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
 .btn:hover {
     background-color: #0056b3;
 }
 
- */
 
-
-
-
+.bold {
+    font-weight: bold;
+}
 
  @media screen and (max-width: 1024px) {
     .team-grid {
