@@ -53,44 +53,46 @@ keys.forEach((key) => {
 // Game Logic Starts Here
 //
 //
+
 // Array of flashcards
 const flashcards = [
-  { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1" },
-  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1" },
-  { src: "assets/flashcards/d-flat-1.png", card: "CS1", alt: "d-flat-1" },
-  { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1" },
-  { src: "assets/flashcards/d-sharp-1.png", card: "DS1", alt: "d-sharp-1" },
-  { src: "assets/flashcards/e-flat-1.png", card: "DS1", alt: "e-flat-1" },
-  { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1" },
-  { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1" },
-  { src: "assets/flashcards/f-sharp-1.png", card: "FS1", alt: "f-sharp-1" },
-  { src: "assets/flashcards/g-flat-1.png", card: "FS1", alt: "g-flat-1" },
-  { src: "assets/flashcards/g-1.png", card: "G1", alt: "g-1" },
-  { src: "assets/flashcards/g-sharp-1.png", card: "GS1", alt: "g-sharp-1" },
-  { src: "assets/flashcards/a-flat-1.png", card: "GS1", alt: "a-flat-1" },
-  { src: "assets/flashcards/a-1.png", card: "A1", alt: "a-1" },
-  { src: "assets/flashcards/a-sharp-1.png", card: "AS1", alt: "a-sharp-1" },
-  { src: "assets/flashcards/b-flat-1.png", card: "AS1", alt: "b-flat-1" },
-  { src: "assets/flashcards/b-1.png", card: "B1", alt: "b-1" },
-  { src: "assets/flashcards/c-2.png", card: "C2", alt: "c-2" },
-  { src: "assets/flashcards/c-sharp-2.png", card: "CS2", alt: "c-sharp-2" },
-  { src: "assets/flashcards/d-flat-2.png", card: "CS2", alt: "d-flat-2" },
-  { src: "assets/flashcards/d-2.png", card: "D2", alt: "d-2" },
-  { src: "assets/flashcards/d-sharp-2.png", card: "DS2", alt: "d-sharp-2" },
-  { src: "assets/flashcards/e-flat-2.png", card: "DS2", alt: "e-flat-2" },
-  { src: "assets/flashcards/e-2.png", card: "E2", alt: "e-2" },
-  { src: "assets/flashcards/f-2.png", card: "F2", alt: "f-2" },
-  { src: "assets/flashcards/f-sharp-2.png", card: "FS2", alt: "f-sharp-2" },
-  { src: "assets/flashcards/g-flat-2.png", card: "FS2", alt: "g-flat-2" },
-  { src: "assets/flashcards/g-2.png", card: "G2", alt: "g-2" },
-  { src: "assets/flashcards/g-sharp-2.png", card: "GS2", alt: "g-sharp-2" },
-  { src: "assets/flashcards/a-flat-2.png", card: "GS2", alt: "a-flat-2" },
-  { src: "assets/flashcards/a-2.png", card: "A2", alt: "a-2" },
-  { src: "assets/flashcards/a-sharp-2.png", card: "AS2", alt: "a-sharp-2" },
-  { src: "assets/flashcards/b-flat-2.png", card: "AS2", alt: "b-flat-2" },
-  { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2" },
-  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3" },
+  { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: 'C4' },
+  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1", noteName: 'C#4'},
+  { src: "assets/flashcards/d-flat-1.png", card: "CS1", alt: "d-flat-1", noteName: "D♭4" },
+  { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1", noteName: "D4" },
+  { src: "assets/flashcards/d-sharp-1.png", card: "DS1", alt: "d-sharp-1", noteName: "D#4" },
+  { src: "assets/flashcards/e-flat-1.png", card: "DS1", alt: "e-flat-1", noteName: "E♭4" },
+  { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1", noteName: "E4" },
+  { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1", noteName: "F4" },
+  { src: "assets/flashcards/f-sharp-1.png", card: "FS1", alt: "f-sharp-1", noteName: "F#4" },
+  { src: "assets/flashcards/g-flat-1.png", card: "FS1", alt: "g-flat-1", noteName: "G♭4" },
+  { src: "assets/flashcards/g-1.png", card: "G1", alt: "g-1", noteName: "G4" },
+  { src: "assets/flashcards/g-sharp-1.png", card: "GS1", alt: "g-sharp-1", noteName: "G#4" },
+  { src: "assets/flashcards/a-flat-1.png", card: "GS1", alt: "a-flat-1", noteName: "A♭4" },
+  { src: "assets/flashcards/a-1.png", card: "A1", alt: "a-1", noteName: "A4" },
+  { src: "assets/flashcards/a-sharp-1.png", card: "AS1", alt: "a-sharp-1", noteName: "A#4" },
+  { src: "assets/flashcards/b-flat-1.png", card: "AS1", alt: "b-flat-1", noteName: "B♭4" },
+  { src: "assets/flashcards/b-1.png", card: "B1", alt: "b-1", noteName: "B4" },
+  { src: "assets/flashcards/c-2.png", card: "C2", alt: "c-2", noteName: "C5" },
+  { src: "assets/flashcards/c-sharp-2.png", card: "CS2", alt: "c-sharp-2", noteName: "C#5" },
+  { src: "assets/flashcards/d-flat-2.png", card: "CS2", alt: "d-flat-2", noteName: "D♭5" },
+  { src: "assets/flashcards/d-2.png", card: "D2", alt: "d-2", noteName: "D5" },
+  { src: "assets/flashcards/d-sharp-2.png", card: "DS2", alt: "d-sharp-2", noteName: "D#5" },
+  { src: "assets/flashcards/e-flat-2.png", card: "DS2", alt: "e-flat-2", noteName: "E♭5" },
+  { src: "assets/flashcards/e-2.png", card: "E2", alt: "e-2", noteName: "E5" },
+  { src: "assets/flashcards/f-2.png", card: "F2", alt: "f-2", noteName: "F5" },
+  { src: "assets/flashcards/f-sharp-2.png", card: "FS2", alt: "f-sharp-2", noteName: "F#5" },
+  { src: "assets/flashcards/g-flat-2.png", card: "FS2", alt: "g-flat-2", noteName: "G♭5" },
+  { src: "assets/flashcards/g-2.png", card: "G2", alt: "g-2", noteName: "G5" },
+  { src: "assets/flashcards/g-sharp-2.png", card: "GS2", alt: "g-sharp-2", noteName: "G#5" },
+  { src: "assets/flashcards/a-flat-2.png", card: "GS2", alt: "a-flat-2", noteName: "A♭5" },
+  { src: "assets/flashcards/a-2.png", card: "A2", alt: "a-2", noteName: "A5" },
+  { src: "assets/flashcards/a-sharp-2.png", card: "AS2", alt: "a-sharp-2", noteName: "A#5" },
+  { src: "assets/flashcards/b-flat-2.png", card: "AS2", alt: "b-flat-2", noteName: "B♭5" },
+  { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
+  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" }
 ];
+
 
 let currentFlashcard = null;
 let score = 0;
@@ -101,54 +103,18 @@ let gameStarted = false;
 function generateRandomFlashcard() {
   const randomIndex = Math.floor(Math.random() * flashcards.length);
   currentFlashcard = flashcards[randomIndex];
-  totalQuestions++; //Increment the total number of questions asked
 
-  // Display the flashcard (you can use an img element for this or update the src of a carousel item)
-  const carouselInner = document.querySelector(".carousel-inner");
-  carouselInner.innerHTML = `
-        <div class="carousel-item active">
-            <img src="${currentFlashcard.src}" class="d-block w-70" data-card="${currentFlashcard.card}" alt="${currentFlashcard.alt}">
-        </div>
-    `;
+  // Update the src attribute of the new flashcard image element
+  const flashcardImage = document.getElementById("flashcard-image");
+  flashcardImage.src = currentFlashcard.src;
+  flashcardImage.alt = currentFlashcard.alt;
 
-   // Reset feedback for new card
-   const feedbackElement = document.getElementById("feedback");
-   feedbackElement.textContent = "";
-
-     // Remove color classes from all keys
-  // const allKeys = document.querySelectorAll(".piano-keys .key");
-  // allKeys.forEach(key => key.classList.remove("correct", "incorrect"));
+  // Reset feedback for the new card
+  const feedbackElement = document.getElementById("feedback");
+  feedbackElement.textContent = "";
 }
 
-// function handlePianoKeyClick(event) {
-//   if (!gameStarted) return; // Don't handle clicks if the game hasn't started
-//   const clickedKey = event.target.closest(".key").dataset.key;
-//   if (clickedKey === currentFlashcard.card) {
-//     score++;
-//   } 
-//   generateRandomFlashcard(); // Show the next flashcard whether correct or not
-// }
 
-
-// function handlePianoKeyClick(event) {
-//   if (!gameStarted) return; // Don't handle clicks if the game hasn't started
-
-//   const clickedKey = event.target.closest(".key").dataset.key;
-//   const feedbackElement = document.getElementById("feedback");
-
-//   if (clickedKey === currentFlashcard.card) {
-//     score++;
-//     feedbackElement.textContent = "Correct!";
-//     feedbackElement.style.color = "green"; // Feedback in green if correct
-//   } else {
-//     feedbackElement.textContent = "Incorrect!";
-//     feedbackElement.style.color = "red"; // Feedback in red if incorrect
-//   }
-
-//   setTimeout(() => {
-//     generateRandomFlashcard(); // Show the next flashcard after a short delay
-//   }, 1000); // 1 second delay to give user time to see the feedback
-// }
 
 function handlePianoKeyClick(event) {
   if (!gameStarted) return; // Don't handle clicks if the game hasn't started
@@ -163,10 +129,11 @@ function handlePianoKeyClick(event) {
     feedbackElement.style.color = "green";
     clickedKey.classList.add("correct"); // Add the correct class to the clicked key
   } else {
-    feedbackElement.textContent = "Incorrect!";
+    feedbackElement.textContent = `Incorrect! The correct note was: ${currentFlashcard.noteName}`;
     feedbackElement.style.color = "red";
     clickedKey.classList.add("incorrect"); // Add the incorrect class to the clicked key
   }
+  totalQuestions++;
 
   setTimeout(() => {
     clickedKey.classList.remove("correct", "incorrect");
@@ -178,7 +145,7 @@ function startGame() {
   gameStarted = true;
   score = 0;
   totalQuestions = 0;
-  timeLeft = 120; // Reset the timer
+  timeLeft = 120; // Reset the timer (2 Minutes)
 
   generateRandomFlashcard();
   const pianoKeys = document.querySelectorAll(".piano-keys .key");
@@ -201,9 +168,7 @@ function startGame() {
 
 function endGame() {
   gameStarted = false;
-  document.getElementById(
-    "score"
-  ).textContent = `Your Score: ${score}/${totalQuestions}`;
+  alert(`Your Score: ${score}/${totalQuestions}`)
   const pianoKeys = document.querySelectorAll(".piano-keys .key");
   pianoKeys.forEach((key) =>
     key.removeEventListener("click", handlePianoKeyClick)
@@ -218,7 +183,7 @@ document.getElementById("how-to-play").addEventListener("click", () => {
   );
 });
 
-// Game Logic Ends Here
 //
+// Game Logic Ends Here
 //
 //
