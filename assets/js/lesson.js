@@ -7,7 +7,7 @@
 // difficulty slider to set our difficulty
 const keys = document.querySelectorAll(".piano-keys .key"),
   volume = document.querySelector(".volume-slider input"),
-  keysVisibility = document.querySelector(".keys-checkbox input");
+  keyVisibility = document.querySelector(".key-checkbox input");
 
 const TIMEOUT = 200;
 
@@ -49,47 +49,175 @@ keys.forEach((key) => {
   key.addEventListener("click", () => playNote(key.dataset.key));
 });
 
+// Volume control function
+const handleVolume = function (e) {
+  // we get the volume slider value as an audio volume here
+  note.volume = e.target.value;
+};
+
+// Hide keys control function
+const keyVisibilityToggle = function () {
+  // We loop through the keys here and hide
+  keys.forEach((key) => key.classList.toggle("hide"));
+  console.log("volume switched");
+};
+
+// we want to get our pressed key for registration this error handling
+// to ensure note does audio for notes only plays on key click and not by accident
+const pressedKey = function (e) {
+  // check if our key contained in the all keys array
+  if (allKeys.includes(e.key)) {
+    // if it is play note
+    playNote(e.key);
+  }
+};
+
+// now we get our event listener for 3 controls
+keyVisibility.addEventListener("click", keyVisibilityToggle);
+volume.addEventListener("input", handleVolume);
+document.addEventListener("keydown", pressedKey);
+
 //
 // Game Logic Starts Here
 //
 //
 // Array of flashcards
 const flashcards = [
-  { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1" },
-  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1" },
-  { src: "assets/flashcards/d-flat-1.png", card: "CS1", alt: "d-flat-1" },
-  { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1" },
-  { src: "assets/flashcards/d-sharp-1.png", card: "DS1", alt: "d-sharp-1" },
-  { src: "assets/flashcards/e-flat-1.png", card: "DS1", alt: "e-flat-1" },
-  { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1" },
-  { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1" },
-  { src: "assets/flashcards/f-sharp-1.png", card: "FS1", alt: "f-sharp-1" },
-  { src: "assets/flashcards/g-flat-1.png", card: "FS1", alt: "g-flat-1" },
-  { src: "assets/flashcards/g-1.png", card: "G1", alt: "g-1" },
-  { src: "assets/flashcards/g-sharp-1.png", card: "GS1", alt: "g-sharp-1" },
-  { src: "assets/flashcards/a-flat-1.png", card: "GS1", alt: "a-flat-1" },
-  { src: "assets/flashcards/a-1.png", card: "A1", alt: "a-1" },
-  { src: "assets/flashcards/a-sharp-1.png", card: "AS1", alt: "a-sharp-1" },
-  { src: "assets/flashcards/b-flat-1.png", card: "AS1", alt: "b-flat-1" },
-  { src: "assets/flashcards/b-1.png", card: "B1", alt: "b-1" },
-  { src: "assets/flashcards/c-2.png", card: "C2", alt: "c-2" },
-  { src: "assets/flashcards/c-sharp-2.png", card: "CS2", alt: "c-sharp-2" },
-  { src: "assets/flashcards/d-flat-2.png", card: "CS2", alt: "d-flat-2" },
-  { src: "assets/flashcards/d-2.png", card: "D2", alt: "d-2" },
-  { src: "assets/flashcards/d-sharp-2.png", card: "DS2", alt: "d-sharp-2" },
-  { src: "assets/flashcards/e-flat-2.png", card: "DS2", alt: "e-flat-2" },
-  { src: "assets/flashcards/e-2.png", card: "E2", alt: "e-2" },
-  { src: "assets/flashcards/f-2.png", card: "F2", alt: "f-2" },
-  { src: "assets/flashcards/f-sharp-2.png", card: "FS2", alt: "f-sharp-2" },
-  { src: "assets/flashcards/g-flat-2.png", card: "FS2", alt: "g-flat-2" },
-  { src: "assets/flashcards/g-2.png", card: "G2", alt: "g-2" },
-  { src: "assets/flashcards/g-sharp-2.png", card: "GS2", alt: "g-sharp-2" },
-  { src: "assets/flashcards/a-flat-2.png", card: "GS2", alt: "a-flat-2" },
-  { src: "assets/flashcards/a-2.png", card: "A2", alt: "a-2" },
-  { src: "assets/flashcards/a-sharp-2.png", card: "AS2", alt: "a-sharp-2" },
-  { src: "assets/flashcards/b-flat-2.png", card: "AS2", alt: "b-flat-2" },
-  { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2" },
-  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3" },
+  { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: "C4" },
+  {
+    src: "assets/flashcards/c-sharp-1.png",
+    card: "CS1",
+    alt: "c-sharp-1",
+    noteName: "C#4",
+  },
+  {
+    src: "assets/flashcards/d-flat-1.png",
+    card: "CS1",
+    alt: "d-flat-1",
+    noteName: "D♭4",
+  },
+  { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1", noteName: "D4" },
+  {
+    src: "assets/flashcards/d-sharp-1.png",
+    card: "DS1",
+    alt: "d-sharp-1",
+    noteName: "D#4",
+  },
+  {
+    src: "assets/flashcards/e-flat-1.png",
+    card: "DS1",
+    alt: "e-flat-1",
+    noteName: "E♭4",
+  },
+  { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1", noteName: "E4" },
+  { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1", noteName: "F4" },
+  {
+    src: "assets/flashcards/f-sharp-1.png",
+    card: "FS1",
+    alt: "f-sharp-1",
+    noteName: "F#4",
+  },
+  {
+    src: "assets/flashcards/g-flat-1.png",
+    card: "FS1",
+    alt: "g-flat-1",
+    noteName: "G♭4",
+  },
+  { src: "assets/flashcards/g-1.png", card: "G1", alt: "g-1", noteName: "G4" },
+  {
+    src: "assets/flashcards/g-sharp-1.png",
+    card: "GS1",
+    alt: "g-sharp-1",
+    noteName: "G#4",
+  },
+  {
+    src: "assets/flashcards/a-flat-1.png",
+    card: "GS1",
+    alt: "a-flat-1",
+    noteName: "A♭4",
+  },
+  { src: "assets/flashcards/a-1.png", card: "A1", alt: "a-1", noteName: "A4" },
+  {
+    src: "assets/flashcards/a-sharp-1.png",
+    card: "AS1",
+    alt: "a-sharp-1",
+    noteName: "A#4",
+  },
+  {
+    src: "assets/flashcards/b-flat-1.png",
+    card: "AS1",
+    alt: "b-flat-1",
+    noteName: "B♭4",
+  },
+  { src: "assets/flashcards/b-1.png", card: "B1", alt: "b-1", noteName: "B4" },
+  { src: "assets/flashcards/c-2.png", card: "C2", alt: "c-2", noteName: "C5" },
+  {
+    src: "assets/flashcards/c-sharp-2.png",
+    card: "CS2",
+    alt: "c-sharp-2",
+    noteName: "C#5",
+  },
+  {
+    src: "assets/flashcards/d-flat-2.png",
+    card: "CS2",
+    alt: "d-flat-2",
+    noteName: "D♭5",
+  },
+  { src: "assets/flashcards/d-2.png", card: "D2", alt: "d-2", noteName: "D5" },
+  {
+    src: "assets/flashcards/d-sharp-2.png",
+    card: "DS2",
+    alt: "d-sharp-2",
+    noteName: "D#5",
+  },
+  {
+    src: "assets/flashcards/e-flat-2.png",
+    card: "DS2",
+    alt: "e-flat-2",
+    noteName: "E♭5",
+  },
+  { src: "assets/flashcards/e-2.png", card: "E2", alt: "e-2", noteName: "E5" },
+  { src: "assets/flashcards/f-2.png", card: "F2", alt: "f-2", noteName: "F5" },
+  {
+    src: "assets/flashcards/f-sharp-2.png",
+    card: "FS2",
+    alt: "f-sharp-2",
+    noteName: "F#5",
+  },
+  {
+    src: "assets/flashcards/g-flat-2.png",
+    card: "FS2",
+    alt: "g-flat-2",
+    noteName: "G♭5",
+  },
+  { src: "assets/flashcards/g-2.png", card: "G2", alt: "g-2", noteName: "G5" },
+  {
+    src: "assets/flashcards/g-sharp-2.png",
+    card: "GS2",
+    alt: "g-sharp-2",
+    noteName: "G#5",
+  },
+  {
+    src: "assets/flashcards/a-flat-2.png",
+    card: "GS2",
+    alt: "a-flat-2",
+    noteName: "A♭5",
+  },
+  { src: "assets/flashcards/a-2.png", card: "A2", alt: "a-2", noteName: "A5" },
+  {
+    src: "assets/flashcards/a-sharp-2.png",
+    card: "AS2",
+    alt: "a-sharp-2",
+    noteName: "A#5",
+  },
+  {
+    src: "assets/flashcards/b-flat-2.png",
+    card: "AS2",
+    alt: "b-flat-2",
+    noteName: "B♭5",
+  },
+  { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
+  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" },
 ];
 
 let currentFlashcard = null;

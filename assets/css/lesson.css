@@ -43,7 +43,7 @@ body {
 
 /* center card image */
 .carousel-inner img {
-margin: 0 auto;
+  margin: 0 auto;
 }
 
 /* 
@@ -161,4 +161,31 @@ a lesson
 .piano-keys .black span {
   bottom: 13px;
   color: #888888;
+}
+
+/* Correct and incorrect feedback classes */
+.correct {
+  background: unset !important;
+  background-color: green !important;
+  color: white !important;
+}
+
+.incorrect {
+  background: unset !important;
+  background-color: red !important;
+  color: white !important;
+}
+
+/* Ensure that .correct and .incorrect take precedence over .active */
+.key.correct.active,
+.key.incorrect.active {
+  background: unset !important;
+  background-color: green !important; /* for correct keys */
+  color: white !important;
+}
+
+.key.incorrect.active {
+  background: unset !important;
+  background-color: red !important; /* for incorrect keys */
+  color: white !important;
 }
