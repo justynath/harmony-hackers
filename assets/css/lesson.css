@@ -31,12 +31,45 @@ body {
 /* placeholder for the flashcard wrapper */
 .card-wrapper {
   flex-direction: row;
-  padding: 35px 40px;
+  /* padding: 35px 40px; */
   border-radius: 20px;
   /* background: var(--main); */
+  background-color: rgba(0, 0, 0, 0.8);
   margin-bottom: 1rem;
   margin-left: 10px;
+  min-height: fit-content;
+  width: fit-content;
+  opacity: 0;
+
 }
+
+.card-wrapper img {
+  height: 200px;
+  box-shadow: inset -5px -10px 10px rgba(24, 24, 24, 0.1);
+}
+
+.image-div {
+  height: 200px;
+}
+
+.feedback-div {
+  height: 100px;
+}
+
+.timer-div {
+  height: 50px;
+}
+
+/* Add fade-in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Controls how long the fade takes */
+}
+
+.fade-in.show {
+  opacity: 1; /* Set opacity to 1 when the 'show' class is added */
+}
+
 
 /* our keyboard body */
 
@@ -50,7 +83,7 @@ body {
 
 /* center card image */
 
-.wrapper header {
+.wrapper .keyboard-header {
   display: flex;
   color: black;
   align-items: center;
@@ -63,21 +96,21 @@ Header styling, volume keys styled cleanly and added styling for
 the key checkbox
 */
 
-header h2 {
+.keyboard-header h2 {
   font-size: 1.4rem;
 }
-header .column {
+.keyboard-header .column {
   display: flex;
   align-items: center;
 }
 
 /* styling the span text */
-header span {
+.keyboard-header span {
   font-weight: 500;
   margin-right: 15px;
   font-size: 1.2rem;
 }
-header input {
+.keyboard-header input {
   outline: none;
   border-radius: 30px;
 }
@@ -173,6 +206,14 @@ a lesson
 .piano-keys .black span {
   bottom: 13px;
   color: #888888;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
 }
 
 /* Correct and incorrect feedback classes */

@@ -125,7 +125,7 @@ const flashcards = [
 let currentFlashcard = null;
 let score = 0;
 let totalQuestions = 0;
-let timeLeft = 120; // 2 minutes
+let timeLeft = 30; // 30 Seconds
 let gameStarted = false;
 
 function generateRandomFlashcard() {
@@ -153,18 +153,19 @@ function handlePianoKeyClick(event) {
 
   if (clickedKeyData === currentFlashcard.card) {
     score++;
-    feedbackElement.textContent = "Correct!";
-    feedbackElement.style.color = "green";
+    feedbackElement.innerHTML = "CORRECT!<br>Well Done!";
+    feedbackElement.classList.add("green");
     clickedKey.classList.add("correct"); // Add the correct class to the clicked key
   } else {
-    feedbackElement.textContent = `Incorrect! The correct note was: ${currentFlashcard.noteName}`;
-    feedbackElement.style.color = "red";
+    feedbackElement.innerHTML = `INCORRECT!<br><span class="fs-4">The correct note was: ${currentFlashcard.noteName}</span>`;
+    feedbackElement.classList.add("red");
     clickedKey.classList.add("incorrect"); // Add the incorrect class to the clicked key
   }
   totalQuestions++;
 
   setTimeout(() => {
     clickedKey.classList.remove("correct", "incorrect");
+    feedbackElement.classList.remove("green", "red");
     generateRandomFlashcard(); // Show the next flashcard after a short delay
   }, 1000); // 1 second delay to give user time to see the feedback
 }
@@ -173,7 +174,16 @@ function startGame() {
   gameStarted = true;
   score = 0;
   totalQuestions = 0;
-  timeLeft = 120; // Reset the timer (2 Minutes)
+  timeLeft = 30; // Reset the timer (30 Seconds)
+
+  const wrapper = document.getElementById("flashcard-wrapper")
+
+  wrapper.classList.add("fade-in");  // Add the fade-in class
+  setTimeout(() => {
+    wrapper.classList.add("show");   // Add the show class after the timeout to trigger fade-in
+  }, 100);  // Slight delay to allow CSS transition to work
+
+
 
   generateRandomFlashcard();
   const pianoKeys = document.querySelectorAll(".piano-keys .key");

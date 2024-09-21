@@ -18,24 +18,29 @@
     <header>Header</header>
     <main>
         <!-- div for our flash-cards-->
-         
-        <div class="card-wrapper">
-        </div>
-            <img id="flashcard-image" src="" class="d-block w-70 mx-auto" />
-            <p id="feedback" class="text-center fs-1 m-2"></p>
+
+        <div class="card-wrapper p-4 mx-auto" id="flashcard-wrapper">
+            <div class="timer-div text-center m-1">
+                <p id="timer" class="text-white fs-2"></p>
             </div>
-            
-        </div>>
+            <div class="image-div">
+                <img id="flashcard-image" src="" class="d-block w-70 mx-auto shadow rounded" />
+            </div>
+            <div class="feedback-div text-center m-2">
+                <p id="feedback" class="fs-2 m-2 fw-bold"></p>
+            </div>
+        </div>
+
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
 
             <!-- Controls for the user??? (tbd empty header for now goes here)-->
-            <header>
+            <div class="keyboard-header">
                 <div class="buttons-container text-center">
-            <button id="start-game" class="btn btn-dark m-3">Start Game</button>
-            <button id="how-to-play" class="btn btn-dark m-3">How to Play</button>
-            </div>
-               <!-- <div class="column difficulty-radio">
+                    <button id="start-game" class="btn btn-dark m-3">Start Game</button>
+                    <button id="how-to-play" class="btn btn-dark m-3">How to Play</button>
+                </div>
+                <!-- <div class="column difficulty-radio">
                 </div> -->
                 <div class="column volume-slider">
                     <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
@@ -43,41 +48,41 @@
                 <div class="column key-checkbox">
                     <span>Show Key Names</span><input type="checkbox" checked>
                 </div>
-            </header>
+            </div>
             <!-- Create a ul list to hold each key, with each key being a list item
             going to style them into piano "keys" in css. Mapped the keys to the 
             middle row of the keyboard for white, upper row for black trying to 
             make the keys similar to the layout of a 25 key piano 
             used this image as ref https://shorturl.at/5yA5P -->
             <ul class="piano-keys">
-                <li class="key white" data-key="C1"><span>C4</span></li>
-                <li class="key black" data-key="CS1"><span>C# D♭</span></li>
-                <li class="key white" data-key="D1"><span>D</span></li>
-                <li class="key black" data-key="DS1"><span>D# E♭</span></li>
-                <li class="key white" data-key="E1"><span>E</span></li>
-                <li class="key white" data-key="F1"><span>F</span></li>
-                <li class="key black" data-key="FS1"><span>F# G♭</span></li>
-                <li class="key white" data-key="G1"><span>G</span></li>
-                <li class="key black" data-key="GS1"><span>G# A♭</span></li>
-                <li class="key white" data-key="A1"><span>A</span></li>
-                <li class="key black" data-key="AS1"><span>A# B♭</span></li>
-                <li class="key white" data-key="B1"><span>B</span></li>
-                <li class="key white" data-key="C2"><span>C5</span></li>
-                <li class="key black" data-key="CS2"><span>C# D♭</span></li>
-                <li class="key white" data-key="D2"><span>D</span></li>
-                <li class="key black" data-key="DS2"><span>D# E♭</span></li>
-                <li class="key white" data-key="E2"><span>E</span></li>
-                <li class="key white" data-key="F2"><span>F</span></li>
-                <li class="key black" data-key="FS2"><span>F# G♭</span></li>
-                <li class="key white" data-key="G2"><span>G</span></li>
-                <li class="key black" data-key="GS2"><span>G# A♭</span></li>
-                <li class="key white" data-key="A2"><span>A</span></li>
-                <li class="key black" data-key="AS2"><span>A# B♭</span></li>
-                <li class="key white" data-key="B2"><span>B</span></li>
-                <li class="key white" data-key="C3"><span>C6</span></li>
+                <li class="key white shadow" data-key="C1"><span>C4</span></li>
+                <li class="key black shadow" data-key="CS1"><span>C# D♭</span></li>
+                <li class="key white shadow" data-key="D1"><span>D</span></li>
+                <li class="key black shadow" data-key="DS1"><span>D# E♭</span></li>
+                <li class="key white shadow" data-key="E1"><span>E</span></li>
+                <li class="key white shadow" data-key="F1"><span>F</span></li>
+                <li class="key black shadow" data-key="FS1"><span>F# G♭</span></li>
+                <li class="key white shadow" data-key="G1"><span>G</span></li>
+                <li class="key black shadow" data-key="GS1"><span>G# A♭</span></li>
+                <li class="key white shadow" data-key="A1"><span>A</span></li>
+                <li class="key black shadow" data-key="AS1"><span>A# B♭</span></li>
+                <li class="key white shadow" data-key="B1"><span>B</span></li>
+                <li class="key white shadow" data-key="C2"><span>C5</span></li>
+                <li class="key black shadow" data-key="CS2"><span>C# D♭</span></li>
+                <li class="key white shadow" data-key="D2"><span>D</span></li>
+                <li class="key black shadow" data-key="DS2"><span>D# E♭</span></li>
+                <li class="key white shadow" data-key="E2"><span>E</span></li>
+                <li class="key white shadow" data-key="F2"><span>F</span></li>
+                <li class="key black shadow" data-key="FS2"><span>F# G♭</span></li>
+                <li class="key white shadow" data-key="G2"><span>G</span></li>
+                <li class="key black shadow" data-key="GS2"><span>G# A♭</span></li>
+                <li class="key white shadow" data-key="A2"><span>A</span></li>
+                <li class="key black shadow" data-key="AS2"><span>A# B♭</span></li>
+                <li class="key white shadow" data-key="B2"><span>B</span></li>
+                <li class="key white shadow" data-key="C3"><span>C6</span></li>
             </ul>
 
-            <p id="timer" class="text-white"></p>
+            <!-- <p id="timer" class="text-white"></p> -->
             <p id="score" class="text-white"></p>
             <div>
 
