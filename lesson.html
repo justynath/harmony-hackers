@@ -17,19 +17,19 @@
 <body>
     <header>Header</header>
     <main>
-        <div>
-            <button id="start-game">Start Game</button>
-            <button id="how-to-play">How to Play</button>
-        </div>
         <!-- div for our flash-cards-->
         <div class="card-wrapper">
+            <div class="text-align-center">
+                <button id="start-game" class="btn btn-dark m-3">Start Game</button>
+                <button id="how-to-play" class="btn btn-dark m-3">How to Play</button>
+            </div>
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <!-- FLASHCARDS RENDERED HERE THROUGH JAVASCRIPT -->
                 </div>
             </div>
+            <p id="feedback" class="text-center"></p>
         </div>
-
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
 
