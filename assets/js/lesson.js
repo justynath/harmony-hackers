@@ -260,8 +260,26 @@ function toggleGame() {
 // Attach event listener to toggle between start and stop
 document.getElementById("start-game").addEventListener("click", toggleGame);
 
-document.getElementById("how-to-play").addEventListener("click", () => {
-  alert(
-    "Match the note displayed with the correct piano key. You have 2 minutes to score as many correct answers as possible!"
-  );
-});
+
+ const modal = document.getElementById("instructionModal");
+  const btn = document.getElementById("instructionButton");
+  const span = document.querySelector(".close");
+
+  btn.addEventListener("click", toggleModal);
+  span.addEventListener("click", closeModal);
+  window.addEventListener("click", outsideClick);
+
+  // Open the modal
+  function toggleModal() {
+    modal.style.display = "flex";
+  }
+
+  // Close the modal when clicking on (x)
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  // Close the modal when clicking outside of the modal content
+  function outsideClick(e) {
+    if (e.target == modal) modal.style.display = "none";
+  }
