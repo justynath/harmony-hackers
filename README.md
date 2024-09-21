@@ -4,9 +4,9 @@ Hannah Olbrich - Frontend/Content/Music Lessons
 
 Justyna Thompson - Presentation/Error Pages/Documentation
 
-Jibril Abshir - Lead Frontend Developer
+Jibril Abshir - Lead Frontend Developer/Landing Page
 
-Stephen Beese - Frontend/Lessons/Music Lessons
+Stephen Beese - Frontend/About Page/Music Lessons
 
 Shaun Anderton - Lead Javascript Developer/Music Lessons
 
