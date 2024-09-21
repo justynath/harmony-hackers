@@ -6,7 +6,6 @@
   font-family: "Monterrat", sans-serif;
 }
 
-/* our keyboard body */
 
 body {
   display: flex;
@@ -14,8 +13,22 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #e3f2fd;
+  background-image: url("../images/wallpaper_notes.jpg");
+  background-size: cover; 
+  background-position: center;
 }
+
+/* placeholder for the flashcard wrapper */
+.card-wrapper {
+  flex-direction: row;
+  padding: 35px 40px;
+  border-radius: 20px;
+  background-color: black;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+}
+
+/* our keyboard body */
 
 .wrapper {
   flex-direction: row;
@@ -29,22 +42,6 @@ body {
   color: #b2b2b2;
   align-items: center;
   justify-content: space-between;
-}
-
-/* placeholder for the flashcard wrapper */
-.card-wrapper {
-  flex-direction: row;
-  padding: 35px 40px;
-  border-radius: 20px;
-  background: #141414;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-/* center card image */
-.carousel-inner img {
-  margin: 0 auto;
-  width: 60%;
 }
 
 /* 
