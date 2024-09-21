@@ -10,197 +10,90 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+        </script>
     <title>Harmony Hub | Lesson</title>
 </head>
 
 <body>
     <header>Header</header>
     <main>
-        <div>
-            <button>Start Game</button>
-            <button>How to Play</button>
-        </div>
         <!-- div for our flash-cards-->
-        <div class="card-wrapper">
-            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets/flashcards/c-1.png" class="d-block w-70" data-card="C1" alt="c-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/c-sharp-1.png" class="d-block w-70" data-card="C#1" alt="c-sharp-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/d-flat-1.png" class="d-block w-70" data-card="C#1" alt="d-flat-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/d-1.png" class="d-block w-70" data-card="D1" alt="d-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/d-sharp-1.png" class="d-block w-70" data-card="D#1" alt="d-sharp-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/e-flat-1.png" class="d-block w-70" data-card="D#1" alt="e-flat-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/e-1.png" class="d-block w-70" data-card="E1" alt="e-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/f-1.png" class="d-block w-70" data-card="F1" alt="f-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/f-sharp-1.png" class="d-block w-70" data-card="F#1" alt="f-sharp-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/g-flat-1.png" class="d-block w-70" data-card="F#1" alt="g-flat-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/g-1.png" class="d-block w-70" data-card="G1" alt="g-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/g-sharp-1.png" class="d-block w-70" data-card="G#1" alt="g-sharp-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/a-flat-1.png" class="d-block w-70" data-card="G#1" alt="a-flat-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/a-1.png" class="d-block w-70" data-card="A1" alt="a-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/a-sharp-1.png" class="d-block w-70" data-card="A#1" alt="a-sharp-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/b-flat-1.png" class="d-block w-70" data-card="A#1" alt="b-flat-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/b-1.png" class="d-block w-70" data-card="B1" alt="b-1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/c-2.png" class="d-block w-70" data-card="C2" alt="c-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/c-sharp-2.png" class="d-block w-70" data-card="C#2" alt="c-sharp-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/d-flat-2.png" class="d-block w-70" data-card="C#2" alt="d-flat-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/d-2.png" class="d-block w-70" data-card="D2" alt="d-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/d-sharp-2.png" class="d-block w-70" data-card="D#2" alt="d-sharp-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/e-flat-2.png" class="d-block w-70" data-card="D#2" alt="e-flat-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/e-2.png" class="d-block w-70" data-card="E2" alt="e-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/f-2.png" class="d-block w-70" data-card="F2" alt="f-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/f-sharp-2.png" class="d-block w-70" data-card="F#2" alt="f-sharp-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/g-flat-2.png" class="d-block w-70" data-card="F#2" alt="g-flat-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/g-2.png" class="d-block w-70" data-card="G2" alt="g-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/g-sharp-2.png" class="d-block w-70" data-card="G#2" alt="g-sharp-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/a-flat-2.png" class="d-block w-70" data-card="G#2" alt="a-flat-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/a-2.png" class="d-block w-70" data-card="A2" alt="a-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/a-sharp-2.png" class="d-block w-70" data-card="A#2" alt="a-sharp-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/b-flat-2.png" class="d-block w-70" data-card="A#2" alt="b-flat-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/b-2.png" class="d-block w-70" data-card="B2" alt="b-2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets/flashcards/c-3.png" class="d-block w-70" data-card="C3" alt="c-3">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+
+        <div class="card-wrapper p-4 mx-auto" id="flashcard-wrapper">
+            <div class="timer-div text-center m-1">
+                <p id="timer" class="text-white fs-2"></p>
+            </div>
+            <div class="image-div">
+                <img id="flashcard-image" src="" class="d-block w-70 mx-auto shadow rounded" />
+            </div>
+            <div class="feedback-div text-center m-2">
+                <p id="feedback" class="fs-2 m-2 fw-bold"></p>
             </div>
         </div>
+
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
 
             <!-- Controls for the user??? (tbd empty header for now goes here)-->
-            <header>
-                <div class="column difficulty-radio">
-                    <!-- nothing here for now, going to add difficulty radio later-->
-                    <p>Placeholder for difficulty</p>
+            <div class="keyboard-header">
+                <div class="buttons-container text-center">
+                    <button id="start-game" class="btn btn-dark m-3">Start Game</button>
+                    <button id="how-to-play" class="btn btn-dark m-3">How to Play</button>
                 </div>
+                <!-- <div class="column difficulty-radio">
+                </div> -->
                 <div class="column volume-slider">
                     <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
                 </div>
-                <div class="column keys-checkbox">
-                    <span>Show Keys</span><input type="checkbox" checked>
+                <div class="column key-checkbox">
+                    <span>Show Key Names</span><input type="checkbox" checked>
                 </div>
-            </header>
+            </div>
             <!-- Create a ul list to hold each key, with each key being a list item
             going to style them into piano "keys" in css. Mapped the keys to the 
             middle row of the keyboard for white, upper row for black trying to 
             make the keys similar to the layout of a 25 key piano 
             used this image as ref https://shorturl.at/5yA5P -->
             <ul class="piano-keys">
-                <li class="key white" data-key="C1"><span>C</span></li>
-                <li class="key black" data-key="C#1"><span>C# D♭</span></li>
-                <li class="key white" data-key="D1"><span>D</span></li>
-                <li class="key black" data-key="D#1"><span>D# E♭</span></li>
-                <li class="key white" data-key="E1"><span>E</span></li>
-                <li class="key white" data-key="F1"><span>F</span></li>
-                <li class="key black" data-key="F#1"><span>F# G♭</span></li>
-                <li class="key white" data-key="G1"><span>G</span></li>
-                <li class="key black" data-key="G#1"><span>G# A♭</span></li>
-                <li class="key white" data-key="A1"><span>A</span></li>
-                <li class="key black" data-key="A#1"><span>A# B♭</span></li>
-                <li class="key white" data-key="B1"><span>B</span></li>
-                <li class="key white" data-key="C2"><span>C</span></li>
-                <li class="key black" data-key="C#2"><span>C# D♭</span></li>
-                <li class="key white" data-key="D2"><span>D</span></li>
-                <li class="key black" data-key="D#2"><span>D# E♭</span></li>
-                <li class="key white" data-key="E2"><span>E</span></li>
-                <li class="key white" data-key="F2"><span>F</span></li>
-                <li class="key black" data-key="F#2"><span>F# G♭</span></li>
-                <li class="key white" data-key="G2"><span>G</span></li>
-                <li class="key black" data-key="G#2"><span>G# A♭</span></li>
-                <li class="key white" data-key="A2"><span>A</span></li>
-                <li class="key black" data-key="A#2"><span>A# B♭</span></li>
-                <li class="key white" data-key="B2"><span>B</span></li>
-                <li class="key white" data-key="C3"><span>C</span></li>
+                <li class="key white shadow" data-key="C1"><span>C4</span></li>
+                <li class="key black shadow" data-key="CS1"><span>C# D♭</span></li>
+                <li class="key white shadow" data-key="D1"><span>D</span></li>
+                <li class="key black shadow" data-key="DS1"><span>D# E♭</span></li>
+                <li class="key white shadow" data-key="E1"><span>E</span></li>
+                <li class="key white shadow" data-key="F1"><span>F</span></li>
+                <li class="key black shadow" data-key="FS1"><span>F# G♭</span></li>
+                <li class="key white shadow" data-key="G1"><span>G</span></li>
+                <li class="key black shadow" data-key="GS1"><span>G# A♭</span></li>
+                <li class="key white shadow" data-key="A1"><span>A</span></li>
+                <li class="key black shadow" data-key="AS1"><span>A# B♭</span></li>
+                <li class="key white shadow" data-key="B1"><span>B</span></li>
+                <li class="key white shadow" data-key="C2"><span>C5</span></li>
+                <li class="key black shadow" data-key="CS2"><span>C# D♭</span></li>
+                <li class="key white shadow" data-key="D2"><span>D</span></li>
+                <li class="key black shadow" data-key="DS2"><span>D# E♭</span></li>
+                <li class="key white shadow" data-key="E2"><span>E</span></li>
+                <li class="key white shadow" data-key="F2"><span>F</span></li>
+                <li class="key black shadow" data-key="FS2"><span>F# G♭</span></li>
+                <li class="key white shadow" data-key="G2"><span>G</span></li>
+                <li class="key black shadow" data-key="GS2"><span>G# A♭</span></li>
+                <li class="key white shadow" data-key="A2"><span>A</span></li>
+                <li class="key black shadow" data-key="AS2"><span>A# B♭</span></li>
+                <li class="key white shadow" data-key="B2"><span>B</span></li>
+                <li class="key white shadow" data-key="C3"><span>C6</span></li>
             </ul>
+
+            <!-- <p id="timer" class="text-white"></p> -->
+            <p id="score" class="text-white"></p>
             <div>
 
     </main>
     <footer>Footer</footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="assets/js/lesson.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

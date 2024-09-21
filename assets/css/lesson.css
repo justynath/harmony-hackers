@@ -1,3 +1,12 @@
+:root {
+    --main: #d5aa77;
+    --sub: #971e08;
+    --text: #FAFAFA;
+    --background: #bc3b18;
+    --accent: #0000;
+}
+
+
 /* default styles */
 * {
   margin: 0;
@@ -6,7 +15,7 @@
   font-family: "Monterrat", sans-serif;
 }
 
-/* our keyboard body */
+
 
 body {
   display: flex;
@@ -14,58 +23,94 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #e3f2fd;
-}
-
-.wrapper {
-  flex-direction: row;
-  padding: 35px 40px;
-  border-radius: 20px;
-  background: #141414;
-}
-
-.wrapper header {
-  display: flex;
-  color: #b2b2b2;
-  align-items: center;
-  justify-content: space-between;
+  background-image: url("../images/wallpaper_notes.jpg");
+  background-size: cover; 
+  background-position: center;
 }
 
 /* placeholder for the flashcard wrapper */
 .card-wrapper {
   flex-direction: row;
-  padding: 35px 40px;
+  /* padding: 35px 40px; */
   border-radius: 20px;
-  background: #141414;
+  /* background: var(--main); */
+  background-color: rgba(0, 0, 0, 0.8);
   margin-bottom: 1rem;
-  color: white;
+  margin-left: 10px;
+  min-height: fit-content;
+  width: fit-content;
+  opacity: 0;
+
 }
 
-/* center card image */
-.carousel-inner img {
-margin: 0 auto;
+.card-wrapper img {
+  height: 200px;
+  box-shadow: inset -5px -10px 10px rgba(24, 24, 24, 0.1);
 }
+
+.image-div {
+  height: 200px;
+}
+
+.feedback-div {
+  height: 100px;
+}
+
+.timer-div {
+  height: 50px;
+}
+
+/* Add fade-in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Controls how long the fade takes */
+}
+
+.fade-in.show {
+  opacity: 1; /* Set opacity to 1 when the 'show' class is added */
+}
+
+
+/* our keyboard body */
+
+.wrapper {
+  flex-direction: row;
+  padding: 35px 40px;
+  border-radius: 20px;
+  background: var(--main);
+}
+
+
+/* center card image */
+
+.wrapper .keyboard-header {
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 /* 
 Header styling, volume keys styled cleanly and added styling for
 the key checkbox
 */
 
-header h2 {
+.keyboard-header h2 {
   font-size: 1.4rem;
 }
-header .column {
+.keyboard-header .column {
   display: flex;
   align-items: center;
 }
 
 /* styling the span text */
-header span {
+.keyboard-header span {
   font-weight: 500;
   margin-right: 15px;
   font-size: 1.2rem;
 }
-header input {
+.keyboard-header input {
   outline: none;
   border-radius: 30px;
 }
@@ -80,7 +125,7 @@ header input {
   cursor: pointer;
   appearance: none;
   position: relative;
-  background: #4b4b4b;
+  background: #000000;
 }
 
 /* styling the input before we click */
@@ -94,7 +139,7 @@ header input {
   height: 20px;
   border-radius: 50%;
   /* coloring and resizing */
-  background: #8c8c8c;
+  background: var(--accent);
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
@@ -161,4 +206,39 @@ a lesson
 .piano-keys .black span {
   bottom: 13px;
   color: #888888;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+/* Correct and incorrect feedback classes */
+.correct {
+  background: unset !important;
+  background-color: green !important;
+  color: white !important;
+}
+
+.incorrect {
+  background: unset !important;
+  background-color: red !important;
+  color: white !important;
+}
+
+/* Ensure that .correct and .incorrect take precedence over .active */
+.key.correct.active,
+.key.incorrect.active {
+  background: unset !important;
+  background-color: green !important; /* for correct keys */
+  color: white !important;
+}
+
+.key.incorrect.active {
+  background: unset !important;
+  background-color: red !important; /* for incorrect keys */
+  color: white !important;
 }
