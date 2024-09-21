@@ -2,7 +2,7 @@
     <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link rel="stylesheet" href="assets/css/index.css">
@@ -29,32 +29,34 @@
             </div>   
            
             <main>
-                <div class="container-flud content hero">
-                    <div class="container-flud">
+                <div class="container-fluid content hero">
+                    <div class="container-fluid">
                         <nav class="navbar navbar-expand-lg navbar-light container-flud">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
+                            <div class="toggle-styling">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <i class="fa-solid fa-play" id="play-icon" style="color: #d5aa77;"></i>
+                                </button>
+                            </div>
                             <a class="navbar-brand" href="index.html">The Harmony <br> Hub</a>
                             <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav ms-auto">
-                                <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="lesson.html">Lesson</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
-                                </li>
-                            </ul>
+                                <ul class="navbar-nav ml-auto list">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="lesson.html">Lesson</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="about.html">About</a>
+                                    </li>
+                                </ul>
                             </div>
                         </nav>
                     </div>        
                     <section class=" d-flex justify-content-center align-items-center">
                         <div class="text-center text-box">
                             <h1 class="title">The Harmony<br> Hub</h1>
-                            <p >Where we make learning music harmonious.</p>
+                            <p class="slogan">Where we make learning music harmonious.</p>
                             <a class="button" href="lesson.html"> 
                                 <span class="old">Learn</span>
                                 <span class="new">Now</span>
@@ -63,8 +65,40 @@
                     </section>    
                 </div>
             </main>
-            <footer>This site is intended for educational purposes only.</footer>
+            <footer>
+                <div class="container-fluid">
+                    <div class="row footer-section">
+                        <div class="col-md-4">
+                            <h3>Links</h3>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="lesson.html">Lesson</a></li>
+                                <li><a href="about.html">About</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Follow Us</h3>
+                            <ul>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+                                <li><a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h3>Contact Us</h3>
+                            <ul>
+                                <li><a href="mailto:theharmonyhub@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Email</a></li>
+                                <li><a href="tel:+447283749425" target="_blank"><i class="fas fa-phone"></i> Phone</a></li>
+                                <li><a href="https://maps.app.goo.gl/xaqPpy14pWRrc1Db7" target="_blank"><i class="fas fa-map-marker-alt"></i> Address</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </body>
         <script src="assets/js/script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/a585228d22.js" crossorigin="anonymous"></script>
     </html>
