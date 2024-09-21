@@ -49,8 +49,6 @@ body {
 
 
 /* center card image */
-.carousel-inner img {
-  margin: 0 auto;
 
 .wrapper header {
   display: flex;
