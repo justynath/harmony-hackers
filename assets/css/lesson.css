@@ -33,7 +33,7 @@ body {
   flex-direction: row;
   padding: 35px 40px;
   border-radius: 20px;
-  background: var(--main);
+  /* background: var(--main); */
   margin-bottom: 1rem;
   margin-left: 10px;
 }
