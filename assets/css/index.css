@@ -70,6 +70,7 @@ nav {
 body.navbar-toggled .text-box {
   display: none;
 }
+
 @media (max-width: 992px) {
   .navbar-collapse {
   position: fixed;
@@ -244,7 +245,7 @@ body {
     font-size: 5rem;
   }
   
-  p {
+  .slogan {
     margin: 1rem;
     font-size: 1.5rem;
     color: var(--text);
@@ -315,7 +316,7 @@ body {
   .button:hover .old {
     opacity: 0;
   }
-  
+  /****** Footer *****/
   footer {
     bottom: 0;
     left: 0;
@@ -324,8 +325,29 @@ body {
     width: 100%;
     align-content: center;
     background-color: #8f4e18;
+    color: var(--text);
   }
 
+  .footer-section{
+    padding: 1rem;
+  }
+  footer .footer-section li{
+    list-style: none;
+    display: inline;
+    margin-right: 1rem;
+    color: var(--text)
+  }
+
+  footer .footer-section li a{
+    color: var(--main);
+    font-weight: bold;
+  }
+
+  footer .footer-section li a:hover{
+    font-size: large;
+    color: var(--sub);
+  }
+/******** Footer End ********/
   @media (max-width: 320px) {
     .title {
       font-size: 3rem;
@@ -335,7 +357,7 @@ body {
       width: 6rem;
       font-size: .8rem;
     }
-    p{
+    .slogan{
       font-size: 1rem;
     }
     .text-box{
@@ -352,7 +374,7 @@ body {
       width: 6rem;
       font-size: .8rem;
     }
-    p{
+    .slogan{
       font-size: 1rem;
     }
     .text-box{
@@ -371,7 +393,7 @@ body {
     .title{
       font-size: 4rem;
     }
-    p{
+    .slogan{
       font-size: 1.5rem;
     }
     .button{
@@ -384,7 +406,7 @@ body {
     .title{
       font-size: 7rem;
     }
-    p{
+    .slogan{
       font-size: 2rem;
     }
     .button{
@@ -398,7 +420,7 @@ body {
     .title{
       font-size: 12rem;
     }
-    p {
+    .slogan{
       font-size: 4rem;
     }
     .button{
