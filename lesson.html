@@ -17,19 +17,17 @@
 <body>
     <header>Header</header>
     <main>
-        <div>
-            <button id="start-game">Start Game</button>
-            <button id="how-to-play">How to Play</button>
-        </div>
         <!-- div for our flash-cards-->
+         
         <div class="card-wrapper">
-            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- FLASHCARDS RENDERED HERE THROUGH JAVASCRIPT -->
-                </div>
-            </div>
+            <div class="buttons-container text-center">
+            <button id="start-game" class="btn btn-dark m-3">Start Game</button>
+            <button id="how-to-play" class="btn btn-dark m-3">How to Play</button>
         </div>
-
+            <img id="flashcard-image" src="" class="d-block w-70 mx-auto" />
+            <p id="feedback" class="text-center fs-1 m-2"></p>
+            </div>
+        </div>>
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
 
@@ -50,7 +48,7 @@
             make the keys similar to the layout of a 25 key piano 
             used this image as ref https://shorturl.at/5yA5P -->
             <ul class="piano-keys">
-                <li class="key white" data-key="C1"><span>C</span></li>
+                <li class="key white" data-key="C1"><span>C4</span></li>
                 <li class="key black" data-key="CS1"><span>C# D♭</span></li>
                 <li class="key white" data-key="D1"><span>D</span></li>
                 <li class="key black" data-key="DS1"><span>D# E♭</span></li>
@@ -62,7 +60,7 @@
                 <li class="key white" data-key="A1"><span>A</span></li>
                 <li class="key black" data-key="AS1"><span>A# B♭</span></li>
                 <li class="key white" data-key="B1"><span>B</span></li>
-                <li class="key white" data-key="C2"><span>C</span></li>
+                <li class="key white" data-key="C2"><span>C5</span></li>
                 <li class="key black" data-key="CS2"><span>C# D♭</span></li>
                 <li class="key white" data-key="D2"><span>D</span></li>
                 <li class="key black" data-key="DS2"><span>D# E♭</span></li>
@@ -74,7 +72,7 @@
                 <li class="key white" data-key="A2"><span>A</span></li>
                 <li class="key black" data-key="AS2"><span>A# B♭</span></li>
                 <li class="key white" data-key="B2"><span>B</span></li>
-                <li class="key white" data-key="C3"><span>C</span></li>
+                <li class="key white" data-key="C3"><span>C6</span></li>
             </ul>
 
             <p id="timer" class="text-white"></p>
