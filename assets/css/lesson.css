@@ -60,6 +60,13 @@ body {
   height: 50px;
 }
 
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Control how long the fade-out takes */
+}
+
+
+
 /* Add fade-in effect */
 .fade-in {
   opacity: 0;

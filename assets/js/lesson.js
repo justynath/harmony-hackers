@@ -77,15 +77,15 @@ keyVisibility.addEventListener("click", keyVisibilityToggle);
 volume.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
 
+
 //
 // Game Logic Starts Here
-//
 //
 
 // Array of flashcards
 const flashcards = [
   { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: 'C4' },
-  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1", noteName: 'C#4'},
+  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1", noteName: 'C#4' },
   { src: "assets/flashcards/d-flat-1.png", card: "CS1", alt: "d-flat-1", noteName: "D♭4" },
   { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1", noteName: "D4" },
   { src: "assets/flashcards/d-sharp-1.png", card: "DS1", alt: "d-sharp-1", noteName: "D#4" },
@@ -121,18 +121,19 @@ const flashcards = [
   { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" }
 ];
 
-
 let currentFlashcard = null;
 let score = 0;
 let totalQuestions = 0;
 let timeLeft = 30; // 30 Seconds
 let gameStarted = false;
+let intervalId; // To store the interval ID for the timer
 
+// Function to generate a random flashcard
 function generateRandomFlashcard() {
   const randomIndex = Math.floor(Math.random() * flashcards.length);
   currentFlashcard = flashcards[randomIndex];
 
-  // Update the src attribute of the new flashcard image element
+  // Update the flashcard image
   const flashcardImage = document.getElementById("flashcard-image");
   flashcardImage.src = currentFlashcard.src;
   flashcardImage.alt = currentFlashcard.alt;
@@ -142,8 +143,7 @@ function generateRandomFlashcard() {
   feedbackElement.textContent = "";
 }
 
-
-
+// Handle the piano key click
 function handlePianoKeyClick(event) {
   if (!gameStarted) return; // Don't handle clicks if the game hasn't started
 
@@ -170,20 +170,19 @@ function handlePianoKeyClick(event) {
   }, 1000); // 1 second delay to give user time to see the feedback
 }
 
+// Function to start the game
 function startGame() {
   gameStarted = true;
   score = 0;
   totalQuestions = 0;
-  timeLeft = 30; // Reset the timer (30 Seconds)
+  timeLeft = 30; // Reset the timer
 
-  const wrapper = document.getElementById("flashcard-wrapper")
-
+  const wrapper = document.getElementById("flashcard-wrapper");
+  wrapper.classList.remove("hidden"); // Remove the hidden class
   wrapper.classList.add("fade-in");  // Add the fade-in class
   setTimeout(() => {
     wrapper.classList.add("show");   // Add the show class after the timeout to trigger fade-in
   }, 100);  // Slight delay to allow CSS transition to work
-
-
 
   generateRandomFlashcard();
   const pianoKeys = document.querySelectorAll(".piano-keys .key");
@@ -193,7 +192,7 @@ function startGame() {
 
   // Timer
   const timerElement = document.getElementById("timer");
-  const intervalId = setInterval(() => {
+  intervalId = setInterval(() => {
     timeLeft--;
     timerElement.textContent = `Time Left: ${timeLeft}s`;
 
@@ -202,26 +201,67 @@ function startGame() {
       endGame();
     }
   }, 1000);
+
+  document.getElementById("start-game").textContent = "Stop Game"; // Change button text
 }
 
+
+// Function to stop the game
+function stopGame() {
+  gameStarted = false;
+  clearInterval(intervalId); // Stop the timer
+
+  const wrapper = document.getElementById("flashcard-wrapper");
+  wrapper.classList.add("fade-out"); // Add the fade-out class
+  
+  // Wait for the fade-out transition to complete before hiding the wrapper
+  setTimeout(() => {
+    wrapper.classList.remove("show"); // Remove the 'show' class to hide it
+    wrapper.classList.add("hidden"); // Add 'hidden' to fully hide it after fade
+    wrapper.classList.remove("fade-out"); // Reset the fade-out class for future games
+  }, 500); // Match the CSS transition duration (0.5s)
+
+  const pianoKeys = document.querySelectorAll(".piano-keys .key");
+  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick));
+  alert(`Game Stopped! Your Score: ${score}/${totalQuestions}`);
+  document.getElementById("start-game").textContent = "Start Game"; // Change button text
+}
+
+// Function to end the game when the time runs out
 function endGame() {
   gameStarted = false;
-  alert(`Your Score: ${score}/${totalQuestions}`)
+  clearInterval(intervalId); // Ensure the timer is cleared
+
+  const wrapper = document.getElementById("flashcard-wrapper");
+  wrapper.classList.add("fade-out"); // Add the fade-out class
+  
+  // Wait for the fade-out transition to complete before hiding the wrapper
+  setTimeout(() => {
+    wrapper.classList.remove("show"); // Remove the 'show' class to hide it
+    wrapper.classList.add("hidden"); // Add 'hidden' to fully hide it after fade
+    wrapper.classList.remove("fade-out"); // Reset the fade-out class for future games
+  }, 500); // Match the CSS transition duration (0.5s)
+
   const pianoKeys = document.querySelectorAll(".piano-keys .key");
-  pianoKeys.forEach((key) =>
-    key.removeEventListener("click", handlePianoKeyClick)
-  );
+  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick));
+  alert(`Time's up! Your Score: ${score}/${totalQuestions}`);
+  document.getElementById("start-game").textContent = "Start Game"; // Reset button text
 }
 
-document.getElementById("start-game").addEventListener("click", startGame);
+// Toggle between start and stop game
+function toggleGame() {
+  if (gameStarted) {
+    stopGame();
+  } else {
+    startGame();
+  }
+}
+
+// Attach event listener to toggle between start and stop
+document.getElementById("start-game").addEventListener("click", toggleGame);
 
 document.getElementById("how-to-play").addEventListener("click", () => {
   alert(
     "Match the note displayed with the correct piano key. You have 2 minutes to score as many correct answers as possible!"
   );
 });
-
-//
-// Game Logic Ends Here
-//
-//
