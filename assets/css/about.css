@@ -1,9 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+:root {
+    --main: #d5aa77;
+    --sub: #971e08;
+    --text: #FAFAFA;
+    --background: #bc3b18;
+    --accent: #000000;
+}
+
+nav {
+    background-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+  
+  .navbar-brand{
+    color: var(--main) !important;
+    font-weight: 900;
+    font-family: 'Satisfy', serif;
+  }
+  
+  .navbar-nav .nav-link{
+    color: var(--main) !important;
+  }
+
 .about-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em;
-    background-color: var(--primary);
+    background-color: var(--sub);
     color: var(--text);
     border-radius: 12px;
 }
@@ -28,8 +52,8 @@
 
 .cta-button {
     padding: 0.75em 1.5em;
-    background-color: var(--accent);
-    color: var(--primary);
+    background-color: var(--main);
+    color: var(--accent);
     border: none;
     border-radius: 8px;
     font-size: 1.1em;
@@ -38,7 +62,10 @@
 }
 
 .cta-button:hover {
-    background-color: var(--accent-dark); /* Darker shade on hover */
+    background-color: #8f4e18; /* Darker shade on hover */
+    color: var(--text);
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .about-image {
@@ -84,7 +111,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center; */
     width: 100%;
-    background-color: white;
+    background-color: var(--main);
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -125,26 +152,27 @@
     font-size: 1.5em;
     margin-bottom: 10px;
     font-weight: bold;
-    color: var(--primary);
+    color: var(--accent);
 }
 
 .card-role {
     font-size: 1em;
-    color: #555;
+    color: var(--accent);
     margin: 0 auto;
 }
 
 .card-text {
     font-size: 1em;
-    color: #555;
+    color: var(--accent);
     margin-bottom: 20px;
     flex-grow: 1;
 }
 
 .card-footer {
     padding: 10px 20px;
-    background-color: #f8f9fa; /* Light gray background */
-    border-top: 1px solid #ddd; /* Adds a subtle line between the body and footer */
+    background-color: var(--sub); /* Light gray background */
+    color: var(--accent);
+    border-top: 1px solid var(--text); /* Adds a subtle line between the body and footer */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,7 +180,7 @@
 }
 
 label {
-    color: var(--primary);
+    color: var(--main);
     font-size: 0.8em;
     margin-bottom: 10px;
 }
@@ -174,16 +202,18 @@ label {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--primary);
-    color: var(--text);
+    background-color: var(--main);
+    color: var(--accent);
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #8f4e18;
+    color: var(--text);
 }
 
 
