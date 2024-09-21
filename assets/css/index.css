@@ -15,7 +15,7 @@
     font-family: "Lato", Arial, sans-serif;
     text-decoration: none !important;
 }
-
+/******* NAVIGATION *********/
 nav {
   background-color: transparent;
   
@@ -94,7 +94,7 @@ body.navbar-toggled .text-box {
   left: 10px;
   z-index: 1;
 }
-
+/****** NAVIGATION END ********/
 
 html,
 body {

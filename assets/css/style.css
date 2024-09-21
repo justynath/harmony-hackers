@@ -54,9 +54,8 @@ body {
   }
   
   footer {
-    bottom: 0;
     left: 0;
-    position: sticky;
+    position: relative;
     line-height: 3em;
     width: 100%;
     align-content: center;
