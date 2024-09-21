@@ -19,10 +19,10 @@ body {
 }
 
 body {
-    background: var(--background);
     color: var(--text);
     font-family: Geneva, Verdana, sans-serif;
     text-align: center;
+    overflow-x: hidden;
   }
   
   .container {
@@ -53,11 +53,36 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
   
+  /****** Footer *****/
   footer {
+    bottom: 0;
     left: 0;
     position: relative;
     line-height: 3em;
     width: 100%;
     align-content: center;
     background-color: #8f4e18;
+    color: var(--text);
+    width: 100%;
   }
+
+  .footer-section{
+    padding: 1rem;
+  }
+  footer .footer-section li{
+    list-style: none;
+    display: inline;
+    margin-right: 1rem;
+    color: var(--text)
+  }
+
+  footer .footer-section li a{
+    color: var(--main);
+    font-weight: bold;
+  }
+
+  footer .footer-section li a:hover{
+    font-size: large;
+    color: var(--sub);
+  }
+/******** Footer End ********/
