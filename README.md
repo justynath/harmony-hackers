@@ -1,9 +1,13 @@
-Vernell Clark - Scrum Lead
+Alan Chapman - Lead Designer/Content/Music Lessons
 
-Justyna Thompson - hosting repo
+Hannah Olbrich - Frontend/Content/Music Lessons
 
-Hannah Olbrich - Content and Frontend (html/css)
+Justyna Thompson - Presentation/Error Pages/Documentation
 
-Alan Chapman - wireframes and content.
+Jibril Abshir - Lead Frontend Developer
 
-Jibril Abshir - Frontend/Landing Page.
+Stephen Beese - Frontend/Lessons/Music Lessons
+
+Shaun Anderton - Lead Javascript Developer/Music Lessons
+
+Vernell Clark - Scrum Lead/Git + Github/Advisor
