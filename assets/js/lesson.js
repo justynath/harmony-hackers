@@ -110,15 +110,68 @@ function generateRandomFlashcard() {
             <img src="${currentFlashcard.src}" class="d-block w-70" data-card="${currentFlashcard.card}" alt="${currentFlashcard.alt}">
         </div>
     `;
+
+   // Reset feedback for new card
+   const feedbackElement = document.getElementById("feedback");
+   feedbackElement.textContent = "";
+
+     // Remove color classes from all keys
+  // const allKeys = document.querySelectorAll(".piano-keys .key");
+  // allKeys.forEach(key => key.classList.remove("correct", "incorrect"));
 }
+
+// function handlePianoKeyClick(event) {
+//   if (!gameStarted) return; // Don't handle clicks if the game hasn't started
+//   const clickedKey = event.target.closest(".key").dataset.key;
+//   if (clickedKey === currentFlashcard.card) {
+//     score++;
+//   } 
+//   generateRandomFlashcard(); // Show the next flashcard whether correct or not
+// }
+
+
+// function handlePianoKeyClick(event) {
+//   if (!gameStarted) return; // Don't handle clicks if the game hasn't started
+
+//   const clickedKey = event.target.closest(".key").dataset.key;
+//   const feedbackElement = document.getElementById("feedback");
+
+//   if (clickedKey === currentFlashcard.card) {
+//     score++;
+//     feedbackElement.textContent = "Correct!";
+//     feedbackElement.style.color = "green"; // Feedback in green if correct
+//   } else {
+//     feedbackElement.textContent = "Incorrect!";
+//     feedbackElement.style.color = "red"; // Feedback in red if incorrect
+//   }
+
+//   setTimeout(() => {
+//     generateRandomFlashcard(); // Show the next flashcard after a short delay
+//   }, 1000); // 1 second delay to give user time to see the feedback
+// }
 
 function handlePianoKeyClick(event) {
   if (!gameStarted) return; // Don't handle clicks if the game hasn't started
-  const clickedKey = event.target.closest(".key").dataset.key;
-  if (clickedKey === currentFlashcard.card) {
+
+  const clickedKey = event.target.closest(".key");
+  const clickedKeyData = clickedKey.dataset.key;
+  const feedbackElement = document.getElementById("feedback");
+
+  if (clickedKeyData === currentFlashcard.card) {
     score++;
+    feedbackElement.textContent = "Correct!";
+    feedbackElement.style.color = "green";
+    clickedKey.classList.add("correct"); // Add the correct class to the clicked key
+  } else {
+    feedbackElement.textContent = "Incorrect!";
+    feedbackElement.style.color = "red";
+    clickedKey.classList.add("incorrect"); // Add the incorrect class to the clicked key
   }
-  generateRandomFlashcard(); // Show the next flashcard whether correct or not
+
+  setTimeout(() => {
+    clickedKey.classList.remove("correct", "incorrect");
+    generateRandomFlashcard(); // Show the next flashcard after a short delay
+  }, 1000); // 1 second delay to give user time to see the feedback
 }
 
 function startGame() {
