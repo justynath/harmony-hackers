@@ -3,67 +3,56 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link rel="preload" href="assets/images/new-hero-image-1.webp" as="image">
             <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link rel="stylesheet" href="assets/css/index.css">
             <title>Harmony Hub | Home</title>
         </head>
-        <body>              
-            <div class="transition-1 is-active">
-                <div class="music-loader-1">
-                    <div class="note">&#9835;</div>
-                    <div class="note">&#9834;</div>
-                    <div class="note">&#9833;</div>
-                    <div class="note">&#9835;</div>
-                    <div class="note">&#9834;</div>
-                </div>
-            </div>
-            <div class="transition-2 is-active">
-                <div class="music-loader-2">
-                    <div class="note">&#9835;</div>
-                    <div class="note">&#9834;</div>
-                    <div class="note">&#9833;</div>
-                    <div class="note">&#9835;</div>
-                    <div class="note">&#9834;</div>
-                </div>
-            </div>   
-           
-            <main>
-                <div class="container-fluid content hero">
-                    <div class="container-fluid">
-                        <nav class="navbar navbar-expand-lg navbar-light container-flud">
-                            <div class="toggle-styling">
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                    <i class="fa-solid fa-play" id="play-icon" style="color: #d5aa77;"></i>
-                                </button>
-                            </div>
-                            <a class="navbar-brand" href="index.html">The Harmony <br> Hub</a>
-                            <div class="collapse navbar-collapse" id="navbarNav">
-                                <ul class="navbar-nav ml-auto list">
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="index.html">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="lesson.html">Lesson</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="about.html">About</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>        
-                    <section class=" d-flex justify-content-center align-items-center">
-                        <div class="text-center text-box">
-                            <h1 class="title">The Harmony<br> Hub</h1>
-                            <p class="slogan">Where we make learning music harmonious.</p>
-                            <a class="button" href="lesson.html"> 
-                                <span class="old">Learn</span>
-                                <span class="new">Now</span>
-                            </a>
+        <body>
+            <header>
+                <div class="nav-container">
+                    <input type="checkbox" name="check" id="check">
+                    <div class="logo-container">
+                    <h3 class="logo">Harmony<span>Hub</span></h3>
+                    </div>
+                    <div class="nav-btn">
+                        <div class="thenav-links">
+                            <ul>
+                            <li class="thenav-link" style="--i: .6s">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="thenav-link" style="--i: .85s">
+                                <a href="lesson.html">Lesson</a>
+                            </li>
+                            <li class="thenav-link" style="--i: 1.1s">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                            <li class="thenav-link" style="--i: 1.35s">
+                                <a href="about.html">About</a>
+                            </li>
+                            </ul>
                         </div>
-                    </section>    
+                    </div>
+                    <div class="hamburger-menu-container">
+                        <div class="hamburger-menu">
+                            <div></div>
+                        </div>
+                    </div>
                 </div>
+            </header>
+            <main>
+                <div class=" d-flex justify-content-center align-items-center hero">
+                    <div class="text-center text-box">
+                        <h1 class="title">The Harmony<br> Hub</h1>
+                        <p class="slogan">Where we make learning music harmonious.</p>
+                        <a class="button" href="lesson.html"> 
+                            <span class="old">Learn</span>
+                            <span class="new">Now</span>
+                        </a>
+                    </div>
+                </div>   
             </main>
             <footer>
                 <div class="container-fluid">
@@ -100,5 +89,4 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/a585228d22.js" crossorigin="anonymous"></script>
     </html>
