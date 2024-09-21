@@ -17,18 +17,18 @@
 }
 
 nav {
-  background-color: #d5aa77;
+  background-color: transparent;
+  
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.navbar-brand{
+  color: var(--main) !important;
+  font-weight: 900;
+  font-family: 'Satisfy', serif;
 }
 
-nav li {
-  display: inline-block;
-  padding: 15px;
+.navbar-nav .nav-link{
+  color: var(--main) !important;
 }
 
 html,
@@ -41,6 +41,7 @@ body {
     color: var(--accent);
     font-family: Geneva, Verdana, sans-serif;
     text-align: center;
+    overflow-x: hidden;
   }
   .transition-1 {
     position: fixed;
@@ -51,7 +52,7 @@ body {
     bottom: 0;
     z-index: 4;
     background-color: var(--background);
-    transition: 0.5s ease-out;
+    transition: 3s ease-out;
   }
   
   .transition-1.is-active {
@@ -65,38 +66,85 @@ body {
     width: 100%;
     height: 100%;
     bottom: 0;
+    display: flex;
+    align-items: center;
     z-index: 4;
     background-color: var(--background);
-    transition: 0.5s ease-out;
+    transition: 3s ease-out;
   }
 .transition-2.is-active {
     right: 50%;
   }
 
-  .loader {
-    position:relative;
-    top: 50%;    
-    width: 120px;
-    margin: 0 auto;
-    height: 20px;
-    border-radius: 20px;
-    background:
-     linear-gradient(orange 0 0) 0/0% no-repeat lightblue;
-    animation: l2 2s infinite steps(10);
-    z-index: 999999999;
+  .music-loader-1 {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: auto;
+    width: 200px;
+    height: 100px;
+    z-index: 2000;
   }
-  @keyframes l2 {
-      100% {background-size:110%}
+
+  .music-loader-2 {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    z-index: 2000;
   }
   
+  .note {
+    font-size: 3rem;
+    animation: bounce 1.5s infinite ease-in-out;
+  }
+  
+  .note:nth-child(1) {
+    animation-delay: 0s;
+    color: #d5aa77;
+}
+
+  .note:nth-child(2) {
+    animation-delay: 0.2s;
+    color: #d87a2b;
+}
+
+.note:nth-child(3) {
+    animation-delay: 0.4s;
+    color: #fff;
+}
+
+.note:nth-child(4) {
+    animation-delay: 0.6s;
+    color: #971e08;
+}
+
+.note:nth-child(5) {
+    animation-delay: 0.8s;
+    color: #4a050f;
+}
+
+
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+    
   .hero{
     position: relative;
     background: url(../images/new-hero-image-1.webp) center / cover no-repeat fixed;
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
   .hero::before {
@@ -106,12 +154,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Adjust the RGBA value for the tint */
-    z-index: 1;/* Ensure the tint is above the background image but below text */
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
   }
   
   .hero * {
-    position: relative; /* Ensure text and other content are above the tint */
+    position: relative;
     z-index: 2; 
    }
   header {
@@ -137,7 +185,6 @@ body {
   }
   
   .title {
-    margin: 2rem auto;
     font-family: 'Satisfy', cursive;
     color: var(--main);
     font-weight: 900;
@@ -226,3 +273,87 @@ body {
     background-color: #8f4e18;
   }
 
+  @media (max-width: 320px) {
+    .title {
+      font-size: 3rem;
+    }
+    .button{
+      padding: 10px 0;
+      width: 6rem;
+      font-size: .8rem;
+    }
+    p{
+      font-size: 1rem;
+    }
+    .text-box{
+      margin-top: -12rem;
+      gap: 0;
+    }
+  }
+  @media (min-width: 375px) {
+    .title {
+      font-size: 3rem;
+    }
+    .button{
+      padding: 10px 0;
+      width: 6rem;
+      font-size: .8rem;
+    }
+    p{
+      font-size: 1rem;
+    }
+    .text-box{
+      margin-top: -5rem;
+      gap: 2rem;
+    }
+
+  }
+
+  
+  @media (min-width: 750px) {
+    .text-box{
+      margin-top: 3rem;
+      gap: 2rem;
+    }
+    .title{
+      font-size: 4rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+    .button{
+      width: 10rem;
+      padding: 13px 0;
+      font-size: 1rem;   
+    }
+  }
+  @media (min-width: 1400px) {
+    .title{
+      font-size: 7rem;
+    }
+    p{
+      font-size: 2rem;
+    }
+    .button{
+      width: 13rem;
+      padding: 20px 0;
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 2500px) {
+    .title{
+      font-size: 12rem;
+    }
+    p {
+      font-size: 4rem;
+    }
+    .button{
+    width: 20rem;
+    padding: 30px 0;
+    font-size: 2rem;
+    }
+    .text-box{
+      gap: 3rem;
+    }
+  }

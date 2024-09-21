@@ -1,9 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+:root {
+    --main: #d5aa77;
+    --sub: #971e08;
+    --text: #FAFAFA;
+    --background: #bc3b18;
+    --accent: #000000;
+}
+
+nav {
+    background-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+  
+  .navbar-brand{
+    color: var(--main) !important;
+    font-weight: 900;
+    font-family: 'Satisfy', serif;
+  }
+  
+  .navbar-nav .nav-link{
+    color: var(--main) !important;
+  }
+
 .about-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em;
-    background-color: var(--primary);
+    background-color: var(--sub);
     color: var(--text);
     border-radius: 12px;
 }
@@ -28,8 +52,8 @@
 
 .cta-button {
     padding: 0.75em 1.5em;
-    background-color: var(--accent);
-    color: var(--primary);
+    background-color: var(--main);
+    color: var(--accent);
     border: none;
     border-radius: 8px;
     font-size: 1.1em;
@@ -38,7 +62,10 @@
 }
 
 .cta-button:hover {
-    background-color: var(--accent-dark); /* Darker shade on hover */
+    background-color: #8f4e18; /* Darker shade on hover */
+    color: var(--text);
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .about-image {
@@ -76,114 +103,123 @@
 }
 
 .card {
+    /* width: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; */
     width: 100%;
-    background-color: white;
+    background-color: var(--main);
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    height: 100%; /* Ensure full height */
+    min-height: 450px; /* Adjust this based on your content */
 }
 
 .card-image {
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
 }
 
 .card-image img {
     width: 180px;
-    height: 180px;
+    height: fit-content;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .card-body {
-    padding: 20px;
+    /* padding: 10px 20px 20px 20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content; */
+    padding: 10px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Grows to take available space, pushing the footer down */
+
 }
 
 .card-title {
     font-size: 1.5em;
     margin-bottom: 10px;
     font-weight: bold;
+    color: var(--accent);
+}
+
+.card-role {
+    font-size: 1em;
+    color: var(--accent);
+    margin: 0 auto;
 }
 
 .card-text {
     font-size: 1em;
-    color: #555;
+    color: var(--accent);
     margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    padding: 10px 20px;
+    background-color: var(--sub); /* Light gray background */
+    color: var(--accent);
+    border-top: 1px solid var(--text); /* Adds a subtle line between the body and footer */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Space between elements inside the footer */
+}
+
+label {
+    color: var(--main);
+    font-size: 0.8em;
+    margin-bottom: 10px;
+}
+
+.music-player {
+    max-width: 85%;
+    border-radius: 10px;
+    margin: 0 auto;
+    
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--main);
+    color: var(--accent);
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #8f4e18;
+    color: var(--text);
 }
 
 
-
-/* .card {
-    width: 300px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.card-image {
-    padding: 20px;
-}
-
-.card-image img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.card-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+.bold {
     font-weight: bold;
 }
-
-.card-text {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
- */
-
-
-
-
 
  @media screen and (max-width: 1024px) {
     .team-grid {
