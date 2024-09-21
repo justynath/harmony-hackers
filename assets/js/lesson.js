@@ -15,12 +15,12 @@ const TIMEOUT = 200;
 let allKeys = [];
 // and we want our note sound effects (we will tie these to our datasets)
 // default is a in case key not mapped
-note = new Audio(`/assets/audio/A1.mp3`);
+note = new Audio(`assets/audio/A1.mp3`);
 
 // play note function, will play the note corresponding to our key
 const playNote = function (key) {
   // sets the srt to our note file chosen
-  note.src = `/assets/audio/${key}.mp3`;
+  note.src = `assets/audio/${key}.mp3`;
 
   // playing note
   note.play();
