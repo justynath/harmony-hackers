@@ -1,3 +1,12 @@
+:root {
+    --main: #d5aa77;
+    --sub: #971e08;
+    --text: #FAFAFA;
+    --background: #bc3b18;
+    --accent: #0000;
+}
+
+
 /* default styles */
 * {
   margin: 0;
@@ -5,6 +14,7 @@
   box-sizing: border-box;
   font-family: "Monterrat", sans-serif;
 }
+
 
 
 body {
@@ -23,7 +33,7 @@ body {
   flex-direction: row;
   padding: 35px 40px;
   border-radius: 20px;
-  background-color: black;
+  background: var(--main);
   margin-bottom: 1rem;
   margin-left: 10px;
 }
@@ -34,7 +44,7 @@ body {
   flex-direction: row;
   padding: 35px 40px;
   border-radius: 20px;
-  background: #141414;
+  background: var(--main);
 }
 
 
@@ -44,10 +54,11 @@ body {
 
 .wrapper header {
   display: flex;
-  color: #b2b2b2;
+  color: black;
   align-items: center;
   justify-content: space-between;
 }
+
 
 /* 
 Header styling, volume keys styled cleanly and added styling for
@@ -83,7 +94,7 @@ header input {
   cursor: pointer;
   appearance: none;
   position: relative;
-  background: #4b4b4b;
+  background: #000000;
 }
 
 /* styling the input before we click */
@@ -97,7 +108,7 @@ header input {
   height: 20px;
   border-radius: 50%;
   /* coloring and resizing */
-  background: #8c8c8c;
+  background: var(--accent);
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
