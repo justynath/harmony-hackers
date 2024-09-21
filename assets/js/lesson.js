@@ -7,7 +7,7 @@
 // difficulty slider to set our difficulty
 const keys = document.querySelectorAll(".piano-keys .key"),
   volume = document.querySelector(".volume-slider input"),
-  keysVisibility = document.querySelector(".keys-checkbox input");
+  keyVisibility = document.querySelector(".key-checkbox input");
 
 const TIMEOUT = 200;
 
@@ -48,6 +48,34 @@ keys.forEach((key) => {
   // calling playTune function with passing data-key value as an argument
   key.addEventListener("click", () => playNote(key.dataset.key));
 });
+
+// Volume control function
+const handleVolume = function (e) {
+  // we get the volume slider value as an audio volume here
+  note.volume = e.target.value;
+};
+
+// Hide keys control function
+const keyVisibilityToggle = function () {
+  // We loop through the keys here and hide
+  keys.forEach((key) => key.classList.toggle("hide"));
+  console.log("volume switched");
+};
+
+// we want to get our pressed key for registration this error handling
+// to ensure note does audio for notes only plays on key click and not by accident
+const pressedKey = function (e) {
+  // check if our key contained in the all keys array
+  if (allKeys.includes(e.key)) {
+    // if it is play note
+    playNote(e.key);
+  }
+};
+
+// now we get our event listener for 3 controls
+keyVisibility.addEventListener("click", keyVisibilityToggle);
+volume.addEventListener("input", handleVolume);
+document.addEventListener("keydown", pressedKey);
 
 //
 // Game Logic Starts Here

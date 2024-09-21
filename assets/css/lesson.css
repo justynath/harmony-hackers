@@ -37,6 +37,11 @@ body {
   background: #141414;
 }
 
+
+/* center card image */
+.carousel-inner img {
+  margin: 0 auto;
+
 .wrapper header {
   display: flex;
   color: #b2b2b2;
@@ -173,7 +178,6 @@ a lesson
   background-color: red !important;
   color: white !important;
 }
-
 
 /* Ensure that .correct and .incorrect take precedence over .active */
 .key.correct.active,
