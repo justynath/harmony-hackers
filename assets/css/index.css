@@ -15,7 +15,7 @@
     font-family: "Lato", Arial, sans-serif;
     text-decoration: none !important;
 }
-
+/******* NAVIGATION *********/
 nav {
   background-color: transparent;
   
@@ -25,16 +25,81 @@ nav {
   color: var(--main) !important;
   font-weight: 900;
   font-family: 'Satisfy', serif;
+
 }
 
 .navbar-nav .nav-link{
   color: var(--main) !important;
+  font-weight: 900;
+  font-family: 'Satisfy', serif;
+  font-size: 1.5rem;
+  margin: .5rem;
+  transition: color .5s, background-color .5s;
+
 }
+
+.navbar-nav .nav-link:hover{
+  color: var(--sub) !important;
+}
+
+.navbar-nav .nav-link::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 0;
+  height: 100%;
+  transform: skewX(25deg);
+  z-index: -1;
+  transition: width .7s;
+  background-color: var(--main);
+}
+
+.navbar-nav .nav-link:hover::before {
+  width: 120%;
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 3rem;
+}
+
+body.navbar-toggled .text-box {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 20%; 
+  background-color: transparent;
+  padding-top: 3rem;
+  transform: translateX(-110%);
+  transition: transform .5s ease-in-out; 
+}
+
+.navbar-collapse.show {
+  transform: translateX(-43%);}
+}
+
+
+.navbar-toggler {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+/****** NAVIGATION END ********/
 
 html,
 body {
-
-    height: 100%;
+  height: 100%;
 }
 
 body {
@@ -162,18 +227,6 @@ body {
     position: relative;
     z-index: 2; 
    }
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    line-height: 3em;
-    background: linear-gradient(0deg, #000000 0%, #0e0e0e 5%, #757575 25%, #c5c5c5 35%, #ffffff 50%, #c5c5c5 65%, #757575 75%, #0e0e0e 95%, #000000 0%);
-    color: var(--background);
-    align-content: center;
-    border-top: 0.025rem solid #ffffff;
-    border-bottom: 0.025rem solid #ffffff;
-    z-index: 3;
-  }
   
   .text-box{
     padding: 1rem;
@@ -182,6 +235,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
   }
   
   .title {
@@ -191,7 +245,7 @@ body {
     font-size: 5rem;
   }
   
-  p {
+  .slogan {
     margin: 1rem;
     font-size: 1.5rem;
     color: var(--text);
@@ -262,17 +316,38 @@ body {
   .button:hover .old {
     opacity: 0;
   }
-  
+  /****** Footer *****/
   footer {
     bottom: 0;
     left: 0;
-    position: fixed;
+    position: relative;
     line-height: 3em;
     width: 100%;
     align-content: center;
     background-color: #8f4e18;
+    color: var(--text);
   }
 
+  .footer-section{
+    padding: 1rem;
+  }
+  footer .footer-section li{
+    list-style: none;
+    display: inline;
+    margin-right: 1rem;
+    color: var(--text)
+  }
+
+  footer .footer-section li a{
+    color: var(--main);
+    font-weight: bold;
+  }
+
+  footer .footer-section li a:hover{
+    font-size: large;
+    color: var(--sub);
+  }
+/******** Footer End ********/
   @media (max-width: 320px) {
     .title {
       font-size: 3rem;
@@ -282,11 +357,11 @@ body {
       width: 6rem;
       font-size: .8rem;
     }
-    p{
+    .slogan{
       font-size: 1rem;
     }
     .text-box{
-      margin-top: -12rem;
+      margin-top: 2rem;
       gap: 0;
     }
   }
@@ -299,11 +374,11 @@ body {
       width: 6rem;
       font-size: .8rem;
     }
-    p{
+    .slogan{
       font-size: 1rem;
     }
     .text-box{
-      margin-top: -5rem;
+      margin-top: 2rem;
       gap: 2rem;
     }
 
@@ -318,7 +393,7 @@ body {
     .title{
       font-size: 4rem;
     }
-    p{
+    .slogan{
       font-size: 1.5rem;
     }
     .button{
@@ -331,7 +406,7 @@ body {
     .title{
       font-size: 7rem;
     }
-    p{
+    .slogan{
       font-size: 2rem;
     }
     .button{
@@ -345,7 +420,7 @@ body {
     .title{
       font-size: 12rem;
     }
-    p {
+    .slogan{
       font-size: 4rem;
     }
     .button{
@@ -354,6 +429,17 @@ body {
     font-size: 2rem;
     }
     .text-box{
+      margin-top: 20rem;
       gap: 3rem;
+    }
+    .navbar-brand{
+      font-size: 4rem;
+    }
+    .navbar-nav .nav-link{
+      font-size: 4rem;
+    }
+    .list{
+      margin-right: 10rem;
+      gap: 6rem;
     }
   }

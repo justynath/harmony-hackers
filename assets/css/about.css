@@ -7,27 +7,110 @@
     --accent: #000000;
 }
 
+/******* NAVIGATION *********/
 nav {
     background-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
+    
+  }
   
   .navbar-brand{
     color: var(--main) !important;
     font-weight: 900;
     font-family: 'Satisfy', serif;
+  
   }
   
   .navbar-nav .nav-link{
     color: var(--main) !important;
+    font-weight: 900;
+    font-family: 'Satisfy', serif;
+    font-size: 1.5rem;
+    margin: .5rem;
+    transition: color .5s, background-color .5s;
+  
+  }
+  
+  .navbar-nav .nav-link:hover{
+    color: var(--sub) !important;
+  }
+  
+  .navbar-nav .nav-link::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 0;
+    height: 100%;
+    transform: skewX(25deg);
+    z-index: -1;
+    transition: width .7s;
+    background-color: var(--main);
+  }
+  
+  .navbar-nav .nav-link:hover::before {
+    width: 120%;
+  }
+  
+  .list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 3rem;
   }
 
-.about-section {
+  .navbar-toggler {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+  }
+/******* Navigation Animation ********/  
+  @media (max-width: 992px) {
+    .navbar-collapse {
+    position: relative;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 20%; 
+    background-color: transparent;
+    padding-top: 3rem;
+    transform: translateX(-110%);
+    transition: transform .5s ease-in-out; 
+  }
+  
+  .navbar-collapse.show {
+    transform: translateX(-43%);}
+  }
+  /****** NAVIGATION END ********/
+/* ABOUT SECTION */
+  .background{
+    background: url(../images/new-hero-image-2.webp) no-repeat center center/cover fixed;
+   }
+  
+   .background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+  }
+   
+  .background * {
+    position: relative;
+    z-index: 2; 
+   }
+  
+
+  .about-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em;
-    background-color: var(--sub);
+    background-color: rgba(213, 170, 119, 0.8);
     color: var(--text);
     border-radius: 12px;
 }
@@ -52,11 +135,12 @@ nav {
 
 .cta-button {
     padding: 0.75em 1.5em;
-    background-color: var(--main);
-    color: var(--accent);
+    background-color: var(--background);
+    color: var(--text);
     border: none;
     border-radius: 8px;
     font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
