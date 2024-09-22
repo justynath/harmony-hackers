@@ -221,7 +221,11 @@ function stopGame() {
 
   const pianoKeys = document.querySelectorAll(".piano-keys .key");
   pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick));
-  alert(`Game Stopped! Your Score: ${score}/${totalQuestions}`);
+  
+  // alert(`Game Stopped! Your Score: ${score}/${totalQuestions}`);
+  // Show the stop game modal
+  showStopGameModal();
+  
   document.getElementById("start-game").textContent = "Start Game"; // Change button text
 }
 
@@ -316,5 +320,43 @@ playAgainButton.addEventListener("click", () => {
 window.addEventListener("click", (e) => {
   if (e.target == gameOverModal) {
     closeGameOverModal();
+  }
+});
+
+//
+// Stop Game Modal
+// Get modal elements for the stop game modal
+const stopGameModal = document.getElementById("stopGameModal");
+const closeStopGameButton = document.querySelector(".close-stopgame");
+const stopGameScore = document.getElementById("stopGameScore");
+const restartGameButton = document.getElementById("restartGameButton");
+const closeStopGameModalButton = document.getElementById("closeStopGameModalButton");
+
+// Function to show the stop game modal with the score
+function showStopGameModal() {
+  stopGameScore.textContent = `${score}/${totalQuestions}`; // Display the user's score
+  stopGameModal.style.display = "flex"; // Show the modal
+}
+
+// Function to close the stop game modal
+function closeStopGameModal() {
+  stopGameModal.style.display = "none"; // Hide the modal
+}
+
+
+// Event listeners to close the stop game modal
+closeStopGameButton.addEventListener("click", closeStopGameModal);
+closeStopGameModalButton.addEventListener("click", closeStopGameModal);
+
+// Event listener for restarting the game from the stop game modal
+restartGameButton.addEventListener("click", () => {
+  closeStopGameModal(); // Close the modal
+  startGame();          // Restart the game
+});
+
+// Close the modal if clicked outside the modal content
+window.addEventListener("click", (e) => {
+  if (e.target == stopGameModal) {
+    closeStopGameModal();
   }
 });
