@@ -360,3 +360,34 @@ window.addEventListener("click", (e) => {
     closeStopGameModal();
   }
 });
+
+
+
+
+// Get modal elements for the Learn Notes modal
+const learnNotesModal = document.getElementById("learnNotesModal");
+const learnNotesButton = document.getElementById("learn-notes");
+const closeLearnButton = document.querySelector(".close-learn");
+const closeLearnModalButton = document.getElementById("closeLearnModalButton");
+
+// Function to show the Learn Notes modal
+function showLearnNotesModal() {
+    learnNotesModal.style.display = "flex";
+}
+
+// Function to close the Learn Notes modal
+function closeLearnNotesModal() {
+    learnNotesModal.style.display = "none";
+}
+
+// Event listeners to open and close the Learn Notes modal
+learnNotesButton.addEventListener("click", showLearnNotesModal);
+closeLearnButton.addEventListener("click", closeLearnNotesModal);
+closeLearnModalButton.addEventListener("click", closeLearnNotesModal);
+
+// Close the modal if clicked outside the modal content
+window.addEventListener("click", (e) => {
+    if (e.target == learnNotesModal) {
+        closeLearnNotesModal();
+    }
+});

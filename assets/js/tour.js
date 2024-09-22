@@ -40,7 +40,16 @@ const driverObj = driver({
             }
         },
         {
-            element: ".key-checkbox",
+            element: "#learn-notes",
+            popover: {
+                className: "first-step-popover-class",
+                title: "Learn the notes",
+                description: "Click this button to learn the different notes on the Staff. Learning this will help you improve your score in the game.",
+                position: "top"
+            }
+        },
+        {
+            element: ".key-checkbox input[type='checkbox']",
             popover: {
                 className: "first-step-popover-class",
                 title: "Show Key Names",
