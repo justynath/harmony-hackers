@@ -41,8 +41,8 @@
                     <button id="instructionButton" class="btn btn-dark m-3">How to Play</button>
                 </div>
                 <!-- The Modal -->
-                <div id="instructionModal" class="modal">
-                    <div class="modal-content">
+                <div id="instructionModal" class="justify-content-center modal">
+                    <div class="modal-contents">
                         <span class="close">&times;</span>
                         <h2>Instructions for note flashcard game!</h2>
                         <p>The aim of the game is to get as many treble clef notes right within a set time limit.
@@ -52,6 +52,15 @@
                             When the game is over a pop-up will appear with a score. At any point during the game, you can press the stop button to end the game.
                         </p>
                         <p>Hope you enjoy your musical journey! </p>
+                    </div>
+                </div>
+                <!-- Game Over Modal -->
+                <div id="gameOverModal" class="justify-content-center modal">
+                    <div class="modal-contents">
+                        <span class="close-gameover">&times;</span>
+                        <h2>Game Over!</h2>
+                        <p id="gameOverMessage"></p>
+                        <button type="button" id="playAgainButton">Play Again</button>
                     </div>
                 </div>
                 <div class="column volume-slider">
