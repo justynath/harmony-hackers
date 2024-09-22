@@ -11,6 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+
+    <!-- driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
+
+
     <title>Harmony Hub | Lesson</title>
 </head>
 
@@ -110,7 +116,6 @@
                     <div class="column volume-slider">
                         <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
                     </div>
-
                     <div class="column learn-diff-column">
                         <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button>
                         <div class="column difficulty-select" style="width:200px;">
@@ -125,53 +130,50 @@
                         </div>
                     </div>
                 </div>
-            </header>
-            <!-- Create a ul list to hold each key, with each key being a list item
+                <!-- Create a ul list to hold each key, with each key being a list item
             going to style them into piano "keys" in css. Mapped the keys to the 
             middle row of the keyboard for white, upper row for black trying to 
             make the keys similar to the layout of a 25 key piano 
             used this image as ref https://shorturl.at/5yA5P -->
-            <ul class="piano-keys">
-                <li class="key white" data-key="C1"><span>C4</span></li>
-                <li class="key black" data-key="CS1"><span>C# D♭</span></li>
-                <li class="key white" data-key="D1"><span>D</span></li>
-                <li class="key black" data-key="DS1"><span>D# E♭</span></li>
-                <li class="key white" data-key="E1"><span>E</span></li>
-                <li class="key white" data-key="F1"><span>F</span></li>
-                <li class="key black" data-key="FS1"><span>F# G♭</span></li>
-                <li class="key white" data-key="G1"><span>G</span></li>
-                <li class="key black" data-key="GS1"><span>G# A♭</span></li>
-                <li class="key white" data-key="A1"><span>A</span></li>
-                <li class="key black" data-key="AS1"><span>A# B♭</span></li>
-                <li class="key white" data-key="B1"><span>B</span></li>
-                <li class="key white" data-key="C2"><span>C5</span></li>
-                <li class="key black" data-key="CS2"><span>C# D♭</span></li>
-                <li class="key white" data-key="D2"><span>D</span></li>
-                <li class="key black" data-key="DS2"><span>D# E♭</span></li>
-                <li class="key white" data-key="E2"><span>E</span></li>
-                <li class="key white" data-key="F2"><span>F</span></li>
-                <li class="key black" data-key="FS2"><span>F# G♭</span></li>
-                <li class="key white" data-key="G2"><span>G</span></li>
-                <li class="key black" data-key="GS2"><span>G# A♭</span></li>
-                <li class="key white" data-key="A2"><span>A</span></li>
-                <li class="key black" data-key="AS2"><span>A# B♭</span></li>
-                <li class="key white" data-key="B2"><span>B</span></li>
-                <li class="key white" data-key="C3"><span>C6</span></li>
-            </ul>
+                <ul class="piano-keys mx-4" id="piano-keys">
+                    <li class="key white shadow" data-key="C1"><span>C4</span></li>
+                    <li class="key black shadow" data-key="CS1"><span>C# D♭</span></li>
+                    <li class="key white shadow" data-key="D1"><span>D</span></li>
+                    <li class="key black shadow" data-key="DS1"><span>D# E♭</span></li>
+                    <li class="key white shadow" data-key="E1"><span>E</span></li>
+                    <li class="key white shadow" data-key="F1"><span>F</span></li>
+                    <li class="key black shadow" data-key="FS1"><span>F# G♭</span></li>
+                    <li class="key white shadow" data-key="G1"><span>G</span></li>
+                    <li class="key black shadow" data-key="GS1"><span>G# A♭</span></li>
+                    <li class="key white shadow" data-key="A1"><span>A</span></li>
+                    <li class="key black shadow" data-key="AS1"><span>A# B♭</span></li>
+                    <li class="key white shadow" data-key="B1"><span>B</span></li>
+                    <li class="key white shadow" data-key="C2"><span>C5</span></li>
+                    <li class="key black shadow" data-key="CS2"><span>C# D♭</span></li>
+                    <li class="key white shadow" data-key="D2"><span>D</span></li>
+                    <li class="key black shadow" data-key="DS2"><span>D# E♭</span></li>
+                    <li class="key white shadow" data-key="E2"><span>E</span></li>
+                    <li class="key white shadow" data-key="F2"><span>F</span></li>
+                    <li class="key black shadow" data-key="FS2"><span>F# G♭</span></li>
+                    <li class="key white shadow" data-key="G2"><span>G</span></li>
+                    <li class="key black shadow" data-key="GS2"><span>G# A♭</span></li>
+                    <li class="key white shadow" data-key="A2"><span>A</span></li>
+                    <li class="key black shadow" data-key="AS2"><span>A# B♭</span></li>
+                    <li class="key white shadow" data-key="B2"><span>B</span></li>
+                    <li class="key white shadow" data-key="C3"><span>C6</span></li>
+                </ul>
+            </div>
 
-            <p id="timer" class="text-white"></p>
-            <p id="score" class="text-white"></p>
-            <div>
-
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-        </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
-        </script>
-    <script src="assets/js/lesson.js"></script>
-    <script src="assets/js/script.js"></script>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+            </script>
+        <script src="assets/js/lesson.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/tour.js"></script>
 </body>
 
 

@@ -7,29 +7,28 @@
     --accent: #000000;
 }
 
-nav {
-    background-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-  
-  .navbar-brand{
-    color: var(--main) !important;
-    font-weight: 900;
-    font-family: 'Satisfy', serif;
-  }
-  
-  .navbar-nav .nav-link{
-    color: var(--main) !important;
-  }
+/* ABOUT SECTION */
+  .background{
+    background: url(../images/new-hero-image-2.webp) no-repeat center center/cover fixed;
+   }
+   
+  .background * {
+    z-index: 2; 
+   }
+   
+   .body-container{
+    height: 5rem;
+   }
 
-.about-section {
+  .about-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2em;
-    background-color: var(--sub);
+    background-color: rgba(213, 170, 119, 0.8);
     color: var(--text);
     border-radius: 12px;
+    padding-top: 2rem;
 }
 
 .about-content {
@@ -52,11 +51,12 @@ nav {
 
 .cta-button {
     padding: 0.75em 1.5em;
-    background-color: var(--main);
-    color: var(--accent);
+    background-color: var(--background);
+    color: var(--text);
     border: none;
     border-radius: 8px;
     font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -86,13 +86,13 @@ nav {
 /* Team Section */
 #team-section {
     padding: 2em;
-    margin-bottom: 100px;
 }
 
 .team-content h2 {
     font-size: 2.5em;
     margin-bottom: 1.5em;
     text-align: center;
+    background-color: #00000003;
 }
 
 .team-grid {
@@ -170,7 +170,7 @@ nav {
 
 .card-footer {
     padding: 10px 20px;
-    background-color: var(--sub); /* Light gray background */
+    background-color: #742611; /* Light gray background */
     color: var(--accent);
     border-top: 1px solid var(--text); /* Adds a subtle line between the body and footer */
     display: flex;
@@ -179,7 +179,7 @@ nav {
     gap: 10px; /* Space between elements inside the footer */
 }
 
-label {
+.label {
     color: var(--main);
     font-size: 0.8em;
     margin-bottom: 10px;

@@ -3,7 +3,6 @@
 // Main selectors for DOM elements
 const keys = document.querySelectorAll(".piano-keys .key"); // Select all piano key elements
 const volume = document.querySelector(".volume-slider input"); // Select volume slider input
-// const keyVisibility = document.querySelector(".key-checkbox input"); // Select key visibility toggle checkbox
 
 // Constants
 const TIMEOUT = 200; // Timeout duration for key highlight effect in milliseconds
@@ -19,49 +18,39 @@ const playNote = (key) => {
 
   const clickedKey = document.querySelector(`[data-key="${key}"]`); // Get the key DOM element by data-key
   clickedKey.classList.add("active"); // Add the 'active' class to the key to visually indicate it has been pressed
-
   // Remove the 'active' class after a short delay (200ms)
   setTimeout(() => {
-    // setting the timeout as a top lvl var so we don't need to dive in
-    // and constantly change it
     clickedKey.classList.remove("active");
   }, TIMEOUT);
 };
-// now we loop through each key, then for each key add an onclick Event
-// listener to make sure that when said key is clicked it will play the
-// corresponding sound
+
+// Add event listeners to each key for mouse click events
 keys.forEach((key) => {
-  // adding data-key value to the allKeys array
-  allKeys.push(key.dataset.key);
-  // calling playTune function with passing data-key value as an argument
-  key.addEventListener("click", () => playNote(key.dataset.key));
+  allKeys.push(key.dataset.key); // Add the data-key of each key to the allKeys array
+  key.addEventListener("click", () => playNote(key.dataset.key)); // Add click event listener to play the note on key click
 });
 
-// Volume control function
-const handleVolume = function (e) {
-  // we get the volume slider value as an audio volume here
-  note.volume = e.target.value;
+// Volume control handler to adjust note volume
+const handleVolume = (e) => {
+  note.volume = e.target.value; // Adjust the volume of the note based on the slider input value
 };
 
 // Handle keyboard key press to play the corresponding note
 const handleKeyPress = (e) => {
   if (allKeys.includes(e.key)) {
-    // if it is play note
-    playNote(e.key);
+    playNote(e.key); // Play the note if the pressed key matches any in the allKeys array
   }
 };
 
-const toggleKeyVisibility = function () {};
-
-// Attach event listeners for control elements
 volume.addEventListener("input", handleVolume); // Adjust volume when the volume slider is changed
 document.addEventListener("keydown", handleKeyPress); // Play note when a corresponding key is pressed on the keyboard
 
 /// GAME LOGIC ///
 
-// Array of flashcards
+// Flashcards array representing different musical notes with corresponding image, note name, and alt text
 const flashcards = [
   { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: "C4" },
+
   {
     src: "assets/flashcards/c-sharp-1.png",
     card: "CS1",
@@ -195,7 +184,7 @@ const flashcards = [
     noteName: "B♭5",
   },
   { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
-  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" },
+  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" }
   // (Continues with other notes...)
 ];
 
@@ -234,22 +223,25 @@ const generateRandomFlashcard = () => {
 const handlePianoKeyClick = (event) => {
   if (!gameStarted) return; // Do nothing if the game hasn't started
 
-  const clickedKey = event.target.closest(".key");
-  const clickedKeyData = clickedKey.dataset.key;
-  const feedbackElement = document.getElementById("feedback");
+  const clickedKey = event.target.closest(".key"); // Get the clicked key element
+  const clickedKeyData = clickedKey.dataset.key; // Get the data-key attribute of the clicked key
+  const feedbackElement = document.getElementById("feedback"); // Get the feedback message element
 
+  // Check if the clicked key matches the current flashcard
   if (clickedKeyData === currentFlashcard.card) {
-    score++;
-    feedbackElement.textContent = "Correct!";
-    feedbackElement.style.color = "green";
-    clickedKey.classList.add("correct"); // Add the correct class to the clicked key
+    score++; // Increase score if correct
+    feedbackElement.innerHTML = "CORRECT!<br>Well Done!"; // Show success message
+    feedbackElement.classList.add("green"); // Add 'green' class to the feedback for correct answer
+    clickedKey.classList.add("correct"); // Add 'correct' class to the key
   } else {
-    feedbackElement.textContent = `Incorrect! The correct note was: ${currentFlashcard.noteName}`;
-    feedbackElement.style.color = "red";
-    clickedKey.classList.add("incorrect"); // Add the incorrect class to the clicked key
+    // Show incorrect feedback if the wrong key is pressed
+    feedbackElement.innerHTML = `INCORRECT!<br><span class="fs-4">The correct note was: ${currentFlashcard.noteName}<span>`;
+    feedbackElement.classList.add("red"); // Add 'red' class for incorrect answer
+    clickedKey.classList.add("incorrect"); // Add 'incorrect' class to the key
   }
-  totalQuestions++;
+  totalQuestions++; // Increment total questions count
 
+  // After a delay, reset the key and feedback styles and generate a new flashcard
   setTimeout(() => {
     clickedKey.classList.remove("correct", "incorrect"); // Remove the correct/incorrect classes
     feedbackElement.classList.remove("green", "red"); // Remove feedback color classes
@@ -279,7 +271,6 @@ const startGame = () => {
     timeLeft = 30;
     keys.forEach((key) => key.classList.toggle("hide")); // Toggle the 'hide' class on each key to show/hide labels
   }
-
   const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
   wrapper.classList.remove("hidden", "fade-out"); // Show the flashcard wrapper
   wrapper.classList.add("fade-in", "show"); // Add fade-in animation
@@ -295,8 +286,8 @@ const startGame = () => {
     timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
 
     if (timeLeft <= 0) {
-      clearInterval(intervalId);
-      endGame();
+      clearInterval(intervalId); // Stop the timer when time runs out
+      endGame(); // End the game
     }
   }, 1000); // Repeat every second
 
@@ -318,6 +309,7 @@ const stopGame = () => {
   }, 500); // Delay to match fade-out animation duration
 
   const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
+
   pianoKeys.forEach((key) =>
     key.removeEventListener("click", handlePianoKeyClick)
   ); // Remove click listeners from keys
@@ -341,6 +333,7 @@ const endGame = () => {
   }, 500); // Delay to match fade-out animation duration
 
   const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
+
   pianoKeys.forEach((key) =>
     key.removeEventListener("click", handlePianoKeyClick)
   ); // Remove click listeners from keys
@@ -419,9 +412,7 @@ const stopGameModal = document.getElementById("stopGameModal");
 const closeStopGameButton = document.querySelector(".close-stopgame");
 const stopGameScore = document.getElementById("stopGameScore");
 const restartGameButton = document.getElementById("restartGameButton");
-const closeStopGameModalButton = document.getElementById(
-  "closeStopGameModalButton"
-);
+const closeStopGameModalButton = document.getElementById("closeStopGameModalButton");
 
 // Show the stop game modal with the current score
 const showStopGameModal = () => {
@@ -471,9 +462,11 @@ if (closeLearnModalButton) {
     learnNotesModal.style.display = "none"; // Hide the modal
   });
 }
+
 // Close the learn notes modal if the user clicks outside of it
 window.addEventListener("click", (e) => {
   if (e.target === learnNotesModal) {
     learnNotesModal.style.display = "none"; // Hide the modal
   }
 });
+

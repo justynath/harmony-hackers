@@ -1,290 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            <link rel="stylesheet" href="assets/css/style.css">
-            <link rel="stylesheet" href="assets/css/about.css">
-            <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
-            <title>Harmony Hub | About Us</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="assets/images/new-hero-image-2.webp" as="image">
+    <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
+    <title>Harmony Hub | About Us</title>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/d29701d5af.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div class="container-flud">
-        <nav class="navbar navbar-expand-lg navbar-light container-flud">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">The Harmony <br> Hub</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="lesson.html">Lesson</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-        <main>
-            <div class="about-section">
-                <div class="about-content">
-                    <h1>About Harmony Hub</h1>
-                    <p>
-                        Harmony Hub is your personal guide to mastering the Piano! Whether you're just starting your
-                        musical journey or looking to sharpen your skills, we're here to help you unlock the full
-                        potential of your instrument!
-                    </p>
-                    <p>Our app is designed to make learning scales, chords, and music theory both fun and engaging. With
-                        step-by-step lessons, interactive exercises, and real-time feedback, you'll be playing with
-                        confidence in no time.</p>
-                    <p>At Harmony Hub, we believe that learning music should be intuitive and accessible to everyone.
-                        That's why we've created a platform that adapts to your skill level and helps you progress at
-                        your own pace. Whether you're learning for fun, preparing for exams, or aiming to perform on
-                        stage, we’ve got you covered.
-                    </p>
-                    <a href="#team-section" class="cta-button">Meet the Team!</a>
+    </head>
+    <body>
+        <header class="background">
+            <div class="nav-container">
+                <label for="check" class="sr-only">Toggle Navigation</label>
+                <input type="checkbox" name="check" id="check">
+                <div class="logo-container">
+                    <h3 class="logo">The Harmony<br> Hub</h3>
                 </div>
-                <div class="about-image">
-                    <img src="assets/images/piano-image-about-page.png" alt="Grand Piano">
+                <div class="nav-btn">
+                    <div class="thenav-links">
+                        <ul>
+                            <li class="thenav-link" style="--i: .6s">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="thenav-link" style="--i: .85s">
+                                <a href="lesson.html">Lesson</a>
+                            </li>
+                            <li class="thenav-link" style="--i: 1.1s">
+                                <a href="contact.html">Contact</a>
+                            </li>
+                            <li class="thenav-link" style="--i: 1.35s">
+                                <a href="about.html">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hamburger-menu-container">
+                    <div class="hamburger-menu">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
                 </div>
             </div>
+        </header>
+    <main class="background" id="about">
+        <div class="body-container"></div>
+        <div class="about-section">
+            <div class="about-content">
+                <h1>About Harmony Hub</h1>
+                <p>
+                    Harmony Hub is your personal guide to mastering the Piano! Whether you're just starting your
+                    musical journey or looking to sharpen your skills, we're here to help you unlock the full
+                    potential of your instrument!
+                </p>
+                <p>Our app is designed to make learning scales, chords, and music theory both fun and engaging. With
+                    step-by-step lessons, interactive exercises, and real-time feedback, you'll be playing with
+                    confidence in no time.</p>
+                <p>At Harmony Hub, we believe that learning music should be intuitive and accessible to everyone.
+                    That's why we've created a platform that adapts to your skill level and helps you progress at
+                    your own pace. Whether you're learning for fun, preparing for exams, or aiming to perform on
+                    stage, we’ve got you covered.
+                </p>
+                <a href="#team-section" class="cta-button">Meet the Team!</a>
+            </div>
+            <div class="about-image">
+                <img src="assets/images/piano-image-about-page.png" alt="Grand Piano">
+            </div>
+        </div>
 
-            <div id="team-section">
-                <div class="team-content">
-                    <h2>Meet the Team</h2>
+        <div id="team-section">
+            <div class="team-content">
+                <h2>Meet the Team</h2>
 
-                    <!-- TEAM CARDS GRID -->
-                    <div class="team-grid">
+                <!-- TEAM CARDS GRID -->
+                <div class="team-grid">
 
-                        <!-- CARD 1 - Vernell Clark -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/images/team/Vernell-Clark.jpg" alt="Vernell Clark">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Vernell Clark</h3>
-                                <p class="card-role"><span class="bold">Team Role: </span>Scrum Lead</p>
-                                <p class="card-text">I really enjoyed helping each of the team members shine in what
-                                    they do. I am so impressed with their willingness to take on tasks and use their
-                                    individual talents to contribute to the success of this project.</p>
-                            </div>
-                            <div class="card-footer">
-                                <label>Paganini Niccolo - Caprice No. 24</label>
-                                <audio controls class="music-player">
-                                    <source
-                                        src="assets/audio/classical-pieces/Paganini-Niccolo-Caprice-No.24-Sergei-Nakaryakov-trumpet-Bb.mp3"
-                                        type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div class="button-group">
-                                    <a href="https://github.com/VCGithubCode" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Vernell Clark's GitHub Profile"><i
-                                            class="fa-brands fa-github fa-xl"></i></a>
-                                    <a href="https://www.linkedin.com/in/vernell-clark-swe/" class="btn"
-                                        target="_blank" rel="noopener noreferrer" title="Vernell Clark's LinkedIn Profile"><i class="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                </div>
+                    <!-- CARD 1 - Vernell Clark -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/team/Vernell-Clark.jpg" alt="an image of Vernell">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Vernell Clark</h3>
+                            <p class="card-role"><span class="bold">Team Role: </span>Scrum Lead</p>
+                            <p class="card-text">I really enjoyed helping each of the team members shine in what
+                                they do. I am so impressed with their willingness to take on tasks and use their
+                                individual talents to contribute to the success of this project.</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="label">Paganini Niccolo - Caprice No. 24</p>
+                            <audio controls class="music-player">
+                                <source
+                                    src="assets/audio/classical-pieces/Paganini-Niccolo-Caprice-No.24-Sergei-Nakaryakov-trumpet-Bb.mp3"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <div class="button-group">
+                                <a href="https://github.com/VCGithubCode" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Vernell Clark's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/vernell-clark-swe/" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Vernell Clark's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- CARD 2 - Shaun Anderton -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/images/team/Shaun-Anderton.png" alt="Card Image">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title bold">Shaun Anderton</h3>
-                                <p class="card-role"><span class="bold">Team Role: </span>Frontend - worked on Piano</p>
-                                <p class="card-text">Enjoyed getting to meet new people and work together to build
-                                    something great. Loved applying what I already know to an outstanding project.</p>
-                            </div>
-                            <div class="card-footer">
-                                <label>COMPOSER - COMPOSITION</label>
-                                <audio controls class="music-player">
-                                    <source src="#" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div class="button-group">
-                                    <a href="https://github.com/ShaAnder" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Shaun Anderton's GitHub Profile"><i
-                                            class="fa-brands fa-github fa-xl"></i></a>
-                                    <a href="https://www.linkedin.com/in/shaun-anderton-551670a9/" class="btn"
-                                        target="_blank" rel="noopener noreferrer" title="Shaun Anderton's LinkedIn Profile"><i class="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                </div>
+                    <!-- CARD 2 - Shaun Anderton -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/team/Shaun-Anderton.png" alt="an image of Shaun">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title bold">Shaun Anderton</h3>
+                            <p class="card-role"><span class="bold">Team Role: </span>Frontend - worked on Piano</p>
+                            <p class="card-text">Enjoyed getting to meet new people and work together to build
+                                something great. Loved applying what I already know to an outstanding project.</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="label">Mendelssohn - Song Without Words</p>
+                            <audio controls class="music-player">
+                                <source
+                                    src="assets/audio/classical-pieces/Mendelssohn-Song-Without-Words-Book-5-Op. 62-VI.-Frühlingslied-(Spring-Song).mp3"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <div class="button-group">
+                                <a href="https://github.com/ShaAnder" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Shaun Anderton's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/shaun-anderton-551670a9/" class="btn"
+                                    target="_blank" rel="noopener noreferrer"
+                                    title="Shaun Anderton's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- CARD 3  - Stephen Beese -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/images/team/Stephen-Beese.jpg" alt="Card Image">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title bold">Stephen Beese</h3>
-                                <p class="card-role"><span class="bold">Team Role: </span>Frontend - About Page</p>
-                                <p class="card-text">I enjoyed working on my first Hackathon, I have loved working
-                                    together with other developers and expanding what I have learned in solo projects to
-                                    contribute to a larger goal with others.</p>
-                            </div>
-                            <div class="card-footer">
-                                <label>Miles Davis - Concierto De Aranjuez</label>
-                                <audio controls class="music-player">
-                                    <source src="assets/audio/classical-pieces/Miles-Davis-Concierto-De-Aranjuez.mp3"
-                                        type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div class="button-group">
-                                    <a href="https://github.com/stephenbeese" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Stephen Beese's GitHub Profile"><i
-                                            class="fa-brands fa-github fa-xl"></i></a>
-                                    <a href="https://www.linkedin.com/in/stephenbeese/" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Stephen Beese's LinkedIn Profile"><i
-                                            class="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                </div>
+                    <!-- CARD 3  - Stephen Beese -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/team/Stephen-Beese.jpg" alt="an image of Stephen">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title bold">Stephen Beese</h3>
+                            <p class="card-role"><span class="bold">Team Role: </span>Frontend - About Page</p>
+                            <p class="card-text">I enjoyed working on my first Hackathon, I have loved working
+                                together with other developers and expanding what I have learned in solo projects to
+                                contribute to a larger goal with others.</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="label">Miles Davis - Concierto De Aranjuez</p>
+                            <audio controls class="music-player">
+                                <source src="assets/audio/classical-pieces/Miles-Davis-Concierto-De-Aranjuez.mp3"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <div class="button-group">
+                                <a href="https://github.com/stephenbeese" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Stephen Beese's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/stephenbeese/" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Stephen Beese's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- CARD 4 - Hannah Olbrich -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/images/team/Hannah-Olbrich.jpg" alt="Card Image">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Hannah Olbrich</h3>
-                                <p class="card-role"><span class="bold">Team Role: </span></p>
-                                <p class="card-text">I contributed to this project by gathering content for audio, and
-                                    the flashcards. I also helped out with the layout and functionality on the lessons
-                                    page and also assisted team members with my musical knowledge. In my spare time I
-                                    enjoy playing my musical instruments at home and some of them in amateur orchestras.
-                                    I also enjoy spending time with my cat, cooking, seeing friends, gardening and doing
-                                    jigsaws and other puzzles.</p>
-                            </div>
-                            <div class="card-footer">
-                                <label>Mozart - Marriage of Figaro Overture</label>
-                                <audio controls class="music-player">
-                                    <source
-                                        src="assets/audio/classical-pieces/Overture-to-The-marriage-of-Figaro-K.-492.mp3"
-                                        type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div class="button-group">
-                                    <a href="https://github.com/hannahro15" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Hannah Olbrich's GitHub Profile"><i
-                                            class="fa-brands fa-github fa-xl"></i></a>
-                                    <a href="https://www.linkedin.com/in/hannaholbrich/" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Hannah Olbrich's LinkedIn Profile"><i
-                                            class="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                </div>
+                    <!-- CARD 4 - Hannah Olbrich -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/team/Hannah-Olbrich.jpg" alt="an image of Hannah">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Hannah Olbrich</h3>
+                            <p class="card-role"><span class="bold">Team Role: </span></p>
+                            <p class="card-text">I contributed to this project by gathering content for audio, and
+                                the flashcards. I also helped out with the layout and functionality on the lessons
+                                page and also assisted team members with my musical knowledge. In my spare time I
+                                enjoy playing my musical instruments at home and some of them in amateur orchestras.
+                                I also enjoy spending time with my cat, cooking, seeing friends, gardening and doing
+                                jigsaws and other puzzles.</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="label">Mozart - Marriage of Figaro Overture</p>
+                            <audio controls class="music-player">
+                                <source
+                                    src="assets/audio/classical-pieces/Overture-to-The-marriage-of-Figaro-K.-492.mp3"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <div class="button-group">
+                                <a href="https://github.com/hannahro15" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Hannah Olbrich's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/hannaholbrich/" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Hannah Olbrich's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- CARD 5 - Alan Chapman -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/images/team/Alan-Chapman.png" alt="Card Image">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Alan Chapman</h3>
-                                <p class="card-role"><span class="bold">Team Role: </span></p>
-                                <p class="card-text">Recently passed Full Stack with Predictive Analytics, looking to
-                                    take on a role in Data Analysis then Machine Learning. Many years of learning,
-                                    teaching and generally enjoying the piano. Cycling, swimming and Puzzler
-                                    enthusiast.</p>
-                            </div>
-                            <div class="card-footer">
-                                <label>Chopin - Minute Waltz</label>
-                                <audio controls class="music-player">
-                                    <source src="assets/audio/classical-pieces/Chopin-Minute-Waltz.mp3"
-                                        type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div class="button-group">
-                                    <a href="https://github.com/alanjameschapman" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Alan Chapman's GitHub Profile"><i
-                                            class="fa-brands fa-github fa-xl"></i></a>
-                                    <a href="https://www.linkedin.com/in/alanjameschapman/" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Alan Chapman's LinkedIn Profile"><i class="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                </div>
+                    <!-- CARD 5 - Alan Chapman -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/team/Alan-Chapman.png" alt="an image of Alan">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Alan Chapman</h3>
+                            <p class="card-role"><span class="bold">Team Role: Lead Designer/Content/Music Lessons</span></p>
+                            <p class="card-text">Recently passed Full Stack with Predictive Analytics, looking to
+                                take on a role in Data Analysis then Machine Learning. Many years of learning,
+                                teaching and generally enjoying the piano. Cycling, swimming and Puzzler
+                                enthusiast.</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="label">Chopin - Minute Waltz</p>
+                            <audio controls class="music-player">
+                                <source src="assets/audio/classical-pieces/Chopin-Minute-Waltz.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <div class="button-group">
+                                <a href="https://github.com/alanjameschapman" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Alan Chapman's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/alanjameschapman/" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Alan Chapman's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- CARD 6  - Justyna Thompson -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/images/team/Justyna-Thompson.jpg" alt="Card Image">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Justyna Thompson</h3>
-                                <p class="card-role"><span class="bold">Team Role: </span></p>
-                                <p class="card-text">Code Institute student pursuing a diploma in Full Stack Web
-                                    Development, with a particular interest in Python. I'm excited to dive deeper into
-                                    back-end development, and while I have a strong passion for maths, classical music
-                                    may soon become my next love</p>
-                            </div>
-                            <div class="card-footer">
-                                <label>Beethoven - Für Elise</label>
-                                <audio controls class="music-player">
-                                    <source src="assets/audio/classical-pieces/Beethoven-Für-Elise.mp3"
-                                        type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div class="button-group">
-                                    <a href="https://github.com/justynath" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Justyna Thompson's GitHub Profile"><i
-                                            class="fa-brands fa-github fa-xl"></i></a>
-                                    <a href="https://www.linkedin.com/in/justyna-thompson-8479822a4/" class="btn"
-                                        target="_blank" rel="noopener noreferrer" title="Justyna Thompson's LinkedIn Profile"><i class="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                </div>
+                    <!-- CARD 6  - Justyna Thompson -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/team/Justyna-Thompson.jpg" alt="an image of Justyna">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Justyna Thompson</h3>
+                            <p class="card-role"><span class="bold">Team Role: </span></p>
+                            <p class="card-text">Code Institute student pursuing a diploma in Full Stack Web
+                                Development, with a particular interest in Python. I'm excited to dive deeper into
+                                back-end development, and while I have a strong passion for maths, classical music
+                                may soon become my next love</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="label">Beethoven - Für Elise</p>
+                            <audio controls class="music-player">
+                                <source src="assets/audio/classical-pieces/Beethoven-Für-Elise.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <div class="button-group">
+                                <a href="https://github.com/justynath" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Justyna Thompson's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/justyna-thompson-8479822a4/" class="btn"
+                                    target="_blank" rel="noopener noreferrer"
+                                    title="Justyna Thompson's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- CARD 7 - Jabril Abshir -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="assets/images/team/Jabril-Abshir.jpg" alt="Card Image">
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Jabril Abshir</h3>
-                                <p class="card-role"><span class="bold">Team Role: Landing Page and Navbar + General
-                                        Assistance</span></p>
-                                <p class="card-text">I am an inspiring software developer currently working on my web
-                                    development skills. I have lately liked working on full-stack projects involving
-                                    React.js and Node.js however I will soon start some online courses and projects
-                                    using .Net and C# since that's a popular tech stack in my area.</p>
-                            </div>
-                            <div class="card-footer">
-                                <label>Beethoven - 5th Symphony</label>
-                                <audio controls class="music-player">
-                                    <source src="assets/audio/classical-pieces/Beethoven's-5th-Symphony.mp3"
-                                        type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
-                                <div class="button-group">
-                                    <a href="https://github.com/JibAb96" class="btn" target="_blank" rel="noopener noreferrer"
-                                        title="Jabril Abshir's GitHub Profile"><i
-                                            class="fa-brands fa-github fa-xl"></i></a>
-                                    <a href="https://www.linkedin.com/in/jibril-abshir-developer" class="btn"
-                                        target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in fa-xl"></i></a>
-                                </div>
+                    <!-- CARD 7 - Jibril Abshir -->
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="assets/images/team/Jabril-Abshir.jpg" alt="an image of Jabril">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Jibril Abshir</h3>
+                            <p class="card-role"><span class="bold">Team Role: Frontend - Landing page/UI</span></p>
+                            <p class="card-text">I am an inspiring software developer currently working on my web
+                                development skills. I have lately liked working on full-stack projects involving
+                                React.js and Node.js however I will soon start some online courses and projects
+                                using .Net and C# since that's a popular tech stack in my area.</p>
+                        </div>
+                        <div class="card-footer">
+                            <p class="label">Beethoven - 5th Symphony</p>
+                            <audio controls class="music-player">
+                                <source src="assets/audio/classical-pieces/Beethoven's-5th-Symphony.mp3"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <div class="button-group">
+                                <a href="https://github.com/JibAb96" class="btn" target="_blank"
+                                    rel="noopener noreferrer" title="Jibril Abshir's GitHub Profile"><i
+                                        class="fa-brands fa-github fa-xl"></i></a>
+                                <a href="https://www.linkedin.com/in/jibril-abshir-developer" class="btn"
+                                    target="_blank" rel="noopener noreferrer"
+                                    title="Jibril Abshir's LinkedIn Profile"><i
+                                        class="fa-brands fa-linkedin-in fa-xl"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
         </main>
-        <footer>This site is intended for educational purposes only.</footer>
-</body>
+        <footer>
+            <div class="container-fluid">
+                <div class="row footer-section">
+                    <div class="col-md-4">
+                        <h3 style="color: #d5aa77;">HH</h3>
+                        <p style="color: #d5aa77;">This site is for educational purposes only</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 style="color: #d5aa77;">Follow Us</h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+                                    <i class="fab fa-facebook"> Facebook</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label="Twitter" >
+                                    <i class="fab fa-twitter"> Twitter</i> 
+                                </a>
+                                </li>
+                            <li>
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                                    <i class="fab fa-instagram"> Instagram</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 style="color: #d5aa77;">Contact Us</h3>
+                        <ul>
+                            <li>
+                                <a href="mailto:theharmonyhub@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+                                    <i class="fas fa-envelope"> Email</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:+447283749425" target="_blank" rel="noopener" aria-label="Phone">
+                                    <i class="fas fa-phone"> Phone</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://maps.app.goo.gl/xaqPpy14pWRrc1Db7" target="_blank" rel="noopener" aria-label="Address">
+                                    <i class="fas fa-map-marker-alt"> Address</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
 </html>

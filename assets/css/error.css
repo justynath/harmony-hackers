@@ -28,24 +28,23 @@ body {
 body {
     font-family: Geneva, Verdana, sans-serif;
     text-align: center;
+    position: relative;
+    background: url(../images/wallpaper_notes.jpg) center / cover; 
+    background-repeat: repeat-y;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
 main {
     flex: 1 0 auto;
-    margin-top: 50px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    color: #FF0000;
+    color: red;
+    padding: 60px;
 
-}
-
-.hero{
-    position: relative;
-    background: url(../images/wallpaper_notes.jpg) no-repeat center / cover; 
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
 }
 
 main h1 {
