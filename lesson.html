@@ -34,8 +34,9 @@
                     <p id="timer" class="text-white fs-2"></p>
                 </div>
                 <div class="image-div">
-                    <img id="flashcard-image" src="" class="d-block mx-auto shadow rounded" />
+                    <img id="flashcard-image" src="" class="d-block mx-auto shadow rounded" />       
                 </div>
+                <p id="assistance" class="note-assistance"></p>
                 <div class="feedback-div text-center m-2">
                     <p id="feedback" class="fs-2 m-2 fw-bold"></p>
                 </div>
@@ -102,7 +103,7 @@
                             <p>In this section, you can learn about musical notes and how they are used in sheet music.
                             </p>
                             <div class="diagram-container">
-                                <img src="assets/images/clef-diagram.jpeg" alt="Clef Diagram" class="clef-diagram">
+                                <img src="assets/images/training-notes.png" alt="Clef Diagram" class="clef-diagram">
                             </div>
                             <button type="button" id="learnMoreButton" class="btn btn-primary">
                                 <a href="https://www.chordsheet-maker.com/blog/music-theory-crash-course-1-notes"
@@ -115,9 +116,18 @@
                     <div class="column volume-slider">
                         <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
                     </div>
-                    <div class="column key-checkbox">
-                        <button id="learn-notes" class="btn btn-dark m-2 m-md-3">Learn Notes</button>
-                        <span>Show Key Names:</span><input type="checkbox" checked>
+                    <div class="column learn-diff-column">
+                        <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button>
+                        <div class="column difficulty-select" style="width:200px;">
+                            
+                            <select id="diff-select">
+                                <option value="" disabled selected>Select Difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                                <option value="maestro">Maestro</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <!-- Create a ul list to hold each key, with each key being a list item
@@ -154,9 +164,7 @@
                 </ul>
             </div>
 
-
         </main>
-        <footer>Footer</footer>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
             </script>

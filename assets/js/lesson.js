@@ -3,7 +3,6 @@
 // Main selectors for DOM elements
 const keys = document.querySelectorAll(".piano-keys .key"); // Select all piano key elements
 const volume = document.querySelector(".volume-slider input"); // Select volume slider input
-const keyVisibility = document.querySelector(".key-checkbox input"); // Select key visibility toggle checkbox
 
 // Constants
 const TIMEOUT = 200; // Timeout duration for key highlight effect in milliseconds
@@ -19,7 +18,6 @@ const playNote = (key) => {
 
   const clickedKey = document.querySelector(`[data-key="${key}"]`); // Get the key DOM element by data-key
   clickedKey.classList.add("active"); // Add the 'active' class to the key to visually indicate it has been pressed
-  
   // Remove the 'active' class after a short delay (200ms)
   setTimeout(() => {
     clickedKey.classList.remove("active");
@@ -37,11 +35,6 @@ const handleVolume = (e) => {
   note.volume = e.target.value; // Adjust the volume of the note based on the slider input value
 };
 
-// Toggle the visibility of key labels
-const toggleKeyVisibility = () => {
-  keys.forEach((key) => key.classList.toggle("hide")); // Toggle the 'hide' class on each key to show/hide labels
-};
-
 // Handle keyboard key press to play the corresponding note
 const handleKeyPress = (e) => {
   if (allKeys.includes(e.key)) {
@@ -49,8 +42,6 @@ const handleKeyPress = (e) => {
   }
 };
 
-// Attach event listeners for control elements
-keyVisibility.addEventListener("click", toggleKeyVisibility); // Toggle key visibility when checkbox is clicked
 volume.addEventListener("input", handleVolume); // Adjust volume when the volume slider is changed
 document.addEventListener("keydown", handleKeyPress); // Play note when a corresponding key is pressed on the keyboard
 
@@ -59,38 +50,139 @@ document.addEventListener("keydown", handleKeyPress); // Play note when a corres
 // Flashcards array representing different musical notes with corresponding image, note name, and alt text
 const flashcards = [
   { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: "C4" },
-  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1", noteName: "C#4" },
-  { src: "assets/flashcards/d-flat-1.png", card: "CS1", alt: "d-flat-1", noteName: "D♭4" },
+
+  {
+    src: "assets/flashcards/c-sharp-1.png",
+    card: "CS1",
+    alt: "c-sharp-1",
+    noteName: "C#4",
+  },
+  {
+    src: "assets/flashcards/d-flat-1.png",
+    card: "CS1",
+    alt: "d-flat-1",
+    noteName: "D♭4",
+  },
   { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1", noteName: "D4" },
-  { src: "assets/flashcards/d-sharp-1.png", card: "DS1", alt: "d-sharp-1", noteName: "D#4" },
-  { src: "assets/flashcards/e-flat-1.png", card: "DS1", alt: "e-flat-1", noteName: "E♭4" },
+  {
+    src: "assets/flashcards/d-sharp-1.png",
+    card: "DS1",
+    alt: "d-sharp-1",
+    noteName: "D#4",
+  },
+  {
+    src: "assets/flashcards/e-flat-1.png",
+    card: "DS1",
+    alt: "e-flat-1",
+    noteName: "E♭4",
+  },
   { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1", noteName: "E4" },
   { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1", noteName: "F4" },
-  { src: "assets/flashcards/f-sharp-1.png", card: "FS1", alt: "f-sharp-1", noteName: "F#4" },
-  { src: "assets/flashcards/g-flat-1.png", card: "FS1", alt: "g-flat-1", noteName: "G♭4" },
+  {
+    src: "assets/flashcards/f-sharp-1.png",
+    card: "FS1",
+    alt: "f-sharp-1",
+    noteName: "F#4",
+  },
+  {
+    src: "assets/flashcards/g-flat-1.png",
+    card: "FS1",
+    alt: "g-flat-1",
+    noteName: "G♭4",
+  },
   { src: "assets/flashcards/g-1.png", card: "G1", alt: "g-1", noteName: "G4" },
-  { src: "assets/flashcards/g-sharp-1.png", card: "GS1", alt: "g-sharp-1", noteName: "G#4" },
-  { src: "assets/flashcards/a-flat-1.png", card: "GS1", alt: "a-flat-1", noteName: "A♭4" },
+  {
+    src: "assets/flashcards/g-sharp-1.png",
+    card: "GS1",
+    alt: "g-sharp-1",
+    noteName: "G#4",
+  },
+  {
+    src: "assets/flashcards/a-flat-1.png",
+    card: "GS1",
+    alt: "a-flat-1",
+    noteName: "A♭4",
+  },
   { src: "assets/flashcards/a-1.png", card: "A1", alt: "a-1", noteName: "A4" },
-  { src: "assets/flashcards/a-sharp-1.png", card: "AS1", alt: "a-sharp-1", noteName: "A#4" },
-  { src: "assets/flashcards/b-flat-1.png", card: "AS1", alt: "b-flat-1", noteName: "B♭4" },
+  {
+    src: "assets/flashcards/a-sharp-1.png",
+    card: "AS1",
+    alt: "a-sharp-1",
+    noteName: "A#4",
+  },
+  {
+    src: "assets/flashcards/b-flat-1.png",
+    card: "AS1",
+    alt: "b-flat-1",
+    noteName: "B♭4",
+  },
   { src: "assets/flashcards/b-1.png", card: "B1", alt: "b-1", noteName: "B4" },
   { src: "assets/flashcards/c-2.png", card: "C2", alt: "c-2", noteName: "C5" },
-  { src: "assets/flashcards/c-sharp-2.png", card: "CS2", alt: "c-sharp-2", noteName: "C#5" },
-  { src: "assets/flashcards/d-flat-2.png", card: "CS2", alt: "d-flat-2", noteName: "D♭5" },
+  {
+    src: "assets/flashcards/c-sharp-2.png",
+    card: "CS2",
+    alt: "c-sharp-2",
+    noteName: "C#5",
+  },
+  {
+    src: "assets/flashcards/d-flat-2.png",
+    card: "CS2",
+    alt: "d-flat-2",
+    noteName: "D♭5",
+  },
   { src: "assets/flashcards/d-2.png", card: "D2", alt: "d-2", noteName: "D5" },
-  { src: "assets/flashcards/d-sharp-2.png", card: "DS2", alt: "d-sharp-2", noteName: "D#5" },
-  { src: "assets/flashcards/e-flat-2.png", card: "DS2", alt: "e-flat-2", noteName: "E♭5" },
+  {
+    src: "assets/flashcards/d-sharp-2.png",
+    card: "DS2",
+    alt: "d-sharp-2",
+    noteName: "D#5",
+  },
+  {
+    src: "assets/flashcards/e-flat-2.png",
+    card: "DS2",
+    alt: "e-flat-2",
+    noteName: "E♭5",
+  },
   { src: "assets/flashcards/e-2.png", card: "E2", alt: "e-2", noteName: "E5" },
   { src: "assets/flashcards/f-2.png", card: "F2", alt: "f-2", noteName: "F5" },
-  { src: "assets/flashcards/f-sharp-2.png", card: "FS2", alt: "f-sharp-2", noteName: "F#5" },
-  { src: "assets/flashcards/g-flat-2.png", card: "FS2", alt: "g-flat-2", noteName: "G♭5" },
+  {
+    src: "assets/flashcards/f-sharp-2.png",
+    card: "FS2",
+    alt: "f-sharp-2",
+    noteName: "F#5",
+  },
+  {
+    src: "assets/flashcards/g-flat-2.png",
+    card: "FS2",
+    alt: "g-flat-2",
+    noteName: "G♭5",
+  },
   { src: "assets/flashcards/g-2.png", card: "G2", alt: "g-2", noteName: "G5" },
-  { src: "assets/flashcards/g-sharp-2.png", card: "GS2", alt: "g-sharp-2", noteName: "G#5" },
-  { src: "assets/flashcards/a-flat-2.png", card: "GS2", alt: "a-flat-2", noteName: "A♭5" },
+  {
+    src: "assets/flashcards/g-sharp-2.png",
+    card: "GS2",
+    alt: "g-sharp-2",
+    noteName: "G#5",
+  },
+  {
+    src: "assets/flashcards/a-flat-2.png",
+    card: "GS2",
+    alt: "a-flat-2",
+    noteName: "A♭5",
+  },
   { src: "assets/flashcards/a-2.png", card: "A2", alt: "a-2", noteName: "A5" },
-  { src: "assets/flashcards/a-sharp-2.png", card: "AS2", alt: "a-sharp-2", noteName: "A#5" },
-  { src: "assets/flashcards/b-flat-2.png", card: "AS2", alt: "b-flat-2", noteName: "B♭5" },
+  {
+    src: "assets/flashcards/a-sharp-2.png",
+    card: "AS2",
+    alt: "a-sharp-2",
+    noteName: "A#5",
+  },
+  {
+    src: "assets/flashcards/b-flat-2.png",
+    card: "AS2",
+    alt: "b-flat-2",
+    noteName: "B♭5",
+  },
   { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
   { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" }
   // (Continues with other notes...)
@@ -102,6 +194,12 @@ let totalQuestions = 0; // Total number of questions asked in the game
 let timeLeft = 30; // Time left for the game in seconds
 let gameStarted = false; // Boolean to track whether the game has started
 let intervalId; // ID for the interval used in the timer
+let difficulty = "";
+
+const selectDifficulty = () => {
+  let difficulties = document.getElementById("diff-select");
+  difficulty = difficulties.value;
+};
 
 // Generate a random flashcard to display
 const generateRandomFlashcard = () => {
@@ -111,7 +209,13 @@ const generateRandomFlashcard = () => {
   const flashcardImage = document.getElementById("flashcard-image"); // Get the flashcard image element
   flashcardImage.src = currentFlashcard.src; // Set the source of the flashcard image
   flashcardImage.alt = currentFlashcard.alt; // Set the alt text for the flashcard image
-
+  if (difficulty == "easy" || difficulty == "medium") {
+    document.getElementById(
+      "assistance"
+    ).innerHTML = `Assistance: The current note is ${currentFlashcard.noteName}`;
+  } else {
+    document.getElementById("assistance").innerHTML = "";
+  }
   document.getElementById("feedback").textContent = ""; // Clear feedback message
 };
 
@@ -147,18 +251,34 @@ const handlePianoKeyClick = (event) => {
 
 // Start the game and initialize variables
 const startGame = () => {
+  selectDifficulty();
+  if (!difficulty) {
+    alert("Please Select A Difficulty");
+    return;
+  }
+  keys.forEach((key) => key.classList.remove("hide")); // Toggle the 'hide' class on each key to show/hide labels
+  generateRandomFlashcard(); // Generate the first flashcard
   gameStarted = true; // Set gameStarted to true
   score = 0; // Reset score
   totalQuestions = 0; // Reset total questions
-  timeLeft = 30; // Reset time left
-
+  if (difficulty == "easy") {
+    timeLeft = 90;
+  } else if (difficulty == "medium") {
+    timeLeft = 60;
+  } else if (difficulty == "hard") {
+    timeLeft = 60;
+  } else if (difficulty == "maestro") {
+    timeLeft = 30;
+    keys.forEach((key) => key.classList.toggle("hide")); // Toggle the 'hide' class on each key to show/hide labels
+  }
   const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
   wrapper.classList.remove("hidden", "fade-out"); // Show the flashcard wrapper
   wrapper.classList.add("fade-in", "show"); // Add fade-in animation
 
-  generateRandomFlashcard(); // Generate the first flashcard
   const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
-  pianoKeys.forEach((key) => key.addEventListener("click", handlePianoKeyClick)); // Add click listeners to each key
+  pianoKeys.forEach((key) =>
+    key.addEventListener("click", handlePianoKeyClick)
+  ); // Add click listeners to each key
 
   const timerElement = document.getElementById("timer"); // Get the timer element
   intervalId = setInterval(() => {
@@ -189,7 +309,10 @@ const stopGame = () => {
   }, 500); // Delay to match fade-out animation duration
 
   const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
-  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick)); // Remove click listeners from keys
+
+  pianoKeys.forEach((key) =>
+    key.removeEventListener("click", handlePianoKeyClick)
+  ); // Remove click listeners from keys
 
   showStopGameModal(); // Show modal with the stop game score
   document.getElementById("start-game").textContent = "Start Game"; // Change button text back to 'Start Game'
@@ -210,7 +333,10 @@ const endGame = () => {
   }, 500); // Delay to match fade-out animation duration
 
   const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
-  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick)); // Remove click listeners from keys
+
+  pianoKeys.forEach((key) =>
+    key.removeEventListener("click", handlePianoKeyClick)
+  ); // Remove click listeners from keys
 
   showGameOverModal(`Time's up! Your Score: ${score}/${totalQuestions}`); // Show game over modal with the final score
   document.getElementById("start-game").textContent = "Start Game"; // Change button text back to 'Start Game'
@@ -330,10 +456,12 @@ closeLearnButton.addEventListener("click", () => {
   learnNotesModal.style.display = "none"; // Hide the modal
 });
 
-// Close the learn notes modal when the additional close button is clicked
-closeLearnModalButton.addEventListener("click", () => {
-  learnNotesModal.style.display = "none"; // Hide the modal
-});
+if (closeLearnModalButton) {
+  // Close the learn notes modal when the additional close button is clicked
+  closeLearnModalButton.addEventListener("click", () => {
+    learnNotesModal.style.display = "none"; // Hide the modal
+  });
+}
 
 // Close the learn notes modal if the user clicks outside of it
 window.addEventListener("click", (e) => {
@@ -341,5 +469,4 @@ window.addEventListener("click", (e) => {
     learnNotesModal.style.display = "none"; // Hide the modal
   }
 });
-
 

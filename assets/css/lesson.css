@@ -1,11 +1,10 @@
 :root {
-    --main: #d5aa77;
-    --sub: #971e08;
-    --text: #FAFAFA;
-    --background: #bc3b18;
-    --accent: #0000;
+  --main: #d5aa77;
+  --sub: #971e08;
+  --text: #fafafa;
+  --background: #bc3b18;
+  --accent: #0000;
 }
-
 
 /* default styles */
 * {
@@ -15,8 +14,6 @@
   font-family: "Monterrat", sans-serif;
 }
 
-
-
 body {
   display: flex;
   flex-direction: column;
@@ -24,7 +21,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   background-image: url("../images/wallpaper_notes.jpg");
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
 }
 
@@ -43,7 +40,6 @@ main {
   min-height: fit-content;
   width: fit-content;
   opacity: 0;
-
 }
 
 .card-wrapper img {
@@ -72,11 +68,12 @@ main {
 /* Add fade-in effect */
 .fade-in {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out; 
+  transition: opacity 0.5s ease-in-out;
 }
 
 .fade-in.show {
-  opacity: 1; 
+  opacity: 1;
+
 }
 
 /* Code snippet extracted from Vernell Clark's second Portfolio Project */
@@ -92,6 +89,66 @@ modal {
   justify-content: center;
   transition: visibility 0s, opacity 0.3s ease;
   z-index: 1000;
+}
+
+/* Modal content styling */
+.modal-contents {
+  background-color: white;
+  width: 90%;
+  max-width: 700px;
+  max-height: 80dvh;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  bottom: 32%;
+  text-align: center;
+}
+
+/* The Modal Close Button */
+.close,
+.close-gameover {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  background-color: transparent;
+  color: #b6b6b6;
+  font-size: 4.8rem;
+  font-weight: lighter;
+  line-height: 2rem;
+  border: 1px solid #b6b6b6;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+/* End of CSS Taken extracted from Vernell Clark's 2nd Portfolio Project */
+
+.close:hover,
+.close:focus {
+  color: var(--light-color);
+  border-color: var(--light-color);
+}
+
+.modal h2 {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  color: black;
+  font-weight: bold;
+}
+
+.modal p {
+  font-style: italic;
+}
+
+.diagram-container {
+  max-width: 100%;
+}
+
+.clef-diagram {
+  height: 250px;
+  margin-bottom: 10px;
 }
 
 /* Modal content styling */
@@ -157,14 +214,13 @@ modal {
 /* our keyboard body */
 
 .wrapper {
-  padding: 20px 5px;
+  padding: 20px 15px;
   border-radius: 20px;
   background: var(--main);
   overflow: hidden;
   width: fit-content;
   max-width: 100vw;
 }
-
 
 /* center card image */
 
@@ -207,38 +263,28 @@ the key checkbox
   accent-color: #fff;
 }
 
-/* styling the key checkbox */
-.key-checkbox input {
-  height: 30px;
-  width: 60px;
-  cursor: pointer;
+.difficulty-select {
+  min-width: 200px;
+  line-height: 2.4rem;
+}
+
+.difficulty-select select {
   appearance: none;
-  position: relative;
-  background: #000000;
+  width: 100%;
+  font-size: 1.15rem;
+  background-color: #212529;
+  border-radius: 0.4rem;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
 }
 
-/* styling the input before we click */
-.key-checkbox input::before {
-  content: "";
-  position: absolute;
-  /* positioning input */
-  top: 50%;
-  left: 5px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  /* coloring and resizing */
-  background: var(--accent);
-  transform: translateY(-50%);
-  transition: all 0.3s ease;
+.note-assistance {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  color: #fff;
+  text-align: center;
 }
-
-/* additional styling for input before it gets checked */
-.key-checkbox input:checked::before {
-  left: 35px;
-  background: #fff;
-}
-
 /* 
 piano keys styling, we style the keys to be the same shape as piano
 keys, we also automatically uppercase all the keys and add shading to
@@ -342,10 +388,6 @@ a lesson
   color: white !important;
 }
 
-
-
-
-
 /* 
 
   Responsive Design 
@@ -356,14 +398,14 @@ a lesson
 @media (max-width: 1200px) {
   /* Decrease the size of piano keys for tablets */
   .piano-keys .black {
-      width: 35px;
-      height: 140px;
-      margin: 0 -17px;
+    width: 35px;
+    height: 140px;
+    margin: 0 -17px;
   }
 
   .piano-keys .white {
-      width: 65px;
-      height: 200px;
+    width: 65px;
+    height: 200px;
   }
 }
 
@@ -381,7 +423,7 @@ a lesson
   }
 
   .wrapper {
-      padding: 10px;
+      padding: 15px;
   }
 
   .volume-slider, .key-checkbox {
@@ -402,8 +444,6 @@ a lesson
   .piano-keys {
     margin-top: 0px;
   }
-
-
   .piano-keys .black {
       width: 28px;
       height: 100px;
@@ -423,7 +463,7 @@ a lesson
 
   .wrapper {
       width: 100vw;
-      padding: 5px;
+      padding: 10px;
   }
 
   .card-wrapper {
@@ -460,7 +500,7 @@ a lesson
     text-align: right;
     padding-right: 10px;
   }
-
+  
   .timer-div p, .feedback-div p {
     font-size: 0.8em !important;
   }
@@ -502,9 +542,9 @@ a lesson
   }
 }
 
-
 @media (max-width: 655px) {
   .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
     font-size: 0.6em;
   }
 }
+
