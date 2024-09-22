@@ -77,7 +77,6 @@ keyVisibility.addEventListener("click", keyVisibilityToggle);
 volume.addEventListener("input", handleVolume);
 document.addEventListener("keydown", pressedKey);
 
-
 //
 // Game Logic Starts Here
 //
@@ -205,7 +204,6 @@ function startGame() {
   document.getElementById("start-game").textContent = "Stop Game"; // Change button text
 }
 
-
 // Function to stop the game
 function stopGame() {
   gameStarted = false;
@@ -244,7 +242,7 @@ function endGame() {
 
   const pianoKeys = document.querySelectorAll(".piano-keys .key");
   pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick));
-  alert(`Time's up! Your Score: ${score}/${totalQuestions}`);
+  showGameOverModal(`Time's up! Your Score: ${score}/${totalQuestions}`);
   document.getElementById("start-game").textContent = "Start Game"; // Reset button text
 }
 
@@ -260,8 +258,8 @@ function toggleGame() {
 // Attach event listener to toggle between start and stop
 document.getElementById("start-game").addEventListener("click", toggleGame);
 
-
- const modal = document.getElementById("instructionModal");
+/* Code snippet extracted from Vernell Clark's PP2 */
+ const instructionModal = document.getElementById("instructionModal");
   const btn = document.getElementById("instructionButton");
   const span = document.querySelector(".close");
 
@@ -271,15 +269,52 @@ document.getElementById("start-game").addEventListener("click", toggleGame);
 
   // Open the modal
   function toggleModal() {
-    modal.style.display = "flex";
+    instructionModal.style.visibility = "visible";
+    instructionModal.style.display = "flex";
   }
 
   // Close the modal when clicking on (x)
   function closeModal() {
-    modal.style.display = "none";
+    instructionModal.style.visibility = "hidden";
+    instructionModal.style.display = "none";
   }
 
   // Close the modal when clicking outside of the modal content
   function outsideClick(e) {
-    if (e.target == modal) modal.style.display = "none";
+    if (e.target == instructionModal) {
+      instructionModal.style.display = "none";
+      instructionModal.style.visibility = "hidden";
+    }
   }
+/* End code snippet extracted from Vernell Clark's Portfolio 2 Project */
+
+// Get modal elements
+const gameOverModal = document.getElementById("gameOverModal");
+const closeGameOver = document.querySelector(".close-gameover");
+const gameOverMessage = document.getElementById("gameOverMessage");
+const playAgainButton = document.getElementById("playAgainButton");
+
+// Function to show the game over modal
+function showGameOverModal(message) {
+  gameOverMessage.innerHTML = message; // Display the game over message
+  gameOverModal.style.display = "flex"; // Show the modal
+}
+
+// Function to close the game over modal
+function closeGameOverModal() {
+  gameOverModal.style.display = "none";
+}
+
+// Event listeners to close the modal when the 'x' is clicked or play again button is clicked
+closeGameOver.addEventListener("click", closeGameOverModal);
+playAgainButton.addEventListener("click", () => {
+  closeGameOverModal();
+  startGame(); // Optionally start the game again
+});
+
+// Close the modal if clicked outside of modal content
+window.addEventListener("click", (e) => {
+  if (e.target == gameOverModal) {
+    closeGameOverModal();
+  }
+});
