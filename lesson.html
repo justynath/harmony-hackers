@@ -44,19 +44,23 @@
                 <div class="buttons-container text-center">
                     <button id="start-game" class="btn btn-dark m-3">Start Game</button>
                     <button id="instructionButton" class="btn btn-dark m-3">How to Play</button>
+                    <!-- <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button> -->
                 </div>
                 <!-- The Modal -->
                 <div id="instructionModal" class="justify-content-center modal">
                     <div class="modal-contents">
                         <span class="close">&times;</span>
                         <h2>Instructions for note flashcard game!</h2>
-                        <p>The aim of the game is to get as many treble clef notes right within a set time limit.
+                        <p class="text-start">The aim of the game is to get as many treble clef notes right within a set
+                            time limit.
                             The way the game works is that once you click the start game button, a flashcard shows at
                             the top of the screen.
+                            <br class="my-2">
                             The user clicks a key and if they get it right, the key turns green and a correct message
                             appears under the flaschard. If the user gets
                             the note incorrect, the key will highlight in red and an incorrect message will appear under
                             the flaschard.
+                            <br class="my-2">
                             When the game is over a pop-up will appear with a score. At any point during the game, you
                             can press the stop button to end the game.
                         </p>
@@ -82,12 +86,28 @@
                         <button type="button" class="btn btn-secondary" id="closeStopGameModalButton">Close</button>
                     </div>
                 </div>
+                <!-- Learn Notes Modal -->
+                <div id="learnNotesModal" class="justify-content-center modal">
+                    <div class="modal-contents">
+                        <span class="close-learn">&times;</span>
+                        <h2>Learn Musical Notes</h2>
+                        <p>In this section, you can learn about musical notes and how they are used in sheet music.</p>
+                        <img src="assets/images/clef-diagram.jpeg" alt="Clef Diagram" class="clef-diagram">
+                        <button type="button" id="learnMoreButton" class="btn btn-primary">
+                            <a href="https://www.chordsheet-maker.com/blog/music-theory-crash-course-1-notes"
+                                target="_blank" style="color:white;text-decoration:none;">Learn More</a>
+                        </button>
+                        <button type="button" id="closeLearnModalButton" class="btn btn-secondary">Close</button>
+                    </div>
+                </div>
+
 
                 <div class="column volume-slider">
                     <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
                 </div>
                 <div class="column key-checkbox">
-                    <span>Show Key Names</span><input type="checkbox" checked>
+                    <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button>
+                    <span>Show Key Names:</span><input type="checkbox" checked>
                 </div>
             </div>
             <!-- Create a ul list to hold each key, with each key being a list item
