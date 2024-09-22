@@ -16,19 +16,24 @@
  }
 
 .card {
-  background-color: #FAFAFA;
+  background-color: #d5aa77;
   border-radius: 1rem;
   margin-bottom: 2rem;
 }
 
 .form-check-label, .form-label, .form-text{
-  color: var(--accent);
-  font-weight: 400;
+  color: #6a1405;
+  font-weight: 800;
+  font-size: 1.5rem;
+  font-family: 'Satisfy', cursive;
 }
 
 
 h1 {
   font-weight: 900;
+  font-size: 3.5rem;
+  font-family: 'Satisfy', cursive;
+  color: var(--main);
 }
 
 h1, p{
