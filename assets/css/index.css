@@ -6,7 +6,7 @@
     --background: #bc3b18;
     --accent: #0000;
 }
-text-align
+
 
 * {
     margin: 0;
@@ -14,6 +14,7 @@ text-align
     box-sizing: border-box;
     font-family: "Lato", Arial, sans-serif;
     text-decoration: none !important;
+    text-align: center;
 }
   /****** Navigation start *******/  
     
