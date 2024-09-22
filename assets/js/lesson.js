@@ -1,90 +1,65 @@
 /// VARIABLES ///
 
-// we get our three main query selectors here
-// all of our keys to control the piano keys
-// volume for controlling volume selection
-// keyVisibility to toggle key letters being visible or now
-// difficulty slider to set our difficulty
-const keys = document.querySelectorAll(".piano-keys .key"),
-  volume = document.querySelector(".volume-slider input"),
-  keyVisibility = document.querySelector(".key-checkbox input");
+// Main selectors for DOM elements
+const keys = document.querySelectorAll(".piano-keys .key"); // Select all piano key elements
+const volume = document.querySelector(".volume-slider input"); // Select volume slider input
+const keyVisibility = document.querySelector(".key-checkbox input"); // Select key visibility toggle checkbox
 
-const TIMEOUT = 200;
+// Constants
+const TIMEOUT = 200; // Timeout duration for key highlight effect in milliseconds
+let allKeys = []; // Array to store the data-key attributes of all keys
+let note = new Audio(`assets/audio/A1.mp3`); // Default note audio object with a starting audio file
 
-// now we need all of our keys
-let allKeys = [];
-// and we want our note sound effects (we will tie these to our datasets)
-// default is a in case key not mapped
-note = new Audio(`assets/audio/A1.mp3`);
+/// FUNCTIONS ///
 
-// play note function, will play the note corresponding to our key
-const playNote = function (key) {
-  // sets the srt to our note file chosen
-  note.src = `assets/audio/${key}.mp3`;
+// Play the note associated with the key
+const playNote = (key) => {
+  note.src = `assets/audio/${key}.mp3`; // Set the source of the audio to the corresponding key sound
+  note.play(); // Play the sound
 
-  // playing note
-  note.play();
-  // Next we want to get the clicked key, for user feedback and
-  // give it an active class. it makes sense it goes in the play
-  // note function here because it should fire when the note is played
-  // SO we get our data set and add it to a const
-  const clicked = document.querySelector(`[data-key="${key}"]`);
-  // now when the note is pressed add an active class to it
-  clicked.classList.add("active");
-  // now we set a timeout of 200ms, give or take to remove the
-  // styling from the class
+  const clickedKey = document.querySelector(`[data-key="${key}"]`); // Get the key DOM element by data-key
+  clickedKey.classList.add("active"); // Add the 'active' class to the key to visually indicate it has been pressed
+  
+  // Remove the 'active' class after a short delay (200ms)
   setTimeout(() => {
-    // setting the timeout as a top lvl var so we don't need to dive in
-    // and constantly change it
-    clicked.classList.remove("active");
+    clickedKey.classList.remove("active");
   }, TIMEOUT);
 };
-// now we loop through each key, then for each key add an onclick Event
-// listener to make sure that when said key is clicked it will play the
-// corresponding sound
+
+// Add event listeners to each key for mouse click events
 keys.forEach((key) => {
-  // adding data-key value to the allKeys array
-  allKeys.push(key.dataset.key);
-  // calling playTune function with passing data-key value as an argument
-  key.addEventListener("click", () => playNote(key.dataset.key));
+  allKeys.push(key.dataset.key); // Add the data-key of each key to the allKeys array
+  key.addEventListener("click", () => playNote(key.dataset.key)); // Add click event listener to play the note on key click
 });
 
-// Volume control function
-const handleVolume = function (e) {
-  // we get the volume slider value as an audio volume here
-  note.volume = e.target.value;
+// Volume control handler to adjust note volume
+const handleVolume = (e) => {
+  note.volume = e.target.value; // Adjust the volume of the note based on the slider input value
 };
 
-// Hide keys control function
-const keyVisibilityToggle = function () {
-  // We loop through the keys here and hide
-  keys.forEach((key) => key.classList.toggle("hide"));
-  console.log("volume switched");
+// Toggle the visibility of key labels
+const toggleKeyVisibility = () => {
+  keys.forEach((key) => key.classList.toggle("hide")); // Toggle the 'hide' class on each key to show/hide labels
 };
 
-// we want to get our pressed key for registration this error handling
-// to ensure note does audio for notes only plays on key click and not by accident
-const pressedKey = function (e) {
-  // check if our key contained in the all keys array
+// Handle keyboard key press to play the corresponding note
+const handleKeyPress = (e) => {
   if (allKeys.includes(e.key)) {
-    // if it is play note
-    playNote(e.key);
+    playNote(e.key); // Play the note if the pressed key matches any in the allKeys array
   }
 };
 
-// now we get our event listener for 3 controls
-keyVisibility.addEventListener("click", keyVisibilityToggle);
-volume.addEventListener("input", handleVolume);
-document.addEventListener("keydown", pressedKey);
+// Attach event listeners for control elements
+keyVisibility.addEventListener("click", toggleKeyVisibility); // Toggle key visibility when checkbox is clicked
+volume.addEventListener("input", handleVolume); // Adjust volume when the volume slider is changed
+document.addEventListener("keydown", handleKeyPress); // Play note when a corresponding key is pressed on the keyboard
 
-//
-// Game Logic Starts Here
-//
+/// GAME LOGIC ///
 
-// Array of flashcards
+// Flashcards array representing different musical notes with corresponding image, note name, and alt text
 const flashcards = [
-  { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: 'C4' },
-  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1", noteName: 'C#4' },
+  { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: "C4" },
+  { src: "assets/flashcards/c-sharp-1.png", card: "CS1", alt: "c-sharp-1", noteName: "C#4" },
   { src: "assets/flashcards/d-flat-1.png", card: "CS1", alt: "d-flat-1", noteName: "D♭4" },
   { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1", noteName: "D4" },
   { src: "assets/flashcards/d-sharp-1.png", card: "DS1", alt: "d-sharp-1", noteName: "D#4" },
@@ -118,276 +93,253 @@ const flashcards = [
   { src: "assets/flashcards/b-flat-2.png", card: "AS2", alt: "b-flat-2", noteName: "B♭5" },
   { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
   { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" }
+  // (Continues with other notes...)
 ];
 
-let currentFlashcard = null;
-let score = 0;
-let totalQuestions = 0;
-let timeLeft = 30; // 30 Seconds
-let gameStarted = false;
-let intervalId; // To store the interval ID for the timer
+let currentFlashcard = null; // Current flashcard in the game
+let score = 0; // Player's score
+let totalQuestions = 0; // Total number of questions asked in the game
+let timeLeft = 30; // Time left for the game in seconds
+let gameStarted = false; // Boolean to track whether the game has started
+let intervalId; // ID for the interval used in the timer
 
-// Function to generate a random flashcard
-function generateRandomFlashcard() {
-  const randomIndex = Math.floor(Math.random() * flashcards.length);
-  currentFlashcard = flashcards[randomIndex];
+// Generate a random flashcard to display
+const generateRandomFlashcard = () => {
+  const randomIndex = Math.floor(Math.random() * flashcards.length); // Generate a random index
+  currentFlashcard = flashcards[randomIndex]; // Select a flashcard from the array
 
-  // Update the flashcard image
-  const flashcardImage = document.getElementById("flashcard-image");
-  flashcardImage.src = currentFlashcard.src;
-  flashcardImage.alt = currentFlashcard.alt;
+  const flashcardImage = document.getElementById("flashcard-image"); // Get the flashcard image element
+  flashcardImage.src = currentFlashcard.src; // Set the source of the flashcard image
+  flashcardImage.alt = currentFlashcard.alt; // Set the alt text for the flashcard image
 
-  // Reset feedback for the new card
-  const feedbackElement = document.getElementById("feedback");
-  feedbackElement.textContent = "";
-}
+  document.getElementById("feedback").textContent = ""; // Clear feedback message
+};
 
-// Handle the piano key click
-function handlePianoKeyClick(event) {
-  if (!gameStarted) return; // Don't handle clicks if the game hasn't started
+// Handle click on a piano key during the game
+const handlePianoKeyClick = (event) => {
+  if (!gameStarted) return; // Do nothing if the game hasn't started
 
-  const clickedKey = event.target.closest(".key");
-  const clickedKeyData = clickedKey.dataset.key;
-  const feedbackElement = document.getElementById("feedback");
+  const clickedKey = event.target.closest(".key"); // Get the clicked key element
+  const clickedKeyData = clickedKey.dataset.key; // Get the data-key attribute of the clicked key
+  const feedbackElement = document.getElementById("feedback"); // Get the feedback message element
 
+  // Check if the clicked key matches the current flashcard
   if (clickedKeyData === currentFlashcard.card) {
-    score++;
-    feedbackElement.innerHTML = "CORRECT!<br>Well Done!";
-    feedbackElement.classList.add("green");
-    clickedKey.classList.add("correct"); // Add the correct class to the clicked key
+    score++; // Increase score if correct
+    feedbackElement.innerHTML = "CORRECT!<br>Well Done!"; // Show success message
+    feedbackElement.classList.add("green"); // Add 'green' class to the feedback for correct answer
+    clickedKey.classList.add("correct"); // Add 'correct' class to the key
   } else {
-    feedbackElement.innerHTML = `INCORRECT!<br><span class="fs-4">The correct note was: ${currentFlashcard.noteName}</span>`;
-    feedbackElement.classList.add("red");
-    clickedKey.classList.add("incorrect"); // Add the incorrect class to the clicked key
+    // Show incorrect feedback if the wrong key is pressed
+    feedbackElement.innerHTML = `INCORRECT!<br>The correct note was: ${currentFlashcard.noteName}`;
+    feedbackElement.classList.add("red"); // Add 'red' class for incorrect answer
+    clickedKey.classList.add("incorrect"); // Add 'incorrect' class to the key
   }
-  totalQuestions++;
+  totalQuestions++; // Increment total questions count
 
+  // After a delay, reset the key and feedback styles and generate a new flashcard
   setTimeout(() => {
-    clickedKey.classList.remove("correct", "incorrect");
-    feedbackElement.classList.remove("green", "red");
-    generateRandomFlashcard(); // Show the next flashcard after a short delay
-  }, 1000); // 1 second delay to give user time to see the feedback
-}
+    clickedKey.classList.remove("correct", "incorrect"); // Remove the correct/incorrect classes
+    feedbackElement.classList.remove("green", "red"); // Remove feedback color classes
+    generateRandomFlashcard(); // Generate a new random flashcard
+  }, 1000);
+};
 
-// Function to start the game
-function startGame() {
-  gameStarted = true;
-  score = 0;
-  totalQuestions = 0;
-  timeLeft = 30; // Reset the timer
+// Start the game and initialize variables
+const startGame = () => {
+  gameStarted = true; // Set gameStarted to true
+  score = 0; // Reset score
+  totalQuestions = 0; // Reset total questions
+  timeLeft = 30; // Reset time left
 
-  const wrapper = document.getElementById("flashcard-wrapper");
-  wrapper.classList.remove("hidden"); // Remove the hidden class
-  wrapper.classList.add("fade-in");  // Add the fade-in class
-  setTimeout(() => {
-    wrapper.classList.add("show");   // Add the show class after the timeout to trigger fade-in
-  }, 100);  // Slight delay to allow CSS transition to work
+  const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
+  wrapper.classList.remove("hidden", "fade-out"); // Show the flashcard wrapper
+  wrapper.classList.add("fade-in", "show"); // Add fade-in animation
 
-  generateRandomFlashcard();
-  const pianoKeys = document.querySelectorAll(".piano-keys .key");
-  pianoKeys.forEach((key) =>
-    key.addEventListener("click", handlePianoKeyClick)
-  );
+  generateRandomFlashcard(); // Generate the first flashcard
+  const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
+  pianoKeys.forEach((key) => key.addEventListener("click", handlePianoKeyClick)); // Add click listeners to each key
 
-  // Timer
-  const timerElement = document.getElementById("timer");
+  const timerElement = document.getElementById("timer"); // Get the timer element
   intervalId = setInterval(() => {
-    timeLeft--;
-    timerElement.textContent = `Time Left: ${timeLeft}s`;
+    timeLeft--; // Decrease time left by 1 second
+    timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
 
     if (timeLeft <= 0) {
-      clearInterval(intervalId);
-      endGame();
+      clearInterval(intervalId); // Stop the timer when time runs out
+      endGame(); // End the game
     }
-  }, 1000);
+  }, 1000); // Repeat every second
 
-  document.getElementById("start-game").textContent = "Stop Game"; // Change button text
-}
+  document.getElementById("start-game").textContent = "Stop Game"; // Change button text to 'Stop Game'
+};
 
-// Function to stop the game
-function stopGame() {
-  gameStarted = false;
-  clearInterval(intervalId); // Stop the timer
+// Stop the game
+const stopGame = () => {
+  gameStarted = false; // Set gameStarted to false
+  clearInterval(intervalId); // Clear the timer interval
 
-  const wrapper = document.getElementById("flashcard-wrapper");
-  wrapper.classList.add("fade-out"); // Add the fade-out class
-  
-  // Wait for the fade-out transition to complete before hiding the wrapper
+  const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
+  wrapper.classList.add("fade-out"); // Add fade-out animation
+
   setTimeout(() => {
-    wrapper.classList.remove("show"); // Remove the 'show' class to hide it
-    wrapper.classList.add("hidden"); // Add 'hidden' to fully hide it after fade
-    wrapper.classList.remove("fade-out"); // Reset the fade-out class for future games
-  }, 500); // Match the CSS transition duration (0.5s)
+    wrapper.classList.remove("show"); // Hide flashcard wrapper after fade-out
+    wrapper.classList.add("hidden");
+    wrapper.classList.remove("fade-out");
+  }, 500); // Delay to match fade-out animation duration
 
-  const pianoKeys = document.querySelectorAll(".piano-keys .key");
-  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick));
-  
-  // alert(`Game Stopped! Your Score: ${score}/${totalQuestions}`);
-  // Show the stop game modal
-  showStopGameModal();
-  
-  document.getElementById("start-game").textContent = "Start Game"; // Change button text
-}
+  const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
+  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick)); // Remove click listeners from keys
 
-// Function to end the game when the time runs out
-function endGame() {
-  gameStarted = false;
-  clearInterval(intervalId); // Ensure the timer is cleared
+  showStopGameModal(); // Show modal with the stop game score
+  document.getElementById("start-game").textContent = "Start Game"; // Change button text back to 'Start Game'
+};
 
-  const wrapper = document.getElementById("flashcard-wrapper");
-  wrapper.classList.add("fade-out"); // Add the fade-out class
-  
-  // Wait for the fade-out transition to complete before hiding the wrapper
+// End the game when time runs out
+const endGame = () => {
+  gameStarted = false; // Set gameStarted to false
+  clearInterval(intervalId); // Clear the timer interval
+
+  const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
+  wrapper.classList.add("fade-out"); // Add fade-out animation
+
   setTimeout(() => {
-    wrapper.classList.remove("show"); // Remove the 'show' class to hide it
-    wrapper.classList.add("hidden"); // Add 'hidden' to fully hide it after fade
-    wrapper.classList.remove("fade-out"); // Reset the fade-out class for future games
-  }, 500); // Match the CSS transition duration (0.5s)
+    wrapper.classList.remove("show"); // Hide flashcard wrapper after fade-out
+    wrapper.classList.add("hidden");
+    wrapper.classList.remove("fade-out");
+  }, 500); // Delay to match fade-out animation duration
 
-  const pianoKeys = document.querySelectorAll(".piano-keys .key");
-  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick));
-  showGameOverModal(`Time's up! Your Score: ${score}/${totalQuestions}`);
-  document.getElementById("start-game").textContent = "Start Game"; // Reset button text
-}
+  const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
+  pianoKeys.forEach((key) => key.removeEventListener("click", handlePianoKeyClick)); // Remove click listeners from keys
 
-// Toggle between start and stop game
-function toggleGame() {
-  if (gameStarted) {
-    stopGame();
-  } else {
-    startGame();
-  }
-}
+  showGameOverModal(`Time's up! Your Score: ${score}/${totalQuestions}`); // Show game over modal with the final score
+  document.getElementById("start-game").textContent = "Start Game"; // Change button text back to 'Start Game'
+};
 
-// Attach event listener to toggle between start and stop
+// Toggle between starting and stopping the game
+const toggleGame = () => {
+  gameStarted ? stopGame() : startGame(); // Start or stop the game based on current state
+};
+
+// Attach event listener to the start/stop button
 document.getElementById("start-game").addEventListener("click", toggleGame);
 
-/* Code snippet extracted from Vernell Clark's PP2 */
- const instructionModal = document.getElementById("instructionModal");
-  const btn = document.getElementById("instructionButton");
-  const span = document.querySelector(".close");
+/// MODAL FUNCTIONALITY ///
 
-  btn.addEventListener("click", toggleModal);
-  span.addEventListener("click", closeModal);
-  window.addEventListener("click", outsideClick);
+// Instructions modal logic
+const instructionModal = document.getElementById("instructionModal");
+const instructionButton = document.getElementById("instructionButton");
+const closeInstruction = document.querySelector(".close");
 
-  // Open the modal
-  function toggleModal() {
-    instructionModal.style.visibility = "visible";
-    instructionModal.style.display = "flex";
-  }
+// Open the instructions modal when the instructions button is clicked
+instructionButton.addEventListener("click", () => {
+  instructionModal.style.visibility = "visible";
+  instructionModal.style.display = "flex";
+});
 
-  // Close the modal when clicking on (x)
-  function closeModal() {
+// Close the instructions modal when the close button is clicked
+closeInstruction.addEventListener("click", () => {
+  instructionModal.style.visibility = "hidden";
+  instructionModal.style.display = "none";
+});
+
+// Close the instructions modal if the user clicks outside of it
+window.addEventListener("click", (e) => {
+  if (e.target === instructionModal) {
     instructionModal.style.visibility = "hidden";
     instructionModal.style.display = "none";
   }
+});
 
-  // Close the modal when clicking outside of the modal content
-  function outsideClick(e) {
-    if (e.target == instructionModal) {
-      instructionModal.style.display = "none";
-      instructionModal.style.visibility = "hidden";
-    }
-  }
-/* End code snippet extracted from Vernell Clark's Portfolio 2 Project */
-
-// Get modal elements
+// Game over modal logic
 const gameOverModal = document.getElementById("gameOverModal");
 const closeGameOver = document.querySelector(".close-gameover");
 const gameOverMessage = document.getElementById("gameOverMessage");
 const playAgainButton = document.getElementById("playAgainButton");
 
-// Function to show the game over modal
-function showGameOverModal(message) {
-  gameOverMessage.innerHTML = message; // Display the game over message
+// Show the game over modal with a custom message
+const showGameOverModal = (message) => {
+  gameOverMessage.innerHTML = message; // Set the message in the game over modal
   gameOverModal.style.display = "flex"; // Show the modal
-}
+};
 
-// Function to close the game over modal
-function closeGameOverModal() {
-  gameOverModal.style.display = "none";
-}
+// Close the game over modal when the close button is clicked
+const closeGameOverModal = () => {
+  gameOverModal.style.display = "none"; // Hide the modal
+};
 
-// Event listeners to close the modal when the 'x' is clicked or play again button is clicked
-closeGameOver.addEventListener("click", closeGameOverModal);
+closeGameOver.addEventListener("click", closeGameOverModal); // Attach event listener to close button
 playAgainButton.addEventListener("click", () => {
-  closeGameOverModal();
-  startGame(); // Optionally start the game again
+  closeGameOverModal(); // Close the modal
+  startGame(); // Restart the game
 });
 
-// Close the modal if clicked outside of modal content
+// Close the game over modal if the user clicks outside of it
 window.addEventListener("click", (e) => {
-  if (e.target == gameOverModal) {
-    closeGameOverModal();
+  if (e.target === gameOverModal) {
+    closeGameOverModal(); // Close the modal
   }
 });
 
-//
-// Stop Game Modal
-// Get modal elements for the stop game modal
+// Stop game modal logic
 const stopGameModal = document.getElementById("stopGameModal");
 const closeStopGameButton = document.querySelector(".close-stopgame");
 const stopGameScore = document.getElementById("stopGameScore");
 const restartGameButton = document.getElementById("restartGameButton");
 const closeStopGameModalButton = document.getElementById("closeStopGameModalButton");
 
-// Function to show the stop game modal with the score
-function showStopGameModal() {
-  stopGameScore.textContent = `${score}/${totalQuestions}`; // Display the user's score
+// Show the stop game modal with the current score
+const showStopGameModal = () => {
+  stopGameScore.textContent = `${score}/${totalQuestions}`; // Display the score
   stopGameModal.style.display = "flex"; // Show the modal
-}
+};
 
-// Function to close the stop game modal
-function closeStopGameModal() {
+// Close the stop game modal
+const closeStopGameModal = () => {
   stopGameModal.style.display = "none"; // Hide the modal
-}
+};
 
+closeStopGameButton.addEventListener("click", closeStopGameModal); // Attach event listener to close button
+closeStopGameModalButton.addEventListener("click", closeStopGameModal); // Attach event listener to additional close button
 
-// Event listeners to close the stop game modal
-closeStopGameButton.addEventListener("click", closeStopGameModal);
-closeStopGameModalButton.addEventListener("click", closeStopGameModal);
-
-// Event listener for restarting the game from the stop game modal
 restartGameButton.addEventListener("click", () => {
   closeStopGameModal(); // Close the modal
-  startGame();          // Restart the game
+  startGame(); // Restart the game
 });
 
-// Close the modal if clicked outside the modal content
+// Close the stop game modal if the user clicks outside of it
 window.addEventListener("click", (e) => {
-  if (e.target == stopGameModal) {
-    closeStopGameModal();
+  if (e.target === stopGameModal) {
+    closeStopGameModal(); // Close the modal
   }
 });
 
-
-
-
-// Get modal elements for the Learn Notes modal
+// Learn notes modal logic
 const learnNotesModal = document.getElementById("learnNotesModal");
 const learnNotesButton = document.getElementById("learn-notes");
 const closeLearnButton = document.querySelector(".close-learn");
 const closeLearnModalButton = document.getElementById("closeLearnModalButton");
 
-// Function to show the Learn Notes modal
-function showLearnNotesModal() {
-    learnNotesModal.style.display = "flex";
-}
-
-// Function to close the Learn Notes modal
-function closeLearnNotesModal() {
-    learnNotesModal.style.display = "none";
-}
-
-// Event listeners to open and close the Learn Notes modal
-learnNotesButton.addEventListener("click", showLearnNotesModal);
-closeLearnButton.addEventListener("click", closeLearnNotesModal);
-closeLearnModalButton.addEventListener("click", closeLearnNotesModal);
-
-// Close the modal if clicked outside the modal content
-window.addEventListener("click", (e) => {
-    if (e.target == learnNotesModal) {
-        closeLearnNotesModal();
-    }
+// Show the learn notes modal when the button is clicked
+learnNotesButton.addEventListener("click", () => {
+  learnNotesModal.style.display = "flex"; // Show the modal
 });
+
+// Close the learn notes modal when the close button is clicked
+closeLearnButton.addEventListener("click", () => {
+  learnNotesModal.style.display = "none"; // Hide the modal
+});
+
+// Close the learn notes modal when the additional close button is clicked
+closeLearnModalButton.addEventListener("click", () => {
+  learnNotesModal.style.display = "none"; // Hide the modal
+});
+
+// Close the learn notes modal if the user clicks outside of it
+window.addEventListener("click", (e) => {
+  if (e.target === learnNotesModal) {
+    learnNotesModal.style.display = "none"; // Hide the modal
+  }
+});
+
+
