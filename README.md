@@ -35,7 +35,7 @@ The Harmony Hub is an interactive tool designed to help users of all skill level
 
 ### Aim <a name="aim"></a>
 
-The aim of The Harmony Hub is to provide an easy-to-use platform for learning piano in a fun and structured way. It helps beginners start with music basics and gives advanced players a tool to improve their skills. With different difficulty levels and interactive exercises, the apgit p helps users build confidence and fluency in reading music and playing the piano.
+The aim of The Harmony Hub is to provide an easy-to-use platform for learning piano in a fun and structured way. It helps beginners start with music basics and gives advanced players a tool to improve their skills. With different difficulty levels and interactive exercises, the app helps users build confidence and fluency in reading music and playing the piano.
 
 ### Targeted Audience <a name="targeted-audience"></a>
 
