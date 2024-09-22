@@ -28,12 +28,15 @@ body {
   background-position: center;
 }
 
+main {
+  max-height: 80vh !important;
+  height: fit-content;
+}
+
 /* placeholder for the flashcard wrapper */
 .card-wrapper {
   flex-direction: row;
-  /* padding: 35px 40px; */
   border-radius: 20px;
-  /* background: var(--main); */
   background-color: rgba(0, 0, 0, 0.8);
   margin-bottom: 1rem;
   margin-left: 10px;
@@ -153,18 +156,21 @@ modal {
   padding: 20px 5px;
   border-radius: 20px;
   background: var(--main);
-  width: 100dvw;
+  /* width: 100dvw; */
   overflow: hidden;
+  width: fit-content;
+  max-width: 100vw;
 }
 
 
 /* center card image */
 
-.wrapper .keyboard-header {
+.keyboard-header {
   display: flex;
   color: black;
   align-items: center;
   justify-content: space-between;
+  min-width: fit-content;
 }
 
 
@@ -176,6 +182,7 @@ the key checkbox
 .keyboard-header h2 {
   font-size: 1.4rem;
 }
+
 .keyboard-header .column {
   display: flex;
   align-items: center;
@@ -187,10 +194,12 @@ the key checkbox
   margin-right: 15px;
   font-size: 1.2rem;
 }
+
 .keyboard-header input {
   outline: none;
   border-radius: 30px;
 }
+
 .volume-slider input {
   accent-color: #fff;
 }
@@ -237,15 +246,19 @@ a lesson
 
 .piano-keys {
   display: flex;
+  justify-content: center;
   list-style: none;
   margin-top: 40px;
+  padding-left: 0px;
 }
+
 .piano-keys .key {
   cursor: pointer;
   user-select: none;
   position: relative;
   text-transform: uppercase;
 }
+
 .piano-keys .black {
   z-index: 2;
   width: 44px;
@@ -254,10 +267,12 @@ a lesson
   border-radius: 0 0 5px 5px;
   background: linear-gradient(#333, #000);
 }
+
 .piano-keys .black.active {
   box-shadow: inset -5px -10px 10px rgba(24, 24, 24, 0.1);
   background: linear-gradient(to bottom, #000, #434343);
 }
+
 .piano-keys .white {
   height: 250px;
   width: 75px;
@@ -265,10 +280,12 @@ a lesson
   border: 1px solid #000;
   background: linear-gradient(#fff 96%, #eee 4%);
 }
+
 .piano-keys .white.active {
   box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to bottom, #fff 0%, #eee 100%);
 }
+
 .piano-keys .key span {
   position: absolute;
   bottom: 20px;
@@ -277,9 +294,11 @@ a lesson
   font-size: 1.13rem;
   text-align: center;
 }
+
 .piano-keys .key.hide span {
   display: none;
 }
+
 .piano-keys .black span {
   bottom: 13px;
   color: #888888;
@@ -318,4 +337,155 @@ a lesson
   background: unset !important;
   background-color: red !important; /* for incorrect keys */
   color: white !important;
+}
+
+
+
+
+
+/* 
+
+  Responsive Design 
+
+*/
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1200px) {
+  /* Decrease the size of piano keys for tablets */
+  .piano-keys .black {
+      width: 35px;
+      height: 140px;
+      margin: 0 -17px; /* Adjust margin to align with white keys */
+  }
+
+  .piano-keys .white {
+      width: 65px; /* Adjust width for better alignment */
+      height: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* For smaller tablets */
+  .piano-keys .black {
+      width: 30px;
+      height: 120px;
+      margin: 0 -15px; /* Adjust margin to prevent gaps */
+  }
+
+  .piano-keys .white {
+      width: 60px;
+      height: 180px;
+  }
+
+  .wrapper {
+      padding: 10px;
+  }
+
+  .volume-slider, .key-checkbox {
+      margin-top: 10px;
+  }
+
+  .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
+    font-size: 0.8em;
+  }
+
+  .volume-slider input {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* For mobile devices */
+  .piano-keys {
+    margin-top: 0px;
+  }
+
+
+  .piano-keys .black {
+      width: 28px;
+      height: 100px;
+      margin: 0 -12px; /* Tighter margin to remove gaps */
+  }
+
+  .piano-keys .white {
+      width: 55px;
+      height: 150px;
+  }
+
+  .keyboard-header {
+      /* flex-direction: column; */
+      align-items: center;
+      padding: 10px;
+  }
+
+  .wrapper {
+      width: 100vw;
+      padding: 5px;
+  }
+
+  .card-wrapper {
+      width: 90vw;
+  }
+
+  .modal-contents {
+      max-width: 90%;
+      max-height: 70vh;
+  }
+
+  .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 655px) {
+  .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
+    font-size: 0.6em;
+  }
+}
+
+
+@media (max-width: 600px) {
+  /* For very small devices (mobiles) */
+  /* Force landscape orientation */
+  .piano-keys {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+  }
+
+  .piano-keys .black {
+      width: 25px;
+      height: 90px;
+      margin: 0 -10px; /* Tighter margins to avoid gaps */
+  }
+
+  .piano-keys .white {
+      width: 50px;
+      height: 130px;
+  }
+
+  /* Adjust body orientation */
+  body {
+      transform: rotate(-90deg);
+      transform-origin: top left;
+      width: 100vh;
+      height: 100vw;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100vw;
+      left: 0;
+  }
+
+  .wrapper {
+      transform: rotate(90deg);
+      width: 100vw;
+  }
+
+  .card-wrapper {
+      width: 80vw;
+      height: fit-content;
+  }
 }

@@ -131,7 +131,7 @@ const handlePianoKeyClick = (event) => {
     clickedKey.classList.add("correct"); // Add 'correct' class to the key
   } else {
     // Show incorrect feedback if the wrong key is pressed
-    feedbackElement.innerHTML = `INCORRECT!<br>The correct note was: ${currentFlashcard.noteName}`;
+    feedbackElement.innerHTML = `INCORRECT!<br><span class="fs-4">The correct note was: ${currentFlashcard.noteName}<span>`;
     feedbackElement.classList.add("red"); // Add 'red' class for incorrect answer
     clickedKey.classList.add("incorrect"); // Add 'incorrect' class to the key
   }
