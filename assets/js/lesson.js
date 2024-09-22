@@ -99,7 +99,7 @@ const flashcards = [
 let currentFlashcard = null; // Current flashcard in the game
 let score = 0; // Player's score
 let totalQuestions = 0; // Total number of questions asked in the game
-let timeLeft = 30; // Time left for the game in seconds
+let timeLeft = 999999999999; // Time left for the game in seconds
 let gameStarted = false; // Boolean to track whether the game has started
 let intervalId; // ID for the interval used in the timer
 
@@ -150,7 +150,7 @@ const startGame = () => {
   gameStarted = true; // Set gameStarted to true
   score = 0; // Reset score
   totalQuestions = 0; // Reset total questions
-  timeLeft = 30; // Reset time left
+  timeLeft = 999999999999; // Reset time left
 
   const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
   wrapper.classList.remove("hidden", "fade-out"); // Show the flashcard wrapper

@@ -440,6 +440,71 @@ a lesson
   }
 }
 
+@media (max-width: 768px) {
+  #flashcard-wrapper {
+    padding: 10px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%; /* Ensure the card wrapper takes the full width */
+    margin-bottom: 5px;
+  }
+
+  .timer-div {
+    flex: 1;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .feedback-div {
+    flex: 1;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  .timer-div p, .feedback-div p {
+    font-size: 0.8em !important;
+  }
+
+  .card-wrapper {
+    padding: 10px;
+  }
+
+  .timer-div, .image-div, .feedback-div {
+    height: fit-content;
+  }
+
+  .timer-div p .feedback-div p, .feedback-div p span {
+    font-size: 0.9em !important;
+  }
+
+  .image-div img {
+    height: 100px;
+  }
+
+  .keyboard-header {
+    padding: 0px !important;
+    height: fit-content;
+    /* margin: 10px !important; */
+  }
+
+  .volume-slider, .key-checkbox {
+    margin-top: 0px;
+  }
+
+  #learn-notes {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 667px) {
+  .image-div img {
+    height: 80px;
+  }
+}
+
+
 @media (max-width: 655px) {
   .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
     font-size: 0.6em;
@@ -447,9 +512,7 @@ a lesson
 }
 
 
-@media (max-width: 600px) {
-  /* For very small devices (mobiles) */
-  /* Force landscape orientation */
+/* @media (max-width: 600px) {
   .piano-keys {
       flex-direction: row;
       flex-wrap: nowrap;
@@ -459,7 +522,7 @@ a lesson
   .piano-keys .black {
       width: 25px;
       height: 90px;
-      margin: 0 -10px; /* Tighter margins to avoid gaps */
+      margin: 0 -10px;
   }
 
   .piano-keys .white {
@@ -467,7 +530,6 @@ a lesson
       height: 130px;
   }
 
-  /* Adjust body orientation */
   body {
       transform: rotate(-90deg);
       transform-origin: top left;
@@ -489,3 +551,4 @@ a lesson
       height: fit-content;
   }
 }
+ */
