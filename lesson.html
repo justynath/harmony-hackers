@@ -11,6 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+
+    <!-- driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
+
+
     <title>Harmony Hub | Lesson</title>
 </head>
 
@@ -19,7 +25,7 @@
     <main>
         <!-- div for our flash-cards-->
 
-        <div class="card-wrapper p-4 mx-auto" id="flashcard-wrapper">
+        <div class=" card-wrapper p-4 mx-auto" id="flashcard-wrapper">
             <div class="timer-div text-center m-1">
                 <p id="timer" class="text-white fs-2"></p>
             </div>
@@ -89,7 +95,7 @@
             middle row of the keyboard for white, upper row for black trying to 
             make the keys similar to the layout of a 25 key piano 
             used this image as ref https://shorturl.at/5yA5P -->
-            <ul class="piano-keys">
+            <ul class="piano-keys" id="piano-keys">
                 <li class="key white shadow" data-key="C1"><span>C4</span></li>
                 <li class="key black shadow" data-key="CS1"><span>C# D♭</span></li>
                 <li class="key white shadow" data-key="D1"><span>D</span></li>
@@ -131,6 +137,7 @@
         </script>
     <script src="assets/js/lesson.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/tour.js"></script>
 </body>
 
 
