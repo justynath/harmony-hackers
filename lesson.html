@@ -11,6 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+
+    <!-- driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
+
+
     <title>Harmony Hub | Lesson</title>
 </head>
 
@@ -19,7 +25,7 @@
     <main>
         <!-- div for our flash-cards-->
 
-        <div class="card-wrapper p-4 mx-auto" id="flashcard-wrapper">
+        <div class=" card-wrapper p-4 mx-auto" id="flashcard-wrapper">
             <div class="timer-div text-center m-1">
                 <p id="timer" class="text-white fs-2"></p>
             </div>
@@ -33,20 +39,75 @@
 
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
-
             <!-- Controls for the user??? (tbd empty header for now goes here)-->
             <div class="keyboard-header">
                 <div class="buttons-container text-center">
                     <button id="start-game" class="btn btn-dark m-3">Start Game</button>
-                    <button id="how-to-play" class="btn btn-dark m-3">How to Play</button>
+                    <button id="instructionButton" class="btn btn-dark m-3">How to Play</button>
+                    <!-- <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button> -->
                 </div>
-                <!-- <div class="column difficulty-radio">
-                </div> -->
+                <!-- The Modal -->
+                <div id="instructionModal" class="justify-content-center modal">
+                    <div class="modal-contents">
+                        <span class="close">&times;</span>
+                        <h2>Instructions for note flashcard game!</h2>
+                        <p class="text-start">The aim of the game is to get as many treble clef notes right within a set
+                            time limit.
+                            The way the game works is that once you click the start game button, a flashcard shows at
+                            the top of the screen.
+                            <br class="my-2">
+                            The user clicks a key and if they get it right, the key turns green and a correct message
+                            appears under the flaschard. If the user gets
+                            the note incorrect, the key will highlight in red and an incorrect message will appear under
+                            the flaschard.
+                            <br class="my-2">
+                            When the game is over a pop-up will appear with a score. At any point during the game, you
+                            can press the stop button to end the game.
+                        </p>
+                        <p>Hope you enjoy your musical journey! </p>
+                    </div>
+                </div>
+                <!-- Game Over Modal -->
+                <div id="gameOverModal" class="justify-content-center modal">
+                    <div class="modal-contents">
+                        <span class="close-gameover">&times;</span>
+                        <h2>Game Over!</h2>
+                        <p id="gameOverMessage"></p>
+                        <button type="button" id="playAgainButton">Play Again</button>
+                    </div>
+                </div>
+                <!-- Stop Game Modal -->
+                <div id="stopGameModal" class="justify-content-center modal">
+                    <div class="modal-contents">
+                        <span class="close-stopgame">&times;</span>
+                        <h2>Game Stopped!</h2>
+                        <p>Your Score: <span id="stopGameScore"></span></p>
+                        <button type="button" id="restartGameButton" class="btn btn-primary">Restart Game</button>
+                        <button type="button" class="btn btn-secondary" id="closeStopGameModalButton">Close</button>
+                    </div>
+                </div>
+                <!-- Learn Notes Modal -->
+                <div id="learnNotesModal" class="justify-content-center modal">
+                    <div class="modal-contents">
+                        <span class="close-learn">&times;</span>
+                        <h2>Learn Musical Notes</h2>
+                        <p>In this section, you can learn about musical notes and how they are used in sheet music.</p>
+                        <img src="assets/images/clef-diagram.jpeg" alt="Clef Diagram" class="clef-diagram">
+                        <button type="button" id="learnMoreButton" class="btn btn-primary">
+                            <a href="https://www.chordsheet-maker.com/blog/music-theory-crash-course-1-notes"
+                                target="_blank" style="color:white;text-decoration:none;">Learn More</a>
+                        </button>
+                        <button type="button" id="closeLearnModalButton" class="btn btn-secondary">Close</button>
+                    </div>
+                </div>
+
+
                 <div class="column volume-slider">
                     <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
                 </div>
                 <div class="column key-checkbox">
-                    <span>Show Key Names</span><input type="checkbox" checked>
+                    <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button>
+                    <span>Show Key Names:</span><input type="checkbox" checked>
                 </div>
             </div>
             <!-- Create a ul list to hold each key, with each key being a list item
@@ -54,7 +115,7 @@
             middle row of the keyboard for white, upper row for black trying to 
             make the keys similar to the layout of a 25 key piano 
             used this image as ref https://shorturl.at/5yA5P -->
-            <ul class="piano-keys">
+            <ul class="piano-keys" id="piano-keys">
                 <li class="key white shadow" data-key="C1"><span>C4</span></li>
                 <li class="key black shadow" data-key="CS1"><span>C# D♭</span></li>
                 <li class="key white shadow" data-key="D1"><span>D</span></li>
@@ -96,6 +157,7 @@
         </script>
     <script src="assets/js/lesson.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/tour.js"></script>
 </body>
 
 
