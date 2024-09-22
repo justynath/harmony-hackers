@@ -144,9 +144,13 @@ modal {
   font-style: italic;
 }
 
+.diagram-container {
+  max-width: 100%;
+}
 
 .clef-diagram {
   height: 100px;
+  margin-bottom: 10px;
 }
 
 
@@ -156,7 +160,6 @@ modal {
   padding: 20px 5px;
   border-radius: 20px;
   background: var(--main);
-  /* width: 100dvw; */
   overflow: hidden;
   width: fit-content;
   max-width: 100vw;
@@ -349,20 +352,17 @@ a lesson
 
 */
 
-
-
-
 /* MEDIA QUERIES */
 @media (max-width: 1200px) {
   /* Decrease the size of piano keys for tablets */
   .piano-keys .black {
       width: 35px;
       height: 140px;
-      margin: 0 -17px; /* Adjust margin to align with white keys */
+      margin: 0 -17px;
   }
 
   .piano-keys .white {
-      width: 65px; /* Adjust width for better alignment */
+      width: 65px;
       height: 200px;
   }
 }
@@ -438,16 +438,14 @@ a lesson
   .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
     font-size: 0.7em;
   }
-}
 
-@media (max-width: 768px) {
   #flashcard-wrapper {
     padding: 10px !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    width: 100%; /* Ensure the card wrapper takes the full width */
+    width: 100%;
     margin-bottom: 5px;
   }
 
@@ -510,45 +508,3 @@ a lesson
     font-size: 0.6em;
   }
 }
-
-
-/* @media (max-width: 600px) {
-  .piano-keys {
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-  }
-
-  .piano-keys .black {
-      width: 25px;
-      height: 90px;
-      margin: 0 -10px;
-  }
-
-  .piano-keys .white {
-      width: 50px;
-      height: 130px;
-  }
-
-  body {
-      transform: rotate(-90deg);
-      transform-origin: top left;
-      width: 100vh;
-      height: 100vw;
-      overflow-x: hidden;
-      position: absolute;
-      top: 100vw;
-      left: 0;
-  }
-
-  .wrapper {
-      transform: rotate(90deg);
-      width: 100vw;
-  }
-
-  .card-wrapper {
-      width: 80vw;
-      height: fit-content;
-  }
-}
- */
