@@ -1,5 +1,7 @@
 # Harmony Hub
 
+## Code Institute Septmeber 2024 Hackathon - Classical Music Month
+
 ## Overview 
 
 The Harmony Hub is an interactive tool designed to help users of all skill levels improve their piano playing abilities. The app features a virtual keyboard and a series of flashcards displaying musical notes. Users are challenged to identify and press the corresponding keys on the virtual keyboard. Ideal for beginners looking to learn piano basics or for experienced players wanting to refine their skills, the app offers varying levels of difficulty to suit different proficiency levels. Whether you’re starting your musical journey or brushing up on your technique, this app provides a practical and engaging way to enhance your keyboard skills.
@@ -41,6 +43,37 @@ The Harmony Hub is designed for a wide range of users, from beginners to more ex
 
 ### User Stories <a name="user-stories"></a>
 
+| User story ID [epicid.usid] | Task | Description | Issue No. |
+
+**Developer**
+
+As a developer, I want to create a landing page that sets the tone for the app and reflects its overall theme.
+
+As a developer, I want to implement a flashcard system to display musical notes, allowing users to learn to recognize them.
+
+As a developer, I want to create a feedback mechanism that confirms whether the correct key was pressed, providing users with instant results.
+
+As a developer, I want to include tutorial and instructional resources within the app, so users can learn about keyboard skills.
+
+As a developer, I want to introduce myself to users, showcasing my skills and involvement in the project.
+
+As a developer, I want to establish a way to receive questions and feedback from users, helping me better understand their needs.
+
+**User/Player**
+
+As a player, I want to explore a visually appealing landing page, so I feel excited to start using the app.
+
+As a player, I want to practice identifying musical notes with flashcards, so I can enhance my music skills in a fun way.
+
+As a player, I want immediate feedback on my key presses, so I can quickly learn and adjust my technique.
+
+As a player, I want easy access to helpful tutorials and instructions, so I can improve my understanding of keyboard skills at my own pace.
+
+As a player, I want to learn about the creator of the app, so I can appreciate their expertise and vision.
+
+As a player, I want to share my thoughts and questions about the app, so I can contribute to its improvement.
+
+
 ## UX <a name="ux"></a>
 
 ### Strategy <a name="strategy"></a>
@@ -64,7 +97,26 @@ Each page includes **navbar** for smooth navigation, and **footer** containing i
 
 The website is clear and inviting, aiming to provide both entertainment and education. Features are organized by importance.
 
-[wireframes](.link here)
+**Wireframes**
+
+| Mobile | Desktop |
+| --- | --- |
+| Landing Page | 
+|![landing page mobile](./assets/images/readme-images/home-mobile.png) | ![landing page desktop](./assets/images/readme-images/home-desktop.png) |
+|![lessons page mobile](./assets/images/readme-images/lessons-mobile.png) | ![lessons page desktop](./assets/images/readme-images/lessons-desktop.png) |
+|![about page mobile](./assets/images/readme-images/about-mobile.png) | ![about page desktop](./assets/images/readme-images/about-desktop.png) |
+|![contact page mobile](./assets/images/readme-images/contact-mobile.png) | ![contact page desktop](./assets/images/readme-images/contact-desktop.png) |
+
+**Mockups**
+
+| Mobile | Desktop |
+| --- | --- |
+| Landing Page | 
+|![landing page mobile](./assets/images/readme-images/home-mobile-mock.png) | ![landing page desktop](./assets/images/readme-images/home-desktop-mock.png) |
+|![lessons page mobile](./assets/images/readme-images/lessons-mobile-mock.png) | ![lessons page desktop](./assets/images/readme-images/lessons-desktop-mock.png) |
+|![about page mobile](./assets/images/readme-images/about-mobile-mock.png) | ![about page desktop](./assets/images/readme-images/about-desktop-mock.png) |
+|![contact page mobile](./assets/images/readme-images/contact-mobile-mock.png) | ![contact page desktop](./assets/images/readme-images/contact-desktop-mock.png) |
+
 
 ### Surface <a name="surface"></a>
 
@@ -72,7 +124,8 @@ The website is clear and inviting, aiming to provide both entertainment and educ
 
 We use this color palette as the base for a clean and aesthetic look.
 
-![colour palette](.link here)
+![colour palette](./assets/images/readme-images/colour-palette.png) 
+
 
 
 #### Images
