@@ -33,7 +33,6 @@
 
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
-
             <!-- Controls for the user??? (tbd empty header for now goes here)-->
             <div class="keyboard-header">
                 <div class="buttons-container text-center">
@@ -46,10 +45,14 @@
                         <span class="close">&times;</span>
                         <h2>Instructions for note flashcard game!</h2>
                         <p>The aim of the game is to get as many treble clef notes right within a set time limit.
-                            The way the game works is that once you click the start game button, a flashcard shows at the top of the screen.
-                            The user clicks a key and if they get it right, the key turns green and a correct message appears under the flaschard. If the user gets
-                            the note incorrect, the key will highlight in red and an incorrect message will appear under the flaschard.
-                            When the game is over a pop-up will appear with a score. At any point during the game, you can press the stop button to end the game.
+                            The way the game works is that once you click the start game button, a flashcard shows at
+                            the top of the screen.
+                            The user clicks a key and if they get it right, the key turns green and a correct message
+                            appears under the flaschard. If the user gets
+                            the note incorrect, the key will highlight in red and an incorrect message will appear under
+                            the flaschard.
+                            When the game is over a pop-up will appear with a score. At any point during the game, you
+                            can press the stop button to end the game.
                         </p>
                         <p>Hope you enjoy your musical journey! </p>
                     </div>
@@ -63,6 +66,17 @@
                         <button type="button" id="playAgainButton">Play Again</button>
                     </div>
                 </div>
+                <!-- Stop Game Modal -->
+                <div id="stopGameModal" class="justify-content-center modal">
+                    <div class="modal-contents">
+                        <span class="close-stopgame">&times;</span>
+                        <h2>Game Stopped!</h2>
+                        <p>Your Score: <span id="stopGameScore"></span></p>
+                        <button type="button" id="restartGameButton" class="btn btn-primary">Restart Game</button>
+                        <button type="button" class="btn btn-secondary" id="closeStopGameModalButton">Close</button>
+                    </div>
+                </div>
+
                 <div class="column volume-slider">
                     <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
                 </div>
