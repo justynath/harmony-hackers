@@ -15,31 +15,115 @@
 </head>
 
 <body>
-    <header>Header</header>
+    <header>Navbar here..</header>
+    <h1 id="lessons-title" class="text-uppercase">Welcome to the Musical Note Flashcards game!!</h1>
+    <p>A game where you can practice your treble clef note reading in an interactive way using a digital keyboard....
+    </p>
     <main>
-        <!-- div for our flash-cards-->
-         
-        <div class="card-wrapper">
-            <div class="buttons-container text-center">
-            <button id="start-game" class="btn btn-dark m-3">Start Game</button>
-            <button id="how-to-play" class="btn btn-dark m-3">How to Play</button>
-        </div>
-            <img id="flashcard-image" src="" class="d-block w-70 mx-auto" />
-            <p id="feedback" class="text-center fs-1 m-2"></p>
-            </div>
-        </div>>
-        <!-- Wrapper for the piano object-->
-        <div class="wrapper">
+        <main>
+            <!-- div for our flash-cards-->
 
-            <!-- Controls for the user??? (tbd empty header for now goes here)-->
-            <header>
-                <div class="column difficulty-radio">
+            <div class="card-wrapper p-4 mx-auto" id="flashcard-wrapper">
+                <div class="timer-div text-center m-1">
+                    <p id="timer" class="text-white fs-2"></p>
                 </div>
-                <div class="column volume-slider">
-                    <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
+                <div class="image-div">
+                    <img id="flashcard-image" src="" class="d-block mx-auto shadow rounded" />       
                 </div>
-                <div class="column key-checkbox">
-                    <span>Show Key Names</span><input type="checkbox" checked>
+                <p id="assistance" class="note-assistance"></p>
+                <div class="feedback-div text-center m-2">
+                    <p id="feedback" class="fs-2 m-2 fw-bold"></p>
+                </div>
+            </div>
+
+            <!-- Wrapper for the piano object-->
+            <div class="wrapper">
+                <!-- Controls for the user??? (tbd empty header for now goes here)-->
+                <div class="keyboard-header px-3">
+                    <div class="buttons-container text-center">
+                        <button id="start-game" class="btn btn-dark m-0 m-lg-3">Start Game</button>
+                        <button id="instructionButton" class="btn btn-dark m-0 m-lg-3">How to Play</button>
+                    </div>
+                    <!-- The Modal -->
+                    <div id="instructionModal" class="justify-content-center modal">
+                        <div class="modal-contents">
+                            <span class="close">&times;</span>
+                            <h2>Instructions for note flashcard game!</h2>
+                            <p class="text-start">The aim of the game is to get as many treble clef notes right within a
+                                set
+                                time limit.
+                                The way the game works is that once you click the start game button, a flashcard shows
+                                at
+                                the top of the screen.
+                                <br class="my-2">
+                                The user clicks a key and if they get it right, the key turns green and a correct
+                                message
+                                appears under the flaschard. If the user gets
+                                the note incorrect, the key will highlight in red and an incorrect message will appear
+                                under
+                                the flaschard.
+                                <br class="my-2">
+                                When the game is over a pop-up will appear with a score. At any point during the game,
+                                you
+                                can press the stop button to end the game.
+                            </p>
+                            <p>Hope you enjoy your musical journey! </p>
+                        </div>
+                    </div>
+                    <!-- Game Over Modal -->
+                    <div id="gameOverModal" class="justify-content-center modal">
+                        <div class="modal-contents">
+                            <span class="close-gameover">&times;</span>
+                            <h2>Game Over!</h2>
+                            <p id="gameOverMessage"></p>
+                            <button type="button" id="playAgainButton" class="btn btn-dark">Play Again</button>
+                        </div>
+                    </div>
+                    <!-- Stop Game Modal -->
+                    <div id="stopGameModal" class="justify-content-center modal">
+                        <div class="modal-contents">
+                            <span class="close-stopgame close">&times;</span>
+                            <h2>Game Stopped!</h2>
+                            <p>Your Score: <span id="stopGameScore"></span></p>
+                            <button type="button" id="restartGameButton" class="btn btn-primary">Restart Game</button>
+                            <button type="button" class="btn btn-secondary" id="closeStopGameModalButton">Close</button>
+                        </div>
+                    </div>
+                    <!-- Learn Notes Modal -->
+                    <div id="learnNotesModal" class="justify-content-center modal">
+                        <div class="modal-contents">
+                            <span class="close-learn close">&times;</span>
+                            <h2>Learn Musical Notes</h2>
+                            <p>In this section, you can learn about musical notes and how they are used in sheet music.
+                            </p>
+                            <div class="diagram-container">
+                                <img src="assets/images/training-notes.png" alt="Clef Diagram" class="clef-diagram">
+                            </div>
+                            <button type="button" id="learnMoreButton" class="btn btn-primary">
+                                <a href="https://www.chordsheet-maker.com/blog/music-theory-crash-course-1-notes"
+                                    target="_blank" style="color:white;text-decoration:none;">Learn More</a>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="column volume-slider">
+                        <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
+                    </div>
+
+                    <div class="column learn-diff-column">
+                        <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button>
+                        <div class="column difficulty-select" style="width:200px;">
+                            
+                            <select id="diff-select">
+                                <option value="" disabled selected>Select Difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                                <option value="maestro">Maestro</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </header>
             <!-- Create a ul list to hold each key, with each key being a list item
@@ -80,7 +164,6 @@
             <div>
 
     </main>
-    <footer>Footer</footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
         </script>
