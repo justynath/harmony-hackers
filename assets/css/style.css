@@ -29,6 +29,11 @@ body {
     grid-template-rows: auto 1fr auto;
   }
   /****** Navigation start *******/  
+    
+  .background{
+    background: url(../images/new-hero-image-1.webp) no-repeat center center/cover fixed;
+   }
+  
   ul {
     list-style: none;
   }
@@ -38,11 +43,12 @@ body {
   }
   
   header {
-    position: sticky;
+    position: fixed;
     top: 0px;
-    background-color: var(--main);
+    background-color: transparent;
     width: 100%;
-    z-index: 1000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 3;
   }
   
   .nav-container {
@@ -70,18 +76,14 @@ body {
   
   
   .logo {
-    color: var(--text);
+    color: var(--main);
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 900;
     font-family: "Satisfy", serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    line-height: 3rem;
+    line-height: 1.4rem;
+    padding-top: .8rem;
   }
   
-  .logo span {
-    font-weight: 300;
-  }
   
   
   .thenav-links > ul {
@@ -96,8 +98,8 @@ body {
   }
   
   .thenav-link > a {
-    line-height: 3rem;
-    color: var(--text);
+    line-height: 4rem;
+    color: var(--main);
     padding: 0 3rem;
     letter-spacing: 1px;
     font-size: .95rem;
@@ -106,9 +108,8 @@ body {
     align-items: center;
     justify-content: space-between;
     transition: .5s;
-    
   }
-  
+
   .thenav-link:hover > a {
     transform: scale(1.1);
     background-color: var(--sub); 
@@ -131,34 +132,12 @@ body {
     justify-content: flex-end;
   }
   
-  .hamburger-menu div {
-    width: 1.6rem;
-    height: 3px;
-    border-radius: 3px;
-    background-color: var(--text);
+  .hamburger-menu i {
+    color: var(--main);
     position: relative;
     z-index: 1001;
-    transition: .5s;
   }
   
-  .hamburger-menu div:before,
-  .hamburger-menu div:after {
-    content: '';
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    background-color: var(--text);
-    border-radius: 3px;
-    transition: .5s;
-  }
-  
-  .hamburger-menu div:before {
-    transform: translateY(-7px);
-  }
-  
-  .hamburger-menu div:after {
-    transform: translateY(7px);
-  }
   
   #check {
     position: absolute;
@@ -174,8 +153,7 @@ body {
   }
   
   #check:checked ~ .hamburger-menu-container .hamburger-menu div {
-    background-color: transparent;
-  }
+    background-color: var(--main);  }
   
   #check:checked ~ .hamburger-menu-container .hamburger-menu div:before {
     transform: translateY(0) rotate(-45deg);
@@ -196,6 +174,11 @@ body {
       transform: translateY(0px);
     }
   }
+
+  .logo, .thenav-link > a {
+    background-color: #00000003;
+  }
+  
   
   @media (max-width: 920px) {
     .hamburger-menu-container {
@@ -205,7 +188,7 @@ body {
     #check {
       display: block;
     }
-  
+ 
     .nav-btn {
       position: fixed;
       height: calc(100vh - 3rem);
@@ -217,7 +200,7 @@ body {
       align-items: center;
       justify-content: space-between;
       overflow-x: hidden;
-      overflow-y: auto;
+      overflow-y: hidden;
       transform: translateX(100%);
       transition: .65s;
     }
@@ -249,6 +232,9 @@ body {
     .thenav-link > a {
       line-height: 1;
       padding: 1.6rem 2rem;
+      color: var(--text);
+      font-size: 1.25rem;
+      background-color: #0000000a;
     }
   
     .thenav-link:hover > a {
@@ -267,7 +253,7 @@ body {
     }
    
   }
-  /****** Navigation end *******/  
+  /****** Navigation end *******/
   h1, h2 {
     margin: 2rem auto;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -279,7 +265,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
   
-  /****** Footer *****/
+    /****** Footer *****/
   footer {
     bottom: 0;
     left: 0;
@@ -287,9 +273,7 @@ body {
     line-height: 3em;
     width: 100%;
     align-content: center;
-    background-color: #8f4e18;
-    color: var(--text);
-    width: 100%;
+    background-color: #742611;
   }
 
   .footer-section{
@@ -299,7 +283,6 @@ body {
     list-style: none;
     display: inline;
     margin-right: 1rem;
-    color: var(--text)
   }
 
   footer .footer-section li a{
