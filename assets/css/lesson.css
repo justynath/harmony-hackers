@@ -76,36 +76,38 @@ body {
   opacity: 1; 
 }
 
-
+/* Code snippet extracted from Vernell Clark's second Portfolio Project */
 /* Basic styles for modal backdrop */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); 
-    justify-content: center;
-    align-items: center; 
-    transition: opacity 0.3s ease; 
-    z-index: 1000; 
+modal {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  transition: visibility 0s, opacity 0.3s ease;
+  z-index: 1000;
 }
+
 /* Modal content styling */
-.modal-content {
-    background-color: white;
-    width: 50%; 
-    height: 50%; 
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    position: relative; 
-    overflow-y: auto; 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
+.modal-contents {
+  background-color: white;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80dvh;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  bottom: 32%;
+  text-align: center;
 }
 
 /* The Modal Close Button */
-.close {
+.close, .close-gameover {
     position: absolute;
     top: 0.4rem;
     right: 0.4rem;
@@ -113,13 +115,14 @@ body {
     color: #b6b6b6;
     font-size: 4.8rem;
     font-weight: lighter;
-    line-height: 1.6rem;
+    line-height: 2.0rem;
     border: 1px solid #b6b6b6;
     border-radius: 50%;
     width: 2.2rem;
     height: 2.2rem;
     cursor: pointer;
 }
+/* End of CSS Taken extracted from Vernell Clark's 2nd Portfolio Project */
 
 .close:hover,
 .close:focus {
@@ -143,10 +146,11 @@ body {
 /* our keyboard body */
 
 .wrapper {
-  flex-direction: row;
-  padding: 35px 40px;
+  padding: 20px 5px;
   border-radius: 20px;
   background: var(--main);
+  width: 100dvw;
+  overflow: hidden;
 }
 
 
