@@ -35,7 +35,7 @@ The Harmony Hub is an interactive tool designed to help users of all skill level
 
 ### Aim <a name="aim"></a>
 
-The aim of The Harmony Hub is to provide an easy-to-use platform for learning piano in a fun and structured way. It helps beginners start with music basics and gives advanced players a tool to improve their skills. With different difficulty levels and interactive exercises, the app helps users build confidence and fluency in reading music and playing the piano.
+The aim of The Harmony Hub is to provide an easy-to-use platform for learning piano in a fun and structured way. It helps beginners start with music basics and gives advanced players a tool to improve their skills. With different difficulty levels and interactive exercises, the apgit p helps users build confidence and fluency in reading music and playing the piano.
 
 ### Targeted Audience <a name="targeted-audience"></a>
 
@@ -127,7 +127,6 @@ We use this color palette as the base for a clean and aesthetic look.
 ![colour palette](./assets/images/readme-images/colour-palette.png) 
 
 
-
 #### Images
 
 - The hero image was created by DALL-E and is designed to set the tone for a classical music experience.
@@ -142,17 +141,13 @@ We use this color palette as the base for a clean and aesthetic look.
 
 [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) Employed to style the pages, creating a visually appealing front-end that enhances user experience through thoughtful design and layout.
 
-**Bootstrap**: Implemented to build a responsive navbar and organize layouts for cards and flashcards, ensuring a seamless and user-friendly interface across all devices.
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=563d7c)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) Implemented to build a responsive navbar and organize layouts for cards and flashcards, ensuring a seamless and user-friendly interface across all devices.
 
-**React**: Utilized to incorporate animations and dynamic features, enhancing interactivity and making the user experience more engaging.
+[![React](https://img.shields.io/badge/React-grey?logo=react&logoColor=61DAFB)](https://en.wikipedia.org/wiki/React_(JavaScript_library)) Utilized to incorporate animations and dynamic features, enhancing interactivity and making the user experience more engaging.
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) Applied to develop the core functionality of the app, including game mechanics and user interactions, allowing for a responsive and interactive learning environment.
 
 [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) Used for creating wireframes and mockups, helping visualize the app's design and layout before development, ensuring a clear plan and efficient workflow.
-
-**Sound Editing Software**: Employed to edit and refine audio components, ensuring high-quality sound for the app's musical elements.
-
-**Open Broadcaster Software (OBS)**: Used for screen recording and presentations, allowing for the creation of tutorials and promotional content to showcase the app effectively.
 
 [![Git](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) Used for version control to keep track of changes in the codebase. (`git add`, `git commit`, `git push`)
 
@@ -161,6 +156,10 @@ We use this color palette as the base for a clean and aesthetic look.
 [![Gitpod](https://img.shields.io/badge/Gitpod-grey?logo=gitpod&logoColor=FFAE33)](https://gitpod.io) used as a cloud-based IDE for development.
 
 [![VSCode](https://img.shields.io/badge/VSCode-grey?logo=htmx&logoColor=007ACC)](https://code.visualstudio.com) Used as a local IDE for development, with built-in Git support and extensions to streamline coding and debugging.
+
+**Sound Editing Software**: Employed to edit and refine audio components, ensuring high-quality sound for the app's musical elements.
+
+**Open Broadcaster Software (OBS)**: Used for screen recording and presentations, allowing for the creation of tutorials and promotional content to showcase the app effectively.
 
 
 ## Agile Development Process <a name="agile"></a>
@@ -193,6 +192,8 @@ We kept everyone updated on project progress and discussions by using the Slack 
 
 ### Error Pages 
 
+
+
 ## Testing
 
 
@@ -213,10 +214,10 @@ A big thank you to all fellow team members for their great work.
 
 | Team Member | Role | GitHub |
 | --- | --- | --- |
-| Alan Chapman | Lead Designer/Content/Music Lessons | [Github](https://github.com/alanjameschapman) |
-| Hannah Olbrich | Frontend/Content/Music Lessons | [Github](https://github.com/hannahro15) |
-| Jibril Abshir | Lead Frontend Developer/Landing Page | [Github](https://github.com/JibAb96) |
-| Justyna Thompson | Presentation/Error Pages/Documentation | [Github](https://github.com/justynath) |
-| Shaun Anderton | Lead Javascript Developer/Music Lessons | [Github](https://github.com/ShaAnder) |
-| Stephen Beese | Frontend/About Page/Music Lessons | [Github](https://github.com/stephenbeese) |
-| Vernell Clark | Scrum Lead/Git + Github/Advisor | [Github](https://github.com/VCGithubCode) |
+| Alan Chapman | Lead Designer/Content/Music Lessons | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/alanjameschapman) |
+| Hannah Olbrich | Frontend/Content/Music Lessons | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/hannahro15) |
+| Jibril Abshir | Lead Frontend Developer/Landing Page | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/JibAb96) |
+| Justyna Thompson | Presentation/Error Pages/Documentation | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/justynath) |
+| Shaun Anderton | Lead Javascript Developer/Music Lessons | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/ShaAnder) |
+| Stephen Beese | Frontend/About Page/Music Lessons | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/stephenbeese) |
+| Vernell Clark | Scrum Lead/Git + Github/Advisor | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/VCGithubCode) |
