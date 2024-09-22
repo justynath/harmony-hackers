@@ -7,12 +7,12 @@
     --accent: #000000;
 }
 
-nav {
-    background-color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+.nav-container {
+    background-color: #d5aa77;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); */
 }
   
-.navbar-brand{
+/* .navbar-brand{
   color: var(--main) !important;
   font-weight: 900;
   font-family: 'Satisfy', serif;
@@ -20,7 +20,7 @@ nav {
 
 .navbar-nav .nav-link{
   color: var(--main) !important;
-}
+} */ */
 
 /* body {
     background: var(--primary);
@@ -29,15 +29,54 @@ nav {
     text-align: center;
   } */
 
-body {
+/* body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("../images/wallpaper_notes.jpg");
+  background-image: url("/assets/images/wallpaper_notes.jpg");
   background-size: cover; 
   background-position: center;
+} */
+
+.background{
+  background: url(../images/new-hero-image-2.webp) no-repeat center center/cover fixed;
+ }
+
+ .background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 1;
+}
+ 
+.background * {
+  position: relative;
+  z-index: 2; 
+ }
+
+.cta-button {
+  padding: 0.75em 1.5em;
+  background-color: var(--background);
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #8f4e18; /* Darker shade on hover */
+  color: var(--text);
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .card-container {
@@ -66,7 +105,7 @@ body {
   display: flex;
   flex-direction: column; /* Stack the elements vertically */
   height: 100%; /* Ensure full height */
-  min-height: 450px; /* Adjust this based on your content */
+  /* min-height: 450px; Adjust this based on your content */
 }
 
 .card-title {
