@@ -6,7 +6,7 @@
     --background: #bc3b18;
     --accent: #0000;
 }
-
+text-align
 
 * {
     margin: 0;
@@ -256,7 +256,6 @@ body {
 body {
     color: var(--accent);
     font-family: Geneva, Verdana, sans-serif;
-    text-align: center;
     overflow-x: hidden;
   }
   .transition-1 {

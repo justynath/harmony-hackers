@@ -1,74 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/contact.css">
+        <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
+        <title>Harmony Hub | Contact</title>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/d29701d5af.js" crossorigin="anonymous"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/contact.css">
-    <link href="assets/favicon/favicon.ico" rel="icon" type="image/x-icon">
-    <title>Harmony Hub | Contact</title>
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/d29701d5af.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div class="nav-container">
-        <input type="checkbox" name="check" id="check">
-        <div class="logo-container">
-        <h3 class="logo">Harmony<span>Hub</span></h3>
-        </div>
-        <div class="nav-btn">
-            <div class="thenav-links">
-                <ul>
-                <li class="thenav-link" style="--i: .6s">
-                    <a href="index.html">Home</a>
-                </li>
-                <li class="thenav-link" style="--i: .85s">
-                    <a href="lesson.html">Lesson</a>
-                </li>
-                <li class="thenav-link" style="--i: 1.1s">
-                    <a href="contact.html">Contact</a>
-                </li>
-                <li class="thenav-link" style="--i: 1.35s">
-                    <a href="about.html">About</a>
-                </li>
-                </ul>
+    <body>
+        <header class="background">
+            <div class="nav-container">
+                <label for="check" class="sr-only">Toggle Navigation</label>
+                <input type="checkbox" name="check" id="check">
+                <div class="logo-container">
+                <h3 class="logo">The Harmony<br> Hub</h3>
+                </div>
+                <div class="nav-btn">
+                    <div class="thenav-links">
+                        <ul>
+                        <li class="thenav-link" style="--i: .6s">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="thenav-link" style="--i: .85s">
+                            <a href="lesson.html">Lesson</a>
+                        </li>
+                        <li class="thenav-link" style="--i: 1.1s">
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        <li class="thenav-link" style="--i: 1.35s">
+                            <a href="about.html">About</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hamburger-menu-container">
+                    <div class="hamburger-menu">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hamburger-menu-container">
-            <div class="hamburger-menu">
-                <div></div>
-            </div>
-        </div>
-    </div>
+        </header>
         <main class="background">
-            <div class="card">
-                <h1>Contact Us</h1>
-                    <p class="card-text">We'd love to hear from you and help you with any questions you may have. Please fill out the form below and we'll get back to you as soon as possible.</p>
-                    <form action="https://formspree.io/f/xqazvdkp" method="POST">
-                        <div class="mb-2">
-                        <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="mb-2" >
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="mb-2" >
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <div class="mb-2">
-                    <button class="cta-button" type="submit">Send</button>
+            <section class="hero-contact pt-5 pb-3">
+            <div class="container">
+                <div class="text-center">
+                <h1 class="my-4">Contact Us</h1>
+                <p >Have any questions? We'd love to hear from you.</p>
                 </div>
             </div>
-        </main>
-        <footer>This site is intended for educational purposes only.</footer>
-</body>
-<script src="assets/js/email.js"></script>
-<script src="assets/js/script.js"></script>
-
+            </section>
+            <section id="contactus" class="container">
+                <form id="contactForm" class="card pt-5 px-5" name="contactForm">
+                    <div class="mb-2 ">
+                    <label for="name" class="contactlabel form-label">Your Name:</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                    <div id="nameHelp" class="form-text">Please provide your preferred name.</div><br>
+                    </div>
+            
+                    <div class="mb-2">
+                    <label for="email" class="contactlabel form-label">Your Email:</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
+                    </div>
+            
+                    <div class="mb-3">
+                    <label for="enquiry" class="contactlabel form-label">Your Query:</label>
+                    <textarea rows="10" name="enquiry" id="enquiry" class="form-control" required></textarea>
+                    </div>
+            
+                    <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                    <label class="form-check-label" for="exampleCheck1">I have read and agreed to the <a
+                        href="https://www.termsfeed.com/live/fabff9bf-356e-4897-943b-4322ed3624ed" 
+                        style="color: #0051A8;"
+                        >privacy
+                        policy</a></label>
+                    </div>
+            
+                    <div class="mb-2">
+                    <input id="submit-button" class="btn btn-success" type="submit" value="Submit Message"
+                        aria-label="clicking submit will redirect to another page"
+                        style="background-color: #175E28;">
+                    </div>
+                </form>
+            </section>
+            <footer>
+                <div class="container-fluid">
+                    <div class="row footer-section">
+                        <div class="col-md-4">
+                            <h3 style="color: #d5aa77;">Links</h3>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="lesson.html">Lesson</a></li>
+                                <li><a href="about.html">About</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 style="color: #d5aa77;">Follow Us</h3>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+                                        <i class="fab fa-facebook"> Facebook</i> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label="Twitter" >
+                                        <i class="fab fa-twitter"> Twitter</i> 
+                                    </a>
+                                    </li>
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+                                        <i class="fab fa-instagram"> Instagram</i> 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 style="color: #d5aa77;">Contact Us</h3>
+                            <ul>
+                                <li>
+                                    <a href="mailto:theharmonyhub@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+                                        <i class="fas fa-envelope"> Email</i> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="tel:+447283749425" target="_blank" rel="noopener" aria-label="Phone">
+                                        <i class="fas fa-phone"> Phone</i> 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://maps.app.goo.gl/xaqPpy14pWRrc1Db7" target="_blank" rel="noopener" aria-label="Address">
+                                        <i class="fas fa-map-marker-alt"> Address</i> 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>    
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
