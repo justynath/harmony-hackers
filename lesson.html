@@ -21,16 +21,19 @@
 </head>
 
 <body>
-    <header>Header</header>
+    <header>Navbar here..</header>
+    <h1 id="lessons-title" class="text-uppercase">Welcome to the Musical Note Flashcards game!!</h1>
+    <p>A game where you can practice your treble clef note reading in an interactive way using a digital keyboard....</p>
+    <main>
     <main>
         <!-- div for our flash-cards-->
 
-        <div class=" card-wrapper p-4 mx-auto" id="flashcard-wrapper">
+        <div class="card-wrapper p-4 mx-auto" id="flashcard-wrapper">
             <div class="timer-div text-center m-1">
                 <p id="timer" class="text-white fs-2"></p>
             </div>
             <div class="image-div">
-                <img id="flashcard-image" src="" class="d-block w-70 mx-auto shadow rounded" />
+                <img id="flashcard-image" src="" class="d-block mx-auto shadow rounded" />
             </div>
             <div class="feedback-div text-center m-2">
                 <p id="feedback" class="fs-2 m-2 fw-bold"></p>
@@ -40,10 +43,10 @@
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
             <!-- Controls for the user??? (tbd empty header for now goes here)-->
-            <div class="keyboard-header">
+            <div class="keyboard-header px-3">
                 <div class="buttons-container text-center">
-                    <button id="start-game" class="btn btn-dark m-3">Start Game</button>
-                    <button id="instructionButton" class="btn btn-dark m-3">How to Play</button>
+                    <button id="start-game" class="btn btn-dark m-0 m-lg-3">Start Game</button>
+                    <button id="instructionButton" class="btn btn-dark m-0 m-lg-3">How to Play</button>
                     <!-- <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button> -->
                 </div>
                 <!-- The Modal -->
@@ -106,7 +109,7 @@
                     <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
                 </div>
                 <div class="column key-checkbox">
-                    <button id="learn-notes" class="btn btn-dark m-3">Learn Notes</button>
+                    <button id="learn-notes" class="btn btn-dark m-2 m-md-3">Learn Notes</button>
                     <span>Show Key Names:</span><input type="checkbox" checked>
                 </div>
             </div>
@@ -115,7 +118,7 @@
             middle row of the keyboard for white, upper row for black trying to 
             make the keys similar to the layout of a 25 key piano 
             used this image as ref https://shorturl.at/5yA5P -->
-            <ul class="piano-keys" id="piano-keys">
+            <ul class="piano-keys mx-4" id="piano-keys">
                 <li class="key white shadow" data-key="C1"><span>C4</span></li>
                 <li class="key black shadow" data-key="CS1"><span>C# D♭</span></li>
                 <li class="key white shadow" data-key="D1"><span>D</span></li>
@@ -142,10 +145,8 @@
                 <li class="key white shadow" data-key="B2"><span>B</span></li>
                 <li class="key white shadow" data-key="C3"><span>C6</span></li>
             </ul>
+        </div>
 
-            <!-- <p id="timer" class="text-white"></p> -->
-            <p id="score" class="text-white"></p>
-            <div>
 
     </main>
     <footer>Footer</footer>
