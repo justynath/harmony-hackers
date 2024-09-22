@@ -6,11 +6,11 @@
 
 The Harmony Hub is an interactive tool designed to help users of all skill levels improve their piano playing abilities. The app features a virtual keyboard and a series of flashcards displaying musical notes. Users are challenged to identify and press the corresponding keys on the virtual keyboard. Ideal for beginners looking to learn piano basics or for experienced players wanting to refine their skills, the app offers varying levels of difficulty to suit different proficiency levels. Whether you’re starting your musical journey or brushing up on your technique, this app provides a practical and engaging way to enhance your keyboard skills.
 
-![Am I Responsive](link here)
+![Am I Responsive](./assets/images/readme-images/am-i-responsive.png)
 
-[live site](https://justynath.github.io/harmony-hackers/)
+[Live Site](https://justynath.github.io/harmony-hackers/)
 
-[GitHub repo](https://github.com/justynath/harmony-hackers)
+[GitHub Repo](https://github.com/justynath/harmony-hackers)
 
 ## Table of Contents
 1. [**Overview**](#overview) 
@@ -28,8 +28,8 @@ The Harmony Hub is an interactive tool designed to help users of all skill level
 5. [**Agile Development Process**](#agile)
 6. [**Features**](#features)
 7. [**Testing**](#testing)
-8.  [**Deployment**](#deployment)
-9.  [**Anknowledgements**](#acknowledgements)
+8. [**Deployment**](#deployment)
+9. [**Anknowledgements**](#acknowledgements)
 
 ## Planning <a name="planning"></a>
 
@@ -42,8 +42,6 @@ The aim of The Harmony Hub is to provide an easy-to-use platform for learning pi
 The Harmony Hub is designed for a wide range of users, from beginners to more experienced piano players. Beginners, including children and adults, can use the app to learn note recognition and basic keyboard skills in a simple, fun way. More advanced players can use it to improve their sight-reading and accuracy. Music teachers can also find it useful as a tool to enhance lessons and encourage regular practice. No matter your skill level, the app offers something for everyone looking to improve their piano skills.
 
 ### User Stories <a name="user-stories"></a>
-
-| User story ID [epicid.usid] | Task | Description | Issue No. |
 
 **Developer**
 
@@ -72,6 +70,9 @@ As a player, I want easy access to helpful tutorials and instructions, so I can 
 As a player, I want to learn about the creator of the app, so I can appreciate their expertise and vision.
 
 As a player, I want to share my thoughts and questions about the app, so I can contribute to its improvement.
+
+
+[Back to Top](#harmony-hub)
 
 
 ## UX <a name="ux"></a>
@@ -132,6 +133,8 @@ We use this color palette as the base for a clean and aesthetic look.
 - The hero image was created by DALL-E and is designed to set the tone for a classical music experience.
 - The background pattern features musical symbols to reinforce the musical theme.
 
+[Back to Top](#harmony-hub)
+
 
 ## Technologies Used <a name="technologies"></a>
 
@@ -161,6 +164,7 @@ We use this color palette as the base for a clean and aesthetic look.
 
 **Open Broadcaster Software (OBS)**: Used for screen recording and presentations, allowing for the creation of tutorials and promotional content to showcase the app effectively.
 
+[Back to Top](#harmony-hub)
 
 ## Agile Development Process <a name="agile"></a>
 
@@ -180,22 +184,103 @@ The team used Slack for quick communication and had two meetings a day to stay i
 
 We kept everyone updated on project progress and discussions by using the Slack team channel Canvas.
 
+[Back to Top](#harmony-hub)
+
 ## Features <a name="features"></a>
 
 ### Landing Page 
 
+The hero image indicates that it is a music app, and the welcoming message conveys that the main purpose is to learn music. There is a start button labeled "Learn."
+
+![landing page](.link here)
+
 ### Lessons Page 
+The keyboard is displayed, and the player has the option to familiarize themselves with all the features of the game through pop-up windows. The player can choose to start the game, where the notes are displayed on flashcards, and they are expected to press the corresponding key.
+
+![lessons page](.link here)
 
 ### About Page 
 
+Here’s the corrected version of your text:
+
+Information about the project includes an introduction to the team members, each with a short description and an option to play a classical music excerpt of their choice.
+
+![about page](.link here)
+
 ### Contact Page 
+A form to fill out if a user wishes to get in touch with the creators of the app.
+
+![contact page](.link here)
 
 ### Error Pages 
+404 and 500 error pages
+
+![500 perrorage](.link here)
+
+### Navigation
+
+![navigation](.link here)
+
+### Footer
+
+![footer](.link here)
+
+### Future Features
+
+- The player had an option to choose the level of difficulty.
+- The score is saved for future reference.
 
 
 
-## Testing
+[Back to Top](#harmony-hub)
 
+
+
+## Testing <a name="testing"></a>
+
+### Features Testing
+
+|  Feature |  Action | Effect |
+|---|---|---|
+|Learn button|Click|Displays the game|
+| | |
+
+
+### Browsers
+
+### Responsiveness
+
+### Accessibility (Lighthouse)
+
+This report presents the results of Lighthouse testing conducted to assess the performance, accessibility, best practices, SEO, and PWA compliance of Landmarks.
+
+Lighthouse tests were executed using the Google Chrome browser's DevTools.
+
+![lighthouse](.link here)
+
+### Bugs 
+
+
+### Validator Testing 
+
+**HTML**
+
+Code has been validated with the official W3C validator and returned no errors or warnings.
+
+![html validator](.link here)
+
+**CSS**
+
+Code has been validated with the official (Jigsaw) validator and returned no errors or warnings.
+
+![css validator](.link here)
+
+**JavaScript**
+
+Code has been validated with the official (Jshint) validator and returned no errors or warnings.
+
+
+[Back to Top](#harmony-hub)
 
 ## Deployment <a name="deployment"></a>
 
@@ -221,3 +306,6 @@ A big thank you to all fellow team members for their great work.
 | Shaun Anderton | Lead Javascript Developer/Music Lessons | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/ShaAnder) |
 | Stephen Beese | Frontend/About Page/Music Lessons | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/stephenbeese) |
 | Vernell Clark | Scrum Lead/Git + Github/Advisor | [![Github](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=white)](https://github.com/VCGithubCode) |
+
+
+[Back to Top](#harmony-hub)
