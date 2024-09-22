@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Play the audio after 5 seconds but keep it muted
+// Play the audio after only after user interaction (browser policy)
         window.addEventListener('load', function() {
             setTimeout(function() {
                 let audio = document.getElementById("myAudio");
