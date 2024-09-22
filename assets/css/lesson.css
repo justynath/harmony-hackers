@@ -23,7 +23,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("../images/wallpaper_notes.jpg");
+  background-image: url("../images/header-img.jpg");
   background-size: cover; 
   background-position: center;
 }
@@ -31,6 +31,10 @@ body {
 main {
   max-height: 80vh !important;
   height: fit-content;
+}
+
+#lessons-title {
+  font-weight: 700;
 }
 
 /* placeholder for the flashcard wrapper */
@@ -81,7 +85,7 @@ main {
 
 /* Code snippet extracted from Vernell Clark's second Portfolio Project */
 /* Basic styles for modal backdrop */
-modal {
+.modal {
   visibility: hidden;
   position: fixed;
   top: 0;
