@@ -184,7 +184,7 @@ const flashcards = [
     noteName: "B♭5",
   },
   { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
-  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" }
+  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" },
   // (Continues with other notes...)
 ];
 
@@ -195,6 +195,8 @@ let timeLeft = 30; // Time left for the game in seconds
 let gameStarted = false; // Boolean to track whether the game has started
 let intervalId; // ID for the interval used in the timer
 let difficulty = "";
+
+let diffSelector = document.getElementById("diff-select");
 
 const selectDifficulty = () => {
   let difficulties = document.getElementById("diff-select");
@@ -255,47 +257,50 @@ const startGame = () => {
   if (!difficulty) {
     alert("Please Select A Difficulty");
     return;
-  }
-  keys.forEach((key) => key.classList.remove("hide")); // Toggle the 'hide' class on each key to show/hide labels
-  generateRandomFlashcard(); // Generate the first flashcard
-  gameStarted = true; // Set gameStarted to true
-  score = 0; // Reset score
-  totalQuestions = 0; // Reset total questions
-  if (difficulty == "easy") {
-    timeLeft = 90;
-  } else if (difficulty == "medium") {
-    timeLeft = 60;
-  } else if (difficulty == "hard") {
-    timeLeft = 60;
-  } else if (difficulty == "maestro") {
-    timeLeft = 30;
-    keys.forEach((key) => key.classList.toggle("hide")); // Toggle the 'hide' class on each key to show/hide labels
-  }
-  const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
-  wrapper.classList.remove("hidden", "fade-out"); // Show the flashcard wrapper
-  wrapper.classList.add("fade-in", "show"); // Add fade-in animation
-
-  const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
-  pianoKeys.forEach((key) =>
-    key.addEventListener("click", handlePianoKeyClick)
-  ); // Add click listeners to each key
-
-  const timerElement = document.getElementById("timer"); // Get the timer element
-  intervalId = setInterval(() => {
-    timeLeft--; // Decrease time left by 1 second
-    timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
-
-    if (timeLeft <= 0) {
-      clearInterval(intervalId); // Stop the timer when time runs out
-      endGame(); // End the game
+  } else {
+    diffSelector.disabled = true;
+    keys.forEach((key) => key.classList.remove("hide")); // Toggle the 'hide' class on each key to show/hide labels
+    generateRandomFlashcard(); // Generate the first flashcard
+    gameStarted = true; // Set gameStarted to true
+    score = 0; // Reset score
+    totalQuestions = 0; // Reset total questions
+    if (difficulty == "easy") {
+      timeLeft = 90;
+    } else if (difficulty == "medium") {
+      timeLeft = 60;
+    } else if (difficulty == "hard") {
+      timeLeft = 60;
+    } else if (difficulty == "maestro") {
+      timeLeft = 30;
+      keys.forEach((key) => key.classList.toggle("hide")); // Toggle the 'hide' class on each key to show/hide labels
     }
-  }, 1000); // Repeat every second
+    const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
+    wrapper.classList.remove("hidden", "fade-out"); // Show the flashcard wrapper
+    wrapper.classList.add("fade-in", "show"); // Add fade-in animation
 
-  document.getElementById("start-game").textContent = "Stop Game"; // Change button text to 'Stop Game'
+    const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
+    pianoKeys.forEach((key) =>
+      key.addEventListener("click", handlePianoKeyClick)
+    ); // Add click listeners to each key
+
+    const timerElement = document.getElementById("timer"); // Get the timer element
+    intervalId = setInterval(() => {
+      timeLeft--; // Decrease time left by 1 second
+      timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
+
+      if (timeLeft <= 0) {
+        clearInterval(intervalId); // Stop the timer when time runs out
+        endGame(); // End the game
+      }
+    }, 1000); // Repeat every second
+
+    document.getElementById("start-game").textContent = "Stop Game"; // Change button text to 'Stop Game'
+  }
 };
 
 // Stop the game
 const stopGame = () => {
+  diffSelector.disabled = false;
   gameStarted = false; // Set gameStarted to false
   clearInterval(intervalId); // Clear the timer interval
 
@@ -412,7 +417,9 @@ const stopGameModal = document.getElementById("stopGameModal");
 const closeStopGameButton = document.querySelector(".close-stopgame");
 const stopGameScore = document.getElementById("stopGameScore");
 const restartGameButton = document.getElementById("restartGameButton");
-const closeStopGameModalButton = document.getElementById("closeStopGameModalButton");
+const closeStopGameModalButton = document.getElementById(
+  "closeStopGameModalButton"
+);
 
 // Show the stop game modal with the current score
 const showStopGameModal = () => {
@@ -469,4 +476,3 @@ window.addEventListener("click", (e) => {
     learnNotesModal.style.display = "none"; // Hide the modal
   }
 });
-
