@@ -13,7 +13,9 @@
             <title>Harmony Hub | Home</title>
         </head>
         <body>
-            <audio id="myAudio" src="/assets/audio/piano-cassical-brand-motive-logo-9997.mp3" autoplay></audio>
+            <iframe src="/assets/audio/piano-cassical-brand-motive-logo-9997.mp3" allow="autoplay"
+                title="Background Music"></iframe>
+            <audio id="myAudio" src="/assets/audio/piano-cassical-brand-motive-logo-9997.mp3" muted></audio>
         <div class="transition-1 is-active">
             <div class="music-loader-1">
                 <div class="note">&#9835;</div>
@@ -34,7 +36,8 @@
         </div>
             <header class="background">
                 <div class="nav-container">
-                    <input type="checkbox" name="check" id="check">
+                    <label for="check" class="sr-only">Menu Toggle</label>
+                    <input type="checkbox" name="check" id="check" title="Menu Toggle">
                     <div class="logo-container">
                     <h3 class="logo">The Harmony<br> Hub</h3>
                     </div>

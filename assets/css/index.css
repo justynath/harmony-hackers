@@ -16,6 +16,10 @@
     text-decoration: none !important;
     text-align: center;
 }
+
+iframe {
+  display: none;
+}
   /****** Navigation start *******/  
     
   .background{
