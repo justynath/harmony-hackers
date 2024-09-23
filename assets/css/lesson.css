@@ -41,10 +41,10 @@ main {
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.8);
   margin-bottom: 1rem;
-  margin-left: 10px;
   min-height: fit-content;
-  width: fit-content;
+  width: 50%;
   opacity: 0;
+  padding-bottom: 10px;
 }
 
 .card-wrapper img {
@@ -271,7 +271,7 @@ the key checkbox
 }
 
 .note-assistance {
-  font-size: 1.6rem;
+  font-size: 0.8rem;
   margin-top: 1rem;
   color: #fff;
   text-align: center;
@@ -398,14 +398,13 @@ a lesson
     margin: 0;
     padding: 0;
   }
+  
   .wrapper {
     width: 100vh;
     max-height: 100vw;
     padding-bottom: 10px;
   }
-  .note-assistance {
-    font-size: 0.6rem;
-  }
+  
   .note-assistance {
     font-size: 0.6rem;
   }
@@ -496,11 +495,10 @@ a lesson
 
   #flashcard-wrapper {
     padding: 10px !important;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    width: 100%;
+    width: 50%;
     margin-bottom: 5px;
   }
 
