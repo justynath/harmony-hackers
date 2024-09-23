@@ -49,8 +49,12 @@ document.addEventListener("keydown", handleKeyPress); // Play note when a corres
 
 // Flashcards array representing different musical notes with corresponding image, note name, and alt text
 const flashcards = [
-  { src: "assets/flashcards/c-1.png", card: "C1", alt: "c-1", noteName: "C4" },
-
+  { 
+    src: "assets/flashcards/c-1.png",
+    card: "C1",
+    alt: "c-1",
+    noteName: "C4"
+  },
   {
     src: "assets/flashcards/c-sharp-1.png",
     card: "CS1",
@@ -63,7 +67,12 @@ const flashcards = [
     alt: "d-flat-1",
     noteName: "D♭4",
   },
-  { src: "assets/flashcards/d-1.png", card: "D1", alt: "d-1", noteName: "D4" },
+  {
+    src: "assets/flashcards/d-1.png",
+    card: "D1",
+    alt: "d-1",
+    noteName: "D4"
+  },
   {
     src: "assets/flashcards/d-sharp-1.png",
     card: "DS1",
@@ -76,7 +85,11 @@ const flashcards = [
     alt: "e-flat-1",
     noteName: "E♭4",
   },
-  { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1", noteName: "E4" },
+  { src: "assets/flashcards/e-1.png",
+    card: "E1",
+    alt: "e-1",
+    noteName: "E4"
+  },
   { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1", noteName: "F4" },
   {
     src: "assets/flashcards/f-sharp-1.png",
@@ -116,8 +129,18 @@ const flashcards = [
     alt: "b-flat-1",
     noteName: "B♭4",
   },
-  { src: "assets/flashcards/b-1.png", card: "B1", alt: "b-1", noteName: "B4" },
-  { src: "assets/flashcards/c-2.png", card: "C2", alt: "c-2", noteName: "C5" },
+  { 
+    src: "assets/flashcards/b-1.png",
+    card: "B1",
+    alt: "b-1",
+    noteName: "B4" 
+  },
+  { 
+    src: "assets/flashcards/c-2.png",
+    card: "C2",
+    alt: "c-2",
+    noteName: "C5" 
+  },
   {
     src: "assets/flashcards/c-sharp-2.png",
     card: "CS2",
@@ -143,8 +166,18 @@ const flashcards = [
     alt: "e-flat-2",
     noteName: "E♭5",
   },
-  { src: "assets/flashcards/e-2.png", card: "E2", alt: "e-2", noteName: "E5" },
-  { src: "assets/flashcards/f-2.png", card: "F2", alt: "f-2", noteName: "F5" },
+  { 
+    src: "assets/flashcards/e-2.png",
+    card: "E2",
+    alt: "e-2",
+    noteName: "E5" 
+  },
+  { 
+    src: "assets/flashcards/f-2.png",
+    card: "F2",
+    alt: "f-2",
+    noteName: "F5"
+  },
   {
     src: "assets/flashcards/f-sharp-2.png",
     card: "FS2",
@@ -157,7 +190,11 @@ const flashcards = [
     alt: "g-flat-2",
     noteName: "G♭5",
   },
-  { src: "assets/flashcards/g-2.png", card: "G2", alt: "g-2", noteName: "G5" },
+  { src: "assets/flashcards/g-2.png",
+    card: "G2",
+    alt: "g-2",
+    noteName: "G5"
+  },
   {
     src: "assets/flashcards/g-sharp-2.png",
     card: "GS2",
@@ -170,7 +207,12 @@ const flashcards = [
     alt: "a-flat-2",
     noteName: "A♭5",
   },
-  { src: "assets/flashcards/a-2.png", card: "A2", alt: "a-2", noteName: "A5" },
+  {
+    src: "assets/flashcards/a-2.png",
+    card: "A2",
+    alt: "a-2",
+    noteName: "A5"
+  },
   {
     src: "assets/flashcards/a-sharp-2.png",
     card: "AS2",
@@ -186,7 +228,6 @@ const flashcards = [
   { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
   { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" },
   { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" },
-  // (Continues with other notes...)
 ];
 
 let currentFlashcard = null; // Current flashcard in the game

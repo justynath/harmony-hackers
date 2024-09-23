@@ -53,7 +53,6 @@ const driverObj = driver({
             popover: {
                 className: "first-step-popover-class",
                 title: "Difficulty Settings",
-                // description: "Use this dropdown to change the difficulty.<br>Easy: 90s and note names<br>Medium: 60s and note names are displayed<br>Hard: 60s and note names are hidden<br>Maestro: 30s, note names and key names are hidden",
                 description: "Use this dropdown to adjust the difficulty level:<br><strong>Easy:</strong> 90 seconds with note names visible.<br><strong>Medium:</strong> 60 seconds with note names visible.<br><strong>Hard:</strong> 60 seconds with note names hidden.<br><strong>Maestro:</strong> 30 seconds with both note and key names hidden.",
                 position: "top"
             }
