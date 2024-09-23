@@ -20,9 +20,10 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(180deg, #ffffff96, #cf8114b2), 
-  url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover;
-  background-size: cover; 
+  background: linear-gradient(180deg, #ffffff96, #cf8114b2),
+    url("../images/ai-generated-8111543_1280.png") no-repeat center center /
+      cover;
+  background-size: cover;
   background-position: center;
 }
 
@@ -31,7 +32,8 @@ main {
   height: fit-content;
 }
 
-#lessons-title, #lessons-intro {
+#lessons-title,
+#lessons-intro {
   padding: 10px;
 }
 
@@ -69,7 +71,6 @@ main {
   transition: opacity 0.5s ease-in-out; /* Control how long the fade-out takes */
 }
 
-
 /* Add fade-in effect */
 .fade-in {
   opacity: 0;
@@ -78,7 +79,6 @@ main {
 
 .fade-in.show {
   opacity: 1;
-
 }
 
 /* Code snippet extracted from Vernell Clark's second Portfolio Project */
@@ -159,34 +159,35 @@ main {
 }
 
 /* The Modal Close Button */
-.close, .close-gameover {
-    position: absolute;
-    top: 0.25rem;
-    right: -0.8rem;
-    background-color: transparent;
-    color: #4f4f4f;
-    font-size: 4rem;
-    font-weight: lighter;
-    line-height: 1.8rem;
-    border: 1px solid #b6b6b6;
-    border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
+.close,
+.close-gameover {
+  position: absolute;
+  top: 0.25rem;
+  right: -0.8rem;
+  background-color: transparent;
+  color: #4f4f4f;
+  font-size: 4rem;
+  font-weight: lighter;
+  line-height: 1.8rem;
+  border: 1px solid #b6b6b6;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }
 /* End of CSS Taken extracted from Vernell Clark's 2nd Portfolio Project */
 
 .close:hover,
 .close:focus {
-    color: var(--light-color);
-    border-color: var(--light-color);
+  color: var(--light-color);
+  border-color: var(--light-color);
 }
 
 .modal h2 {
-    font-size: 2rem;
-    margin-bottom: 1.6rem;
-    color: black;
-    font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  color: black;
+  font-weight: bold;
 }
 
 .modal p {
@@ -201,7 +202,6 @@ main {
   height: 100px;
   margin-bottom: 10px;
 }
-
 
 /* our keyboard body */
 
@@ -222,7 +222,6 @@ main {
   justify-content: space-between;
   min-width: fit-content;
 }
-
 
 /* 
 Header styling, volume keys styled cleanly and added styling for
@@ -271,7 +270,7 @@ the key checkbox
 }
 
 .note-assistance {
-  font-size: 0.8rem;
+  font-size: 1.6rem;
   margin-top: 1rem;
   color: #fff;
   text-align: center;
@@ -398,13 +397,13 @@ a lesson
     margin: 0;
     padding: 0;
   }
-  
+
   .wrapper {
     width: 100vh;
     max-height: 100vw;
     padding-bottom: 10px;
   }
-  
+
   .note-assistance {
     font-size: 0.6rem;
   }
@@ -427,25 +426,30 @@ a lesson
 @media (max-width: 1024px) {
   /* For smaller tablets */
   .piano-keys .black {
-      width: 30px;
-      height: 120px;
-      margin: 0 -15px; /* Adjust margin to prevent gaps */
+    width: 30px;
+    height: 120px;
+    margin: 0 -15px; /* Adjust margin to prevent gaps */
   }
 
   .piano-keys .white {
-      width: 60px;
-      height: 180px;
+    width: 60px;
+    height: 180px;
   }
 
   .wrapper {
-      padding: 15px;
+    padding: 15px;
   }
 
-  .volume-slider, .key-checkbox {
-      margin-top: 10px;
+  .volume-slider,
+  .key-checkbox {
+    margin-top: 10px;
   }
 
-  .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
+  .buttons-container button,
+  #learn-notes,
+  .volume-slider span,
+  .key-checkbox span,
+  .piano-keys .key span {
     font-size: 0.8em;
   }
 
@@ -460,36 +464,44 @@ a lesson
     margin-top: 0px;
   }
   .piano-keys .black {
-      width: 28px;
-      height: 100px;
-      margin: 0 -12px; /* Tighter margin to remove gaps */
+    width: 28px;
+    height: 100px;
+    margin: 0 -12px; /* Tighter margin to remove gaps */
   }
 
   .piano-keys .white {
-      width: 55px;
-      height: 150px;
+    width: 55px;
+    height: 150px;
   }
 
   .keyboard-header {
-      /* flex-direction: column; */
-      align-items: center;
-      padding: 10px;
+    /* flex-direction: column; */
+    align-items: center;
+    padding: 10px;
   }
 
   .wrapper {
-      padding: 10px;
+    padding: 10px;
   }
 
   .card-wrapper {
-      width: 90vw;
+    width: 90vw;
   }
 
   .modal-contents {
-      max-width: 90%;
-      max-height: 70vh;
+    max-width: 90%;
+    max-height: 70vh;
   }
 
-  .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
+  .note-assistance {
+    font-size: 0.8rem;
+  }
+
+  .buttons-container button,
+  #learn-notes,
+  .volume-slider span,
+  .key-checkbox span,
+  .piano-keys .key span {
     font-size: 0.7em;
   }
 
@@ -513,8 +525,9 @@ a lesson
     text-align: right;
     padding-right: 10px;
   }
-  
-  .timer-div p, .feedback-div p {
+
+  .timer-div p,
+  .feedback-div p {
     font-size: 0.8em !important;
   }
 
@@ -522,11 +535,14 @@ a lesson
     padding: 10px;
   }
 
-  .timer-div, .image-div, .feedback-div {
+  .timer-div,
+  .image-div,
+  .feedback-div {
     height: fit-content;
   }
 
-  .timer-div p .feedback-div p, .feedback-div p span {
+  .timer-div p .feedback-div p,
+  .feedback-div p span {
     font-size: 0.9em !important;
   }
 
@@ -540,7 +556,8 @@ a lesson
     /* margin: 10px !important; */
   }
 
-  .volume-slider, .key-checkbox {
+  .volume-slider,
+  .key-checkbox {
     margin-top: 0px;
   }
 
@@ -556,8 +573,11 @@ a lesson
 }
 
 @media (max-width: 655px) {
-  .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
+  .buttons-container button,
+  #learn-notes,
+  .volume-slider span,
+  .key-checkbox span,
+  .piano-keys .key span {
     font-size: 0.6em;
   }
 }
-

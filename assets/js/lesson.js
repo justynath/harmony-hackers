@@ -196,11 +196,23 @@ let timeLeft = 30; // Time left for the game in seconds
 let gameStarted = false; // Boolean to track whether the game has started
 let intervalId; // ID for the interval used in the timer
 let difficulty = "";
+let win; // tracking if we win or not
 
 let diffSelector = document.getElementById("diff-select");
 const selectDifficulty = () => {
   let difficulties = document.getElementById("diff-select");
   difficulty = difficulties.value;
+};
+
+let winLossCheck = (e) => {
+  if (e < Number(10)) {
+    document.getElementById("victory-screen").innerHTML =
+      "You need more than 10 to pass! Try Again!";
+  } else if (e > 10) {
+    document.getElementById(
+      "victory-screen"
+    ).innerHTML = `Congratulations! You scored ${score}. You win!`;
+  }
 };
 
 // Generate a random flashcard to display
@@ -214,7 +226,7 @@ const generateRandomFlashcard = () => {
   if (difficulty == "easy" || difficulty == "medium") {
     document.getElementById(
       "assistance"
-    ).innerHTML = `Assistance: The current note is ${currentFlashcard.noteName}`;
+    ).innerHTML = `The above note is ${currentFlashcard.noteName}`;
   } else {
     document.getElementById("assistance").innerHTML = "";
   }
@@ -286,18 +298,9 @@ const startGame = () => {
     intervalId = setInterval(() => {
       timeLeft--; // Decrease time left by 1 second
       timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
-      const timerElement = document.getElementById("timer"); // Get the timer element
-      intervalId = setInterval(() => {
-        timeLeft--; // Decrease time left by 1 second
-        timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
-
-        if (timeLeft <= 0) {
-          clearInterval(intervalId); // Stop the timer when time runs out
-          endGame(); // End the game
-        }
-      }, 1000); // Repeat every second
       if (timeLeft <= 0) {
         clearInterval(intervalId); // Stop the timer when time runs out
+        winLossCheck(score);
         endGame(); // End the game
       }
     }, 1000); // Repeat every second
@@ -311,6 +314,7 @@ const startGame = () => {
 const stopGame = () => {
   diffSelector.disabled = false;
   keys.forEach((key) => key.classList.remove("hide")); // Toggle the 'hide' class on each key to show/hide labels
+  winLossCheck(score);
   gameStarted = false; // Set gameStarted to false
   clearInterval(intervalId); // Clear the timer interval
 
