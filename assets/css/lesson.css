@@ -211,7 +211,6 @@ main {
   background: var(--main);
   overflow: hidden;
   width: fit-content;
-  max-width: 100vw;
 }
 
 /* center card image */
@@ -403,6 +402,9 @@ a lesson
     width: 100vh;
     height: 100vw;
   }
+  .note-assistance {
+    font-size: 0.6rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -472,7 +474,6 @@ a lesson
   }
 
   .wrapper {
-      width: 100vw;
       padding: 10px;
   }
 
