@@ -12,24 +12,31 @@
   box-sizing: border-box;
   font-family: "Monterrat", sans-serif;
 }
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: fit-content !important;
-  /* background: linear-gradient(180deg, #ffffff96, #cf8114b2), 
-  url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover; */
   background-size: cover; 
   background-position: center;
 }
+
+#navbar {
+  position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+
 main {
-  /* min-height: 100vh !important; */
-  min-height: fit-content !important;
+  max-height: fit-content !important;
   padding-bottom: 100px;
-  min-width: 100vw !important;
-  background: linear-gradient(180deg, #ffffff96, #cf8114b2), 
-  url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover;
+  padding-top: 600px;
+  width: 100vw !important;
+  background: linear-gradient(180deg, #ffffff96, #cf8114b2), url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover;
 }
 
 #lessons-title,
@@ -235,7 +242,7 @@ the key checkbox
 .difficulty-select select {
   appearance: none;
   width: 100%;
-  font-size: 1.15rem;
+  font-size: 1em;
   background-color: #212529;
   border-radius: 0.4rem;
   color: #fff;
@@ -339,6 +346,7 @@ a lesson
   Responsive Design
 */
 /* MEDIA QUERIES */
+
 /* When orientation is in portrait mode on smaller screens*/
 @media (max-width: 650px) and (orientation: portrait) {
   body {
@@ -361,6 +369,7 @@ a lesson
     font-size: 0.6rem;
   }
 }
+
 @media (max-width: 1200px) {
   /* Decrease the size of piano keys for tablets */
   .piano-keys .black {
@@ -429,7 +438,12 @@ a lesson
     max-height: 70vh;
   }
 
-  .buttons-container button, #learn-notes, .volume-slider span, .key-checkbox span, .piano-keys .key span {
+  .buttons-container button,
+  #learn-notes,
+  .volume-slider span,
+  .key-checkbox span,
+  .piano-keys .key span,
+  .difficulty-select select {
     font-size: 0.7em;
   }
   #flashcard-wrapper {
