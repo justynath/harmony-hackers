@@ -398,10 +398,15 @@ a lesson
     margin: 0;
     padding: 0;
   }
+  
   .wrapper {
     width: 100vh;
     max-height: 100vw;
     padding-bottom: 10px;
+  }
+  
+  .note-assistance {
+    font-size: 0.6rem;
   }
 }
 
