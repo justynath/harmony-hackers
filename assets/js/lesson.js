@@ -11,12 +11,11 @@ let note = new Audio(`assets/audio/A1.mp3`); // Default note audio object with a
 
 /// FUNCTIONS ///
 
-
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.scrollY;
-window.onscroll = function() {
+window.onscroll = function () {
   var currentScrollPos = window.scrollY;
-  
+
   if (prevScrollpos > currentScrollPos) {
     // Show navbar when scrolling up
     document.getElementById("navbar").style.top = "0";
@@ -24,7 +23,7 @@ window.onscroll = function() {
     // Hide navbar when scrolling down
     document.getElementById("navbar").style.top = "-80px"; // Adjust based on your navbar's height
   }
-  
+
   prevScrollpos = currentScrollPos;
 };
 
@@ -66,11 +65,11 @@ document.addEventListener("keydown", handleKeyPress); // Play note when a corres
 
 // Flashcards array representing different musical notes with corresponding image, note name, and alt text
 const flashcards = [
-  { 
+  {
     src: "assets/flashcards/c-1.png",
     card: "C1",
     alt: "c-1",
-    noteName: "C4"
+    noteName: "C4",
   },
   {
     src: "assets/flashcards/c-sharp-1.png",
@@ -88,7 +87,7 @@ const flashcards = [
     src: "assets/flashcards/d-1.png",
     card: "D1",
     alt: "d-1",
-    noteName: "D4"
+    noteName: "D4",
   },
   {
     src: "assets/flashcards/d-sharp-1.png",
@@ -102,17 +101,15 @@ const flashcards = [
     alt: "e-flat-1",
     noteName: "E♭4",
   },
-  { src: "assets/flashcards/e-1.png",
-    card: "E1",
-    alt: "e-1",
-    noteName: "E4"
-  },
+  { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1", noteName: "E4" },
   {
     src: "assets/flashcards/f-1.png",
     card: "F1",
     alt: "f-1",
-    noteName: "F4"
+    noteName: "F4",
   },
+  { src: "assets/flashcards/e-1.png", card: "E1", alt: "e-1", noteName: "E4" },
+  { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1", noteName: "F4" },
   {
     src: "assets/flashcards/f-sharp-1.png",
     card: "FS1",
@@ -129,7 +126,7 @@ const flashcards = [
     src: "assets/flashcards/g-1.png",
     card: "G1",
     alt: "g-1",
-    noteName: "G4"
+    noteName: "G4",
   },
   {
     src: "assets/flashcards/g-sharp-1.png",
@@ -147,7 +144,7 @@ const flashcards = [
     src: "assets/flashcards/a-1.png",
     card: "A1",
     alt: "a-1",
-    noteName: "A4"
+    noteName: "A4",
   },
   {
     src: "assets/flashcards/a-sharp-1.png",
@@ -161,17 +158,17 @@ const flashcards = [
     alt: "b-flat-1",
     noteName: "B♭4",
   },
-  { 
+  {
     src: "assets/flashcards/b-1.png",
     card: "B1",
     alt: "b-1",
-    noteName: "B4" 
+    noteName: "B4",
   },
-  { 
+  {
     src: "assets/flashcards/c-2.png",
     card: "C2",
     alt: "c-2",
-    noteName: "C5" 
+    noteName: "C5",
   },
   {
     src: "assets/flashcards/c-sharp-2.png",
@@ -198,17 +195,17 @@ const flashcards = [
     alt: "e-flat-2",
     noteName: "E♭5",
   },
-  { 
+  {
     src: "assets/flashcards/e-2.png",
     card: "E2",
     alt: "e-2",
-    noteName: "E5" 
+    noteName: "E5",
   },
-  { 
+  {
     src: "assets/flashcards/f-2.png",
     card: "F2",
     alt: "f-2",
-    noteName: "F5"
+    noteName: "F5",
   },
   {
     src: "assets/flashcards/f-sharp-2.png",
@@ -222,11 +219,7 @@ const flashcards = [
     alt: "g-flat-2",
     noteName: "G♭5",
   },
-  { src: "assets/flashcards/g-2.png",
-    card: "G2",
-    alt: "g-2",
-    noteName: "G5"
-  },
+  { src: "assets/flashcards/g-2.png", card: "G2", alt: "g-2", noteName: "G5" },
   {
     src: "assets/flashcards/g-sharp-2.png",
     card: "GS2",
@@ -243,7 +236,7 @@ const flashcards = [
     src: "assets/flashcards/a-2.png",
     card: "A2",
     alt: "a-2",
-    noteName: "A5"
+    noteName: "A5",
   },
   {
     src: "assets/flashcards/a-sharp-2.png",
@@ -374,7 +367,7 @@ const startGame = () => {
       if (timeLeft <= 0) {
         clearInterval(intervalId); // Stop the timer when time runs out
         winLossCheck(score);
-        endGame(); // End the game
+        stopGame();
       }
     }, 1000); // Repeat every second
 
@@ -406,31 +399,12 @@ const stopGame = () => {
     key.removeEventListener("click", handlePianoKeyClick)
   ); // Remove click listeners from keys
 
-  showStopGameModal(); // Show modal with the stop game score
-  document.getElementById("start-game").textContent = "Start Game"; // Change button text back to 'Start Game'
-};
+  if (timeLeft == 0) {
+    showStopGameModal("Time's Up!");
+  } else {
+    showStopGameModal("Game Stopped!");
+  }
 
-// End the game when time runs out
-const endGame = () => {
-  gameStarted = false; // Set gameStarted to false
-  clearInterval(intervalId); // Clear the timer interval
-
-  const wrapper = document.getElementById("flashcard-wrapper"); // Get flashcard wrapper element
-  wrapper.classList.add("fade-out"); // Add fade-out animation
-
-  setTimeout(() => {
-    wrapper.classList.remove("show"); // Hide flashcard wrapper after fade-out
-    wrapper.classList.add("hidden");
-    wrapper.classList.remove("fade-out");
-  }, 500); // Delay to match fade-out animation duration
-
-  const pianoKeys = document.querySelectorAll(".piano-keys .key"); // Get all piano keys
-
-  pianoKeys.forEach((key) =>
-    key.removeEventListener("click", handlePianoKeyClick)
-  ); // Remove click listeners from keys
-
-  showGameOverModal(`Time's up! Your Score: ${score}/${totalQuestions}`); // Show game over modal with the final score
   document.getElementById("start-game").textContent = "Start Game"; // Change button text back to 'Start Game'
 };
 
@@ -509,7 +483,8 @@ const closeStopGameModalButton = document.getElementById(
 );
 
 // Show the stop game modal with the current score
-const showStopGameModal = () => {
+const showStopGameModal = (e) => {
+  document.getElementById("gameStopHeader").innerHTML = e;
   stopGameScore.textContent = `${score}/${totalQuestions}`; // Display the score
   stopGameModal.style.display = "flex"; // Show the modal
 };
