@@ -17,20 +17,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #ffffff96, #cf8114b2), 
-  url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover;
+  min-height: fit-content !important;
+  /* background: linear-gradient(180deg, #ffffff96, #cf8114b2), 
+  url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover; */
   background-size: cover; 
   background-position: center;
 }
 main {
-  max-height: 80vh !important;
-  height: fit-content;
+  /* min-height: 100vh !important; */
+  min-height: fit-content !important;
+  padding-bottom: 100px;
+  min-width: 100vw !important;
+  background: linear-gradient(180deg, #ffffff96, #cf8114b2), 
+  url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover;
 }
 
-#lessons-title, #lessons-intro {
+#lessons-title,
+#lessons-intro {
   padding: 10px;
 }
+
 /* placeholder for the flashcard wrapper */
 .card-wrapper {
   flex-direction: row;
@@ -181,6 +187,7 @@ main {
 
 /* our keyboard body */
 .wrapper {
+  margin: 0 auto;
   padding: 20px 15px;
   border-radius: 20px;
   background: var(--main);
