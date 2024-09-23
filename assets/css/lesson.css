@@ -31,6 +31,10 @@ main {
   height: fit-content;
 }
 
+#lessons-title, #lessons-intro {
+  padding: 10px;
+}
+
 /* placeholder for the flashcard wrapper */
 .card-wrapper {
   flex-direction: row;
@@ -383,6 +387,24 @@ a lesson
 */
 
 /* MEDIA QUERIES */
+
+/* When orientation is in portrait mode on smaller screens*/
+@media (max-width: 650px) and (orientation: portrait) {
+  body {
+    transform: rotate(-90deg);
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    transform-origin: center center;
+    margin: 0;
+    padding: 0;
+  }
+  .wrapper {
+    width: 100vh;
+    height: 100vw;
+  }
+}
+
 @media (max-width: 1200px) {
   /* Decrease the size of piano keys for tablets */
   .piano-keys .black {
