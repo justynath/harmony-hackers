@@ -400,7 +400,8 @@ a lesson
   }
   .wrapper {
     width: 100vh;
-    height: 100vw;
+    max-height: 100vw;
+    padding-bottom: 10px;
   }
   .note-assistance {
     font-size: 0.6rem;
