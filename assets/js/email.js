@@ -14,7 +14,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     })
     .then(function(response) {
         if (response.ok) {
-            window.location.href = "../../thank-you.html";  // Redirect to thank-you.html
+            window.location.href = "thank-you.html";  // Redirect to thank-you.html
         } else {
             alert("Something went wrong. Please try again.");
         }
