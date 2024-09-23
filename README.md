@@ -87,10 +87,10 @@ We aim for the app to includes features that allow users to learn and practice r
 ### Structure <a name="structure"></a>
 The app's structure:
 
-1. **Landing page:** The landing page serves as the introduction to the app, featuring a welcoming design. Users can easily access key features and see a prompt to start learning.
-2. **Lessons Page:** The lessons page offers interactive lessons that focus on recognizing notes on a staff. 
-3. **About Page:** The about page introduces the creators of the app, sharing their backgrounds, expertise, motivation and involvemnt in developing the app.
-3. **Contact Page:** The contact page allows users to reach out with questions, feedback, or support requests. 
+- **Landing page:** The landing page serves as the introduction to the app, featuring a welcoming design. Users can easily access key features and see a prompt to start learning.
+- **Lessons Page:** The lessons page offers interactive lessons that focus on recognizing notes on a staff. 
+- **About Page:** The about page introduces the creators of the app, sharing their backgrounds, expertise, motivation and involvemnt in developing the app.
+- **Contact Page:** The contact page allows users to reach out with questions, feedback, or support requests. 
 
 Each page includes **navbar** for smooth navigation, and **footer** containing information about the app purpose.
 
@@ -138,17 +138,15 @@ We use this color palette as the base for a clean and aesthetic look.
 
 ## Technologies Used <a name="technologies"></a>
 
-[![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
-
 [![HTML](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) Used to structure the main pages of the app, including the landing page, learning page, and about page, providing a solid foundation for the overall content layout.
 
 [![CSS](https://img.shields.io/badge/CSS-grey?logo=css3&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) Employed to style the pages, creating a visually appealing front-end that enhances user experience through thoughtful design and layout.
 
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=563d7c)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) Implemented to build a responsive navbar and organize layouts for cards and flashcards, ensuring a seamless and user-friendly interface across all devices.
 
-[![React](https://img.shields.io/badge/React-grey?logo=react&logoColor=61DAFB)](https://en.wikipedia.org/wiki/React_(JavaScript_library)) Utilized to incorporate animations and dynamic features, enhancing interactivity and making the user experience more engaging.
-
 [![JavaScript](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) Applied to develop the core functionality of the app, including game mechanics and user interactions, allowing for a responsive and interactive learning environment.
+
+[![Formspree](https://img.shields.io/badge/Formspree-grey?logo=formspree&logoColor=1C6DD0)](https://formspree.io/)Used to easily create a contact form by allowing seamless integration with a simple HTML form.
 
 [![Balsamiq](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) Used for creating wireframes and mockups, helping visualize the app's design and layout before development, ensuring a clear plan and efficient workflow.
 
@@ -228,7 +226,7 @@ A form to fill out if a user wishes to get in touch with the creators of the app
 ### Future Features
 
 - The player had an option to choose the level of difficulty.
-- The score is saved for future reference.
+- Include pass success rate, e.g. the player need to get 10 correct answers to pass.
 
 
 
