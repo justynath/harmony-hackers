@@ -20,8 +20,9 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("../images/wallpaper_notes.jpg");
-  background-size: cover;
+  background: linear-gradient(180deg, #ffffff96, #cf8114b2), 
+  url("../images/ai-generated-8111543_1280.png") no-repeat center center / cover;
+  background-size: cover; 
   background-position: center;
 }
 
@@ -78,18 +79,6 @@ main {
 
 /* Code snippet extracted from Vernell Clark's second Portfolio Project */
 /* Basic styles for modal backdrop */
-modal {
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  transition: visibility 0s, opacity 0.3s ease;
-  z-index: 1000;
-}
 
 /* Modal content styling */
 .modal-contents {
@@ -123,7 +112,6 @@ modal {
   height: 2.2rem;
   cursor: pointer;
 }
-/* End of CSS Taken extracted from Vernell Clark's 2nd Portfolio Project */
 
 .close:hover,
 .close:focus {
@@ -162,24 +150,24 @@ modal {
   position: absolute;
   overflow-y: auto;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  bottom: 32%;
+  bottom: 20%;
   text-align: center;
 }
 
 /* The Modal Close Button */
 .close, .close-gameover {
     position: absolute;
-    top: 0.4rem;
-    right: 0.4rem;
+    top: 0.25rem;
+    right: -0.8rem;
     background-color: transparent;
-    color: #b6b6b6;
-    font-size: 4.8rem;
+    color: #4f4f4f;
+    font-size: 4rem;
     font-weight: lighter;
-    line-height: 2.0rem;
+    line-height: 1.8rem;
     border: 1px solid #b6b6b6;
     border-radius: 50%;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
     cursor: pointer;
 }
 /* End of CSS Taken extracted from Vernell Clark's 2nd Portfolio Project */
