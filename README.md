@@ -190,48 +190,67 @@ We kept everyone updated on project progress and discussions by using the Slack 
 
 The hero image indicates that it is a music app, and the welcoming message conveys that the main purpose is to learn music. There is a start button labeled "Learn."
 
-![landing page](.link here)
+<img width="849" alt="image" src="https://github.com/user-attachments/assets/4a186e87-d17c-4902-ae7c-e633d77c2040">
+
+Link: [landing page](https://justynath.github.io/harmony-hackers/index.html)
 
 ### Lessons Page 
 The keyboard is displayed, and the player has the option to familiarize themselves with all the features of the game through pop-up windows. The player can choose to start the game, where the notes are displayed on flashcards, and they are expected to press the corresponding key.
 
-![lessons page](.link here)
+| Feature | Screenshot |
+| - | - |
+| Onboarding | <img width="1222" alt="image" src="https://github.com/user-attachments/assets/c7626340-850a-4bd2-ba1a-9b9349d10e75"> |
+| Game feedback | <img width="1239" alt="image" src="https://github.com/user-attachments/assets/031f31b6-b89c-46e5-b60d-e604bfd73689"> |
+| Learn the notes | <img width="508" alt="image" src="https://github.com/user-attachments/assets/2cdae7a7-5369-4a65-a1b0-14594a6742d9"> |
+
+Link: [lessons page](https://justynath.github.io/harmony-hackers/lesson.html)
 
 ### About Page 
 
-Here’s the corrected version of your text:
+Information about the project which includes an introduction to the team members, each with a short description and an option to play a classical music excerpt of their choice.
 
-Information about the project includes an introduction to the team members, each with a short description and an option to play a classical music excerpt of their choice.
+<img width="1400" alt="image" src="https://github.com/user-attachments/assets/2af68349-a25b-4975-b1ef-b449f5b658e3">
 
-![about page](.link here)
+Link: [about page](https://justynath.github.io/harmony-hackers/about.html)
 
-### Contact Page 
+### Contact Page
+
 A form to fill out if a user wishes to get in touch with the creators of the app.
 
-![contact page](.link here)
+<img width="1145" alt="image" src="https://github.com/user-attachments/assets/77fb0f0a-f02a-4fa8-90d1-d3d49f664cfd">
 
-### Error Pages 
-404 and 500 error pages
+Link: [contact page](https://justynath.github.io/harmony-hackers/contact.html)
 
-![500 perrorage](.link here)
+### Error Pages
+
+404 and 500 error pages:
+
+| Page | Screenshot |
+| - | - |
+| 404 | <img width="575" alt="image" src="https://github.com/user-attachments/assets/2c480f82-7c60-4a99-a918-70de16b2086b"> |
+| 500 | <img width="1015" alt="image" src="https://github.com/user-attachments/assets/d52a0ba6-e7f5-4285-a78b-8df18a971bec"> |
 
 ### Navigation
 
-![navigation](.link here)
+Navbar on every page to give user quick access to all pages. Changes to drop down below 920px wide:
+
+| Mode | Screenshot |
+| - | - |
+| Visible | <img width="843" alt="image" src="https://github.com/user-attachments/assets/c02ceab7-5d9a-4bfb-9f31-8cf51b55c091"> |
+| Burger drop-down | <img width="446" alt="image" src="https://github.com/user-attachments/assets/ddc55294-9c13-457c-805a-3e58ef2fb1fd"> |
 
 ### Footer
 
-![footer](.link here)
+Footer on every page giving disclaimer and links for social and contact details.
+
+<img width="839" alt="image" src="https://github.com/user-attachments/assets/228f9786-4142-43d9-a9c8-28b12fb43eb3">
 
 ### Future Features
 
-- The player had an option to choose the level of difficulty.
 - Include pass success rate, e.g. the player need to get 10 correct answers to pass.
 
 
-
 [Back to Top](#harmony-hub)
-
 
 
 ## Testing <a name="testing"></a>
