@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <header class="background">
+    <header class="background" id="navbar">
         <div class="nav-container">
             <input type="checkbox" name="check" id="check">
             <div class="logo-container">
@@ -53,20 +53,8 @@
             </div>
         </div>
     </header>
-    <!-- <h1 id="lessons-title" class="text-uppercase">Welcome to the Musical Note Flashcards game!!</h1>
-    <p id="lessons-intro">A game where you can practice your treble clef note reading in an interactive way using a
-        digital keyboard....
-    </p> -->
     <main>
-        <div class="intro-container">
-            <h1 id="lessons-title" class="text-uppercase">Welcome to the Musical Note Flashcards game!!</h1>
-            <p id="lessons-intro">A game where you can practice your treble clef note reading in an interactive way
-                using a
-                digital keyboard....
-            </p>
-        </div>
         <!-- div for our flash-cards-->
-
         <div class="card-wrapper p-4 mx-auto" id="flashcard-wrapper">
             <div class="timer-div text-center m-1">
                 <p id="timer" class="text-white fs-2"></p>
@@ -82,7 +70,6 @@
 
         <!-- Wrapper for the piano object-->
         <div class="wrapper">
-            <!-- Controls for the user??? (tbd empty header for now goes here)-->
             <div class="keyboard-header px-3">
                 <div class="buttons-container text-center">
                     <button id="start-game" class="btn btn-dark m-0 m-lg-3">Start Game</button>
@@ -212,6 +199,5 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/tour.js"></script>
 </body>
-
 
 </html>

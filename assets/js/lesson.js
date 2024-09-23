@@ -11,6 +11,23 @@ let note = new Audio(`assets/audio/A1.mp3`); // Default note audio object with a
 
 /// FUNCTIONS ///
 
+
+/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+var prevScrollpos = window.scrollY;
+window.onscroll = function() {
+  var currentScrollPos = window.scrollY;
+  
+  if (prevScrollpos > currentScrollPos) {
+    // Show navbar when scrolling up
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    // Hide navbar when scrolling down
+    document.getElementById("navbar").style.top = "-80px"; // Adjust based on your navbar's height
+  }
+  
+  prevScrollpos = currentScrollPos;
+};
+
 // Play the note associated with the key
 const playNote = (key) => {
   note.src = `assets/audio/${key}.mp3`; // Set the source of the audio to the corresponding key sound
@@ -90,7 +107,12 @@ const flashcards = [
     alt: "e-1",
     noteName: "E4"
   },
-  { src: "assets/flashcards/f-1.png", card: "F1", alt: "f-1", noteName: "F4" },
+  {
+    src: "assets/flashcards/f-1.png",
+    card: "F1",
+    alt: "f-1",
+    noteName: "F4"
+  },
   {
     src: "assets/flashcards/f-sharp-1.png",
     card: "FS1",
@@ -103,7 +125,12 @@ const flashcards = [
     alt: "g-flat-1",
     noteName: "G♭4",
   },
-  { src: "assets/flashcards/g-1.png", card: "G1", alt: "g-1", noteName: "G4" },
+  {
+    src: "assets/flashcards/g-1.png",
+    card: "G1",
+    alt: "g-1",
+    noteName: "G4"
+  },
   {
     src: "assets/flashcards/g-sharp-1.png",
     card: "GS1",
@@ -116,7 +143,12 @@ const flashcards = [
     alt: "a-flat-1",
     noteName: "A♭4",
   },
-  { src: "assets/flashcards/a-1.png", card: "A1", alt: "a-1", noteName: "A4" },
+  {
+    src: "assets/flashcards/a-1.png",
+    card: "A1",
+    alt: "a-1",
+    noteName: "A4"
+  },
   {
     src: "assets/flashcards/a-sharp-1.png",
     card: "AS1",
