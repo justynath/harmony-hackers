@@ -185,6 +185,7 @@ const flashcards = [
   },
   { src: "assets/flashcards/b-2.png", card: "B2", alt: "b-2", noteName: "B5" },
   { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" },
+  { src: "assets/flashcards/c-3.png", card: "C3", alt: "c-3", noteName: "C6" },
   // (Continues with other notes...)
 ];
 
@@ -197,7 +198,6 @@ let intervalId; // ID for the interval used in the timer
 let difficulty = "";
 
 let diffSelector = document.getElementById("diff-select");
-
 const selectDifficulty = () => {
   let difficulties = document.getElementById("diff-select");
   difficulty = difficulties.value;
@@ -259,7 +259,6 @@ const startGame = () => {
     return;
   } else {
     diffSelector.disabled = true;
-    keys.forEach((key) => key.classList.remove("hide")); // Toggle the 'hide' class on each key to show/hide labels
     generateRandomFlashcard(); // Generate the first flashcard
     gameStarted = true; // Set gameStarted to true
     score = 0; // Reset score
@@ -287,7 +286,16 @@ const startGame = () => {
     intervalId = setInterval(() => {
       timeLeft--; // Decrease time left by 1 second
       timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
+      const timerElement = document.getElementById("timer"); // Get the timer element
+      intervalId = setInterval(() => {
+        timeLeft--; // Decrease time left by 1 second
+        timerElement.textContent = `Time Left: ${timeLeft}s`; // Update timer display
 
+        if (timeLeft <= 0) {
+          clearInterval(intervalId); // Stop the timer when time runs out
+          endGame(); // End the game
+        }
+      }, 1000); // Repeat every second
       if (timeLeft <= 0) {
         clearInterval(intervalId); // Stop the timer when time runs out
         endGame(); // End the game
@@ -296,11 +304,13 @@ const startGame = () => {
 
     document.getElementById("start-game").textContent = "Stop Game"; // Change button text to 'Stop Game'
   }
+  document.getElementById("start-game").textContent = "Stop Game"; // Change button text to 'Stop Game'
 };
 
 // Stop the game
 const stopGame = () => {
   diffSelector.disabled = false;
+  keys.forEach((key) => key.classList.remove("hide")); // Toggle the 'hide' class on each key to show/hide labels
   gameStarted = false; // Set gameStarted to false
   clearInterval(intervalId); // Clear the timer interval
 
